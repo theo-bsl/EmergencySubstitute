@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SC_Event : MonoBehaviour
+public abstract class SC_Event
 {
     //Fonction Var
     protected List<SC_Event> m_provokedEvents = new List<SC_Event>();
@@ -29,7 +29,7 @@ public abstract class SC_Event : MonoBehaviour
     public string Name { get { return m_name; }}
     public Color Dificulty {  get { return m_dificulty; }}
 
-    private void Start()
+    private void StartEvent()
     {
         InitEvent();
 
@@ -38,6 +38,8 @@ public abstract class SC_Event : MonoBehaviour
     }
 
     protected abstract void InitEvent();
+    protected abstract int UpdateEvent();
+
 
     public void StopTimer()
     {

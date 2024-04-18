@@ -2,19 +2,15 @@ using UnityEngine;
 
 public abstract class SC_EventFatal : SC_Event
 {
-    private void Update()
+    protected override int UpdateEvent()
     {
         if (m_canDecreaseTimer)
         {
             if (m_endTimer < Time.time)
             {
-                EndEvent();
+                return -1;
             }
         }
-    }
-
-    private void EndEvent()
-    {
-        Debug.Log(m_name + "is finished");
+        return 0;
     }
 }
