@@ -14,4 +14,5 @@ public class SC_ProfessionEnum
         Average,
         Good,
     }
+
 }
