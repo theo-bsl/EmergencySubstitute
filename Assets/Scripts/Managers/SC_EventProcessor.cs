@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SC_EventProcessor : MonoBehaviour
 {
-    public void ProcessEvent(SC_Event Event, SO_Character Character)
+    public void ProcessEvent(SC_Event Event)
     {
+        SO_Character Character = SC_CharacterManager.Instance.SelectedCharacter;
         if (Character.IsAvailable)
         {
             StartCoroutine(Process(Event, Character));

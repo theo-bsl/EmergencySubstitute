@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Character
   m_EditorClassIdentifier: 
   m_name: 
-  Name: 
+  m_icon: {fileID: 0}
+  m_workTime: 0
+  m_skills:
+    Mechanic: 2
+    Informatician: 1
+    Cook: 0
+    Doctor: 0
