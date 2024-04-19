@@ -30,4 +30,6 @@ public class SO_Character : ScriptableObject
     public string Name { get { return m_name; } }
 
     public Sprite Icon { get { return m_icon;} }
+
+    public bool IsAvailable { get { return m_workTime <= 0; } }
 }
