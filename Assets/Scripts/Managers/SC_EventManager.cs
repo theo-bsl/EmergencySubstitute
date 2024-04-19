@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SC_EventManager : MonoBehaviour
 {
-
+    public static SC_EventManager Instance;
 
     private List<SC_Event> m_events = new List<SC_Event>();
 
@@ -27,6 +27,12 @@ public class SC_EventManager : MonoBehaviour
     private int m_nbFatalEvent = 0;
     private int m_nbCrisisEvent = 0;
     private int m_nbDiscretEvent = 0;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
 
     public void SpawnEvent(SC_Event Event = null)
     {
