@@ -8,7 +8,6 @@ public class SC_GameManager : MonoBehaviour
     private int m_indexTimeline = 0;
     private int m_nextTimeToSpawnEvent;
     private int m_maxOffsetTime;
-    private int m_offSetTime;
     private SC_EventManager m_eventManager;
 
     private void Start()
@@ -19,7 +18,7 @@ public class SC_GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time == m_nextTimeToSpawnEvent)
+        if (Time.time >= m_nextTimeToSpawnEvent)
         {
             m_eventManager.SpawnEvent();
         }
@@ -27,8 +26,8 @@ public class SC_GameManager : MonoBehaviour
 
     private void CalculateNextEventTime()
     {
-        m_offSetTime = Random.Range(0, m_maxOffsetTime);
-        m_nextTimeToSpawnEvent = m_timeline[m_indexTimeline] + Random.Range(-m_offSetTime, m_offSetTime);
+        int offSetTime = Random.Range(0, m_maxOffsetTime);
+        m_nextTimeToSpawnEvent = m_timeline[m_indexTimeline] + Random.Range(-offSetTime, offSetTime);
         m_indexTimeline++;
     }
 }
