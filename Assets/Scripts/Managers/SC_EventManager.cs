@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SC_EventManager : MonoBehaviour
 {
-
+    public static SC_EventManager Instance;
 
     private List<SC_Event> m_events = new List<SC_Event>();
 
@@ -28,6 +28,11 @@ public class SC_EventManager : MonoBehaviour
     private int m_nbCrisisEvent = 0;
     private int m_nbDiscretEvent = 0;
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
     public void SpawnEvent(SC_Event Event = null)
     {
         if (Event == null && m_events.Count < m_nbMaxEvent)
@@ -57,6 +62,7 @@ public class SC_EventManager : MonoBehaviour
             {
                 ChangeEventNumber(Event);
                 m_events.Add(Event);
+                Event.StartEvent();
             }
         }
     }

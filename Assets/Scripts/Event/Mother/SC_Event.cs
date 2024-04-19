@@ -22,14 +22,14 @@ public abstract class SC_Event
     public List<SC_Event> ProvokedEvents {get { return m_provokedEvents;}}
     public float ResolutionTimer { get { return m_resolutionTimer; }}
     public float BeginningTimer { get { return m_beginningTimer; }}
-    public float EndTimer { get { return m_endTimer; }}
+    public float EndTimer { get { return m_endTimer; } set { m_endTimer = value; } }
     public SC_ProfessionEnum.Profession Profession { get { return m_profession; }}
     public bool HasTimer { get { return m_hasTimer; }}
     public Sprite Icon { get { return m_icon; }}
     public string Name { get { return m_name; }}
     public Color Dificulty {  get { return m_dificulty; }}
 
-    private void StartEvent()
+    public void StartEvent()
     {
         InitEvent();
 
