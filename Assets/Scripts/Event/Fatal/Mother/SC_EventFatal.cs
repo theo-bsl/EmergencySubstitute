@@ -2,15 +2,15 @@ using UnityEngine;
 
 public abstract class SC_EventFatal : SC_Event
 {
-    public override int UpdateEvent()
+    public override ResultEndEvent UpdateEvent()
     {
         if (m_canDecreaseTimer)
         {
             if (m_endTimer < Time.time)
             {
-                return -1;
+                return ResultEndEvent.GameOver;
             }
         }
-        return 0;
+        return ResultEndEvent.Nothing;
     }
 }

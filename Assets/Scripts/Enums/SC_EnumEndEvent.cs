@@ -1,11 +1,4 @@
-using UnityEngine;
-
-public class SC_EnumEndEvent
-{
-    
-}
-
-enum ResultEndEvent
+public enum ResultEndEvent
 {
     Nothing,
     GameOver,

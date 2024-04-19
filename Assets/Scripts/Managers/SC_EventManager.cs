@@ -95,14 +95,14 @@ public class SC_EventManager : MonoBehaviour
         return null;
     }
 
-    private void ManageEndEvent(int ResultEndEvent, SC_Event Event)
+    private void ManageEndEvent(ResultEndEvent ResultEndEvent, SC_Event Event)
     {
-        if (ResultEndEvent == -1)
+        if (ResultEndEvent == ResultEndEvent.GameOver)
         {
             DestroyEvent(Event);
             //GameOver
         }
-        else if (ResultEndEvent == -2)
+        else if (ResultEndEvent == ResultEndEvent.CreateEvent)
         {
             foreach (SC_Event spawnEvent in Event.ProvokedEvents)
             {
@@ -122,7 +122,7 @@ public class SC_EventManager : MonoBehaviour
     {
         foreach(SC_Event Event in m_events)
         {
-            int result = Event.UpdateEvent();
+            ResultEndEvent result = Event.UpdateEvent();
             ManageEndEvent(result, Event);
         }
     }
