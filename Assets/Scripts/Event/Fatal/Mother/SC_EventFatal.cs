@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class SC_EventFatal : SC_Event
 {
-    protected override int UpdateEvent()
+    public override int UpdateEvent()
     {
         if (m_canDecreaseTimer)
         {

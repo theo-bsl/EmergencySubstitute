@@ -55,23 +55,28 @@ public class SC_EventManager : MonoBehaviour
         {
             if (!m_events.Contains(Event))
             {
-                if (typeof(Event).IsSubclassOf(typeof(SC_EventFatal)))
-                {
-                    m_nbFatalEvent++;
-                }
-                /*
-                if (typeof(Event).IsSubclassOf(typeof(SC_EventCrisis)))
-                {
-                    m_nbCrisisEvent++;
-                }
-                if (typeof(Event).IsSubclassOf(typeof(SC_EventDiscret)))
-                {
-                    m_nbDiscretEvent++;
-                }
-                */
+                ChangeEventNumber(Event);
                 m_events.Add(Event);
             }
         }
+    }
+
+    private void ChangeEventNumber(SC_Event NewEvent, int value = 1)
+    {
+        if (NewEvent.GetType().IsSubclassOf(typeof(SC_EventFatal)))
+        {
+            m_nbFatalEvent += value;
+        }
+        /*
+        if (NewEvent.GetType().IsSubclassOf(typeof(SC_EventCrisis)))
+        {
+            m_nbCrisisEvent += value;
+        }
+        if (NewEvent.GetType().IsSubclassOf(typeof(SC_EventDiscret)))
+        {
+            m_nbDiscretEvent += value;
+        }
+        */
     }
 
     private SC_Event PickEvent(List<Type> PoolOfEvent)
@@ -90,13 +95,35 @@ public class SC_EventManager : MonoBehaviour
         return null;
     }
 
+    private void ManageEndEvent(int ResultEndEvent, SC_Event Event)
+    {
+        if (ResultEndEvent == -1)
+        {
+            DestroyEvent(Event);
+            //GameOver
+        }
+        else if (ResultEndEvent == -2)
+        {
+            foreach (SC_Event spawnEvent in Event.ProvokedEvents)
+            {
+                SpawnEvent(spawnEvent);
+            }
+            DestroyEvent(Event);
+        }
+    }
+
     public void DestroyEvent(SC_Event Event)
     {
-
+        ChangeEventNumber(Event, -1);
+        m_events.Remove(Event);
     }
 
     private void Update()
     {
-        
+        foreach(SC_Event Event in m_events)
+        {
+            int result = Event.UpdateEvent();
+            ManageEndEvent(result, Event);
+        }
     }
 }

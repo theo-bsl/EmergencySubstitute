@@ -38,7 +38,7 @@ public abstract class SC_Event
     }
 
     protected abstract void InitEvent();
-    protected abstract int UpdateEvent();
+    public abstract int UpdateEvent();
 
 
     public void StopTimer()
