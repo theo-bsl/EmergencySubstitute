@@ -12,6 +12,7 @@ public class SC_CockpitInteractables : MonoBehaviour
     [SerializeField] private GameObject m_lights;
     [SerializeField] private GameObject m_radioFrequency;
     [SerializeField] private GameObject m_microphone;
+    [SerializeField] private GameObject m_ADF;
     private Vector3 m_mousePos;
     private Camera m_camera;
 
@@ -71,6 +72,10 @@ public class SC_CockpitInteractables : MonoBehaviour
         {
             MicOnOff();
         }
+        else if (hit.collider == m_ADF.GetComponent<Collider>())
+        {
+            ADFOnOff();
+        }
     }
 
     private void UseAccelerator()
@@ -115,5 +120,9 @@ public class SC_CockpitInteractables : MonoBehaviour
     private void MicOnOff()
     {
         Debug.Log("Mic");
+    }
+    private void ADFOnOff()
+    {
+        Debug.Log("adf");
     }
 }
