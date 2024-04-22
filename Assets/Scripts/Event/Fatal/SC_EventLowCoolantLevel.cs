@@ -8,4 +8,5 @@ public class SC_EventLowCoolantLevel : SC_EventFatal
         m_profession = SC_ProfessionEnum.Profession.Mechanic;
         m_canDecreaseTimer = true;
     }
+
 }
