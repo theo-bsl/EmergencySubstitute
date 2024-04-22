@@ -41,12 +41,12 @@ public class SC_GameManager : MonoBehaviour
         m_indexTimeline++;
     }
 
-    private void Win()
+    public void Win()
     {
         SceneManager.LoadScene("Win_Scene");
     }
 
-    private void Lose()
+    public void Lose()
     {
         SceneManager.LoadScene("Defeat_Scene");
     }

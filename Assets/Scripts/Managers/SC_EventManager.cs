@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class SC_EventManager : MonoBehaviour
@@ -34,10 +35,12 @@ public class SC_EventManager : MonoBehaviour
             Instance = this;
     }
 
-    public void SpawnEvent(SC_Event Event = null)
+    public void SpawnEvent(SC_Event Event = null, SC_Event Event2 = null)
     {
         if (Event == null && m_events.Count < m_nbMaxEvent)
         {
+            bool isPairing = false;
+            float crisisAddition = 0;
             List<Type> PoolOfEvent = new List<Type>();
             if (m_nbFatalEvent < m_nbMaxFatalEvent)
             {
@@ -52,9 +55,40 @@ public class SC_EventManager : MonoBehaviour
                 PoolOfEvent.AddRange(m_eventDiscretTypes);
             }
 
+            if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 25 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 50)
+            {
+                if (UnityEngine.Random.Range(0, 100) <= 16.6f)
+                {
+                    isPairing = true;
+                }
+                crisisAddition = 16.6f;
+            }
+            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 50 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 75)
+            {
+                if (UnityEngine.Random.Range(0, 100) <= 33.2f)
+                {
+                    isPairing = true;
+                }
+                crisisAddition = 33.2f;
+            }
+            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 75 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 100)
+            {
+                if (UnityEngine.Random.Range(0, 100) <= 50f)
+                {
+                    isPairing = true;
+                }
+                crisisAddition = 50f;
+            }
+
             if (PoolOfEvent.Count > 0)
             {
                 Event = PickEvent(PoolOfEvent);
+                if (isPairing)
+                {
+                    Event2 = PickEvent(PoolOfEvent);
+                }
+                Event.ResolutionTimer += Event.ResolutionTimer * crisisAddition / 100;
+                Event2.ResolutionTimer += Event2.ResolutionTimer * crisisAddition / 100;
             }
         }
         if (Event != null)
@@ -73,6 +107,7 @@ public class SC_EventManager : MonoBehaviour
                 ChangeEventNumber(Event);
                 m_events.Add(Event);
                 Event.StartEvent();
+                Event2.StartEvent();
             }
         }
     }
@@ -100,11 +135,11 @@ public class SC_EventManager : MonoBehaviour
         if (PoolOfEvent.Count > 0)
         {
             Type eventType = PoolOfEvent[UnityEngine.Random.Range(0, PoolOfEvent.Count)];
-            SC_Event Event = (SC_Event)Activator.CreateInstance(eventType);
+            SC_Event Event1 = (SC_Event)Activator.CreateInstance(eventType);
             bool detect = true;
             foreach (SC_Event Element in m_events)
             {
-                if (Element.GetType() == Event.GetType())
+                if (Element.GetType() == Event1.GetType())
                 {
                     detect = false;
                     break;
@@ -113,9 +148,9 @@ public class SC_EventManager : MonoBehaviour
             if (!detect)
             {
                 PoolOfEvent.Remove(eventType);
-                Event = PickEvent(PoolOfEvent);
+                Event1 = PickEvent(PoolOfEvent);
             }
-            return Event;
+            return Event1;
         }
         return null;
     }
