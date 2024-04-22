@@ -19,7 +19,7 @@ public class SC_EventManager : MonoBehaviour
 
     private List<Type> m_eventDiscretTypes = new List<Type>();
 
-    private int m_nbMaxEvent = 3;
+    private int m_nbMaxEvent = 5;
     private int m_nbMaxFatalEvent = 3;
     private int m_nbMaxCrisisEvent = 3;
     private int m_nbMaxDiscretEvent = 3;
@@ -54,15 +54,25 @@ public class SC_EventManager : MonoBehaviour
 
             if (PoolOfEvent.Count > 0)
             {
-                PickEvent(PoolOfEvent);
+                Event = PickEvent(PoolOfEvent);
             }
         }
         if (Event != null)
         {
-            if (!m_events.Contains(Event))
+            bool detect = true;
+            foreach(SC_Event Element in m_events)
+            {
+                if (Element.GetType() == Event.GetType())
+                {
+                    detect = false;
+                    break;
+                }
+            }
+            if (detect)
             {
                 ChangeEventNumber(Event);
                 m_events.Add(Event);
+                Event.StartEvent();
             }
         }
     }
@@ -91,7 +101,16 @@ public class SC_EventManager : MonoBehaviour
         {
             Type eventType = PoolOfEvent[UnityEngine.Random.Range(0, PoolOfEvent.Count)];
             SC_Event Event = (SC_Event)Activator.CreateInstance(eventType);
-            if (m_events.Contains(Event))
+            bool detect = true;
+            foreach (SC_Event Element in m_events)
+            {
+                if (Element.GetType() == Event.GetType())
+                {
+                    detect = false;
+                    break;
+                }
+            }
+            if (!detect)
             {
                 PoolOfEvent.Remove(eventType);
                 Event = PickEvent(PoolOfEvent);
@@ -105,6 +124,7 @@ public class SC_EventManager : MonoBehaviour
     {
         if (ResultEndEvent == -1)
         {
+            Debug.Log(Event.Name + " killed you !");
             DestroyEvent(Event);
             //GameOver
         }
@@ -126,8 +146,9 @@ public class SC_EventManager : MonoBehaviour
 
     private void Update()
     {
-        foreach(SC_Event Event in m_events)
+        for (int i = m_events.Count - 1; i >= 0; i--)
         {
+            SC_Event Event = m_events[i];
             int result = Event.UpdateEvent();
             ManageEndEvent(result, Event);
         }

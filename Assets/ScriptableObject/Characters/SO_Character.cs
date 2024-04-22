@@ -14,7 +14,7 @@ public class SO_Character : ScriptableObject
     private float m_workTime;
 
     [Serializable]
-    struct Skills
+    public struct Ability
     {
         public SC_ProfessionEnum.Expertise Mechanic;
         public SC_ProfessionEnum.Expertise Informatician;
@@ -23,9 +23,11 @@ public class SO_Character : ScriptableObject
     }
 
     [SerializeField]
-    private Skills m_skills;
+    private Ability m_skills;
 
-    public float WorkTime { get { return m_workTime; } }
+    public Ability Skills { get { return m_skills; } }
+
+    public float WorkTime { get { return m_workTime; } set { m_workTime = value; } }
 
     public string Name { get { return m_name; } }
 
