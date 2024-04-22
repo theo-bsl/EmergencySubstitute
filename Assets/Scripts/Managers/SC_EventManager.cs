@@ -34,11 +34,6 @@ public class SC_EventManager : MonoBehaviour
             Instance = this;
     }
 
-    public void TEMPORARY_SpawnNewEvent()
-    {
-        SpawnEvent();
-    }
-
     public void SpawnEvent(SC_Event Event = null)
     {
         if (Event == null && m_events.Count < m_nbMaxEvent)

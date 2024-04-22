@@ -20,20 +20,20 @@ public class SC_EventProcessor : MonoBehaviour
         switch (Event.Profession)
         {
             case SC_ProfessionEnum.Profession.Mechanic:
-                Event.ResolutionTimer *= Character.m_skills.Mechanic == SC_ProfessionEnum.Expertise.Average || Character.m_skills.Mechanic == SC_ProfessionEnum.Expertise.Bad ? 1.5f : 1;
-                hasWrongExpertise = Character.m_skills.Mechanic == SC_ProfessionEnum.Expertise.Bad;
+                Event.ResolutionTimer *= Character.Skills.Mechanic == SC_ProfessionEnum.Expertise.Average || Character.Skills.Mechanic == SC_ProfessionEnum.Expertise.Bad ? 1.5f : 1;
+                hasWrongExpertise = Character.Skills.Mechanic == SC_ProfessionEnum.Expertise.Bad;
                 break;
             case SC_ProfessionEnum.Profession.Informatician:
-                Event.ResolutionTimer *= Character.m_skills.Informatician == SC_ProfessionEnum.Expertise.Average || Character.m_skills.Informatician == SC_ProfessionEnum.Expertise.Bad ? 1.5f : 1;
-                hasWrongExpertise = Character.m_skills.Informatician == SC_ProfessionEnum.Expertise.Bad;
+                Event.ResolutionTimer *= Character.Skills.Informatician == SC_ProfessionEnum.Expertise.Average || Character.Skills.Informatician == SC_ProfessionEnum.Expertise.Bad ? 1.5f : 1;
+                hasWrongExpertise = Character.Skills.Informatician == SC_ProfessionEnum.Expertise.Bad;
                 break;
             case SC_ProfessionEnum.Profession.Cook:
-                Event.ResolutionTimer *= Character.m_skills.Cook == SC_ProfessionEnum.Expertise.Average || Character.m_skills.Cook == SC_ProfessionEnum.Expertise.Bad ? 1.5f : 1;
-                hasWrongExpertise = Character.m_skills.Cook == SC_ProfessionEnum.Expertise.Bad;
+                Event.ResolutionTimer *= Character.Skills.Cook == SC_ProfessionEnum.Expertise.Average || Character.Skills.Cook == SC_ProfessionEnum.Expertise.Bad ? 1.5f : 1;
+                hasWrongExpertise = Character.Skills.Cook == SC_ProfessionEnum.Expertise.Bad;
                 break;
             case SC_ProfessionEnum.Profession.Doctor:
-                Event.ResolutionTimer *= Character.m_skills.Doctor == SC_ProfessionEnum.Expertise.Average || Character.m_skills.Doctor == SC_ProfessionEnum.Expertise.Bad ? 1.5f : 1;
-                hasWrongExpertise = Character.m_skills.Doctor == SC_ProfessionEnum.Expertise.Bad;
+                Event.ResolutionTimer *= Character.Skills.Doctor == SC_ProfessionEnum.Expertise.Average || Character.Skills.Doctor == SC_ProfessionEnum.Expertise.Bad ? 1.5f : 1;
+                hasWrongExpertise = Character.Skills.Doctor == SC_ProfessionEnum.Expertise.Bad;
                 break;
             default:
                 throw new Exception("The Event profession" + Event.Profession.ToString() + "isn't supported");
