@@ -120,15 +120,15 @@ public class SC_EventManager : MonoBehaviour
         return null;
     }
 
-    private void ManageEndEvent(int ResultEndEvent, SC_Event Event)
+    private void ManageEndEvent(ResultEndEvent ResultEndEvent, SC_Event Event)
     {
-        if (ResultEndEvent == -1)
+        if (ResultEndEvent == ResultEndEvent.GameOver)
         {
             Debug.Log(Event.Name + " killed you !");
             DestroyEvent(Event);
             //GameOver
         }
-        else if (ResultEndEvent == -2)
+        else if (ResultEndEvent == ResultEndEvent.CreateEvent)
         {
             foreach (SC_Event spawnEvent in Event.ProvokedEvents)
             {
@@ -149,7 +149,7 @@ public class SC_EventManager : MonoBehaviour
         for (int i = m_events.Count - 1; i >= 0; i--)
         {
             SC_Event Event = m_events[i];
-            int result = Event.UpdateEvent();
+            ResultEndEvent result = Event.UpdateEvent();
             ManageEndEvent(result, Event);
         }
     }
