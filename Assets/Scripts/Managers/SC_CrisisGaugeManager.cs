@@ -4,6 +4,9 @@ public class SC_CrisisGaugeManager : MonoBehaviour
 {
     public static SC_CrisisGaugeManager Instance;
     private float m_percentage;
+    private float m_gaugeDecrease;
+    private float m_waitTime;
+    [SerializeField] private float m_timeToWaitBeforeDecreaseGauge;
 
     private void Awake()
     {
@@ -31,5 +34,22 @@ public class SC_CrisisGaugeManager : MonoBehaviour
     public float GetCrisisPercentage()
     {
         return m_percentage;
+    }
+
+    private void Update()
+    {
+        if (SC_EventManager.Instance.NumberOfActiveCrisisEvent == 0)
+        {
+            m_waitTime += Time.deltaTime;
+
+            if (m_waitTime >= m_timeToWaitBeforeDecreaseGauge)
+            {
+                DecreaseGauge(m_gaugeDecrease);
+            }
+        }
+        else
+        {
+            m_waitTime = 0;
+        }
     }
 }

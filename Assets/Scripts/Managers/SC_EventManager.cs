@@ -180,6 +180,8 @@ public class SC_EventManager : MonoBehaviour
         m_events.Remove(Event);
     }
 
+    public int NumberOfActiveCrisisEvent { get { return m_nbCrisisEvent; } }
+
     private void Update()
     {
         for (int i = m_events.Count - 1; i >= 0; i--)
