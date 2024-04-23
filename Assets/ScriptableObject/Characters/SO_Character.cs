@@ -10,7 +10,6 @@ public class SO_Character : ScriptableObject
     [SerializeField]
     private Sprite m_icon;
 
-    [SerializeField]
     private float m_workTime;
 
     [Serializable]
