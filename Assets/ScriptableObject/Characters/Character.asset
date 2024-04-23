@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ed93f086557fc4c993379b3e08b58c, type: 3}
   m_Name: Character
   m_EditorClassIdentifier: 
-  m_name: 
+  m_name: test
   m_icon: {fileID: 0}
   m_workTime: 0
   m_skills:

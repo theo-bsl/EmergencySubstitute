@@ -7,6 +7,7 @@ public class SC_EventProcessor : MonoBehaviour
 {
     public static SC_EventProcessor Instance;
 
+    //SO_Character = Character, float = EventDuration, float = WorkTime
     public UnityEvent<SO_Character, float, float> m_updateCharacterWorkTime = new UnityEvent<SO_Character, float, float>();
 
     private void Awake()
