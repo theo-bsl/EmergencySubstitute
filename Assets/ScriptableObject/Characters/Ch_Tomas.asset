@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48ed93f086557fc4c993379b3e08b58c, type: 3}
-  m_Name: Character
+  m_Name: Ch_Tomas
   m_EditorClassIdentifier: 
-  m_name: 
+  m_name: Nicolux Duboudgra
   m_icon: {fileID: 0}
-  m_workTime: 0
   m_skills:
-    Mechanic: 2
+    Mechanic: 0
     Informatician: 1
     Cook: 0
-    Doctor: 0
+    Doctor: 2
