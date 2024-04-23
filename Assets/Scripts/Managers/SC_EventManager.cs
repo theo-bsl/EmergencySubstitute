@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class SC_EventManager : MonoBehaviour
@@ -29,18 +28,39 @@ public class SC_EventManager : MonoBehaviour
     private int m_nbCrisisEvent = 0;
     private int m_nbDiscretEvent = 0;
 
+    private bool m_isPairing = false;
+    private bool m_hasSpawnPairingEvent = false;
+
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
     }
 
-    public void SpawnEvent(SC_Event Event = null, SC_Event Event2 = null)
+    public void SpawnEvent(SC_Event Event = null)
     {
+        float crisisTimePenalty = 0;
+        if (!m_isPairing)
+        {
+            if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 25 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 50)
+            {
+                m_isPairing = UnityEngine.Random.Range(0, 100) <= 16.6f;
+                crisisTimePenalty = 16.6f;
+            }
+            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 50 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 75)
+            {
+                m_isPairing = UnityEngine.Random.Range(0, 100) <= 33.2f;
+                crisisTimePenalty = 33.2f;
+            }
+            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 75 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 100)
+            {
+                m_isPairing = UnityEngine.Random.Range(0, 100) <= 50f;
+                crisisTimePenalty = 50f;
+            }
+        }
+
         if (Event == null && m_events.Count < m_nbMaxEvent)
         {
-            bool isPairing = false;
-            float crisisAddition = 0;
             List<Type> PoolOfEvent = new List<Type>();
             if (m_nbFatalEvent < m_nbMaxFatalEvent)
             {
@@ -55,46 +75,16 @@ public class SC_EventManager : MonoBehaviour
                 PoolOfEvent.AddRange(m_eventDiscretTypes);
             }
 
-            if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 25 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 50)
-            {
-                if (UnityEngine.Random.Range(0, 100) <= 16.6f)
-                {
-                    isPairing = true;
-                }
-                crisisAddition = 16.6f;
-            }
-            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 50 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 75)
-            {
-                if (UnityEngine.Random.Range(0, 100) <= 33.2f)
-                {
-                    isPairing = true;
-                }
-                crisisAddition = 33.2f;
-            }
-            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 75 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 100)
-            {
-                if (UnityEngine.Random.Range(0, 100) <= 50f)
-                {
-                    isPairing = true;
-                }
-                crisisAddition = 50f;
-            }
-
             if (PoolOfEvent.Count > 0)
             {
                 Event = PickEvent(PoolOfEvent);
-                if (isPairing)
-                {
-                    Event2 = PickEvent(PoolOfEvent);
-                }
-                Event.ResolutionTimer += Event.ResolutionTimer * crisisAddition / 100;
-                Event2.ResolutionTimer += Event2.ResolutionTimer * crisisAddition / 100;
+                Event.ResolutionTimer += Event.ResolutionTimer * crisisTimePenalty / 100;
             }
         }
         if (Event != null)
         {
             bool detect = true;
-            foreach(SC_Event Element in m_events)
+            foreach (SC_Event Element in m_events)
             {
                 if (Element.GetType() == Event.GetType())
                 {
@@ -107,10 +97,21 @@ public class SC_EventManager : MonoBehaviour
                 ChangeEventNumber(Event);
                 m_events.Add(Event);
                 Event.StartEvent();
-                Event2.StartEvent();
             }
         }
+
+        if (m_isPairing && !m_hasSpawnPairingEvent)
+        {
+            m_hasSpawnPairingEvent = true;
+            SpawnEvent();
+        }
+        if (m_isPairing && m_hasSpawnPairingEvent)
+        {
+            m_isPairing = false;
+            m_hasSpawnPairingEvent = false;
+        }
     }
+
 
     private void ChangeEventNumber(SC_Event NewEvent, int value = 1)
     {

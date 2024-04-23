@@ -21,10 +21,13 @@ public class SC_CrisisGaugeManager : MonoBehaviour
             SC_GameManager.Instance.Lose();
         }
     }
+
     public void DecreaseGauge(int percentage)
     {
-        m_percentage += percentage;
+        m_percentage -= percentage;
+        m_percentage = m_percentage < 0 ? 0 : m_percentage;
     }
+
     public float GetCrisisPercentage()
     {
         return m_percentage;
