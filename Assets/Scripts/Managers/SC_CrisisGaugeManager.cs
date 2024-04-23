@@ -13,7 +13,7 @@ public class SC_CrisisGaugeManager : MonoBehaviour
         }
     }
 
-    public void IncreaseGauge(int percentage)
+    public void IncreaseGauge(float percentage)
     {
         m_percentage += percentage;
         if (m_percentage >= 100)
@@ -22,7 +22,7 @@ public class SC_CrisisGaugeManager : MonoBehaviour
         }
     }
 
-    public void DecreaseGauge(int percentage)
+    public void DecreaseGauge(float percentage)
     {
         m_percentage -= percentage;
         m_percentage = m_percentage < 0 ? 0 : m_percentage;
