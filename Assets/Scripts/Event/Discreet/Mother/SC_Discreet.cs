@@ -14,6 +14,4 @@ public abstract class SC_Discreet : SC_Event
         }
         return ResultEndEvent.Nothing;
     }
-
-    protected abstract void EventAction();
 }
