@@ -40,6 +40,7 @@ public abstract class SC_Event
 
     protected abstract void InitEvent();
     public abstract ResultEndEvent UpdateEvent();
+    protected abstract void EventAction();
 
 
     public void StopTimer()

@@ -8,4 +8,6 @@ public class SC_EventAutopilotHS : SC_EventFatal
         m_profession = SC_ProfessionEnum.Profession.Informatician;
         m_canDecreaseTimer = true;
     }
+
+    protected override void EventAction() { }
 }

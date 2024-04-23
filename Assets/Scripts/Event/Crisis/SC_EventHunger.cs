@@ -7,4 +7,6 @@ public class SC_EventHunger : SC_EventCrisis
         m_name = "Hunger";
         m_profession = SC_ProfessionEnum.Profession.Cook;
     }
+
+    protected override void EventAction() { }
 }

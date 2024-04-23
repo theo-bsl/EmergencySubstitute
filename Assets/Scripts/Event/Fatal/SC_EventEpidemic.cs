@@ -8,4 +8,5 @@ public class SC_EventEpidemic : SC_EventFatal
         m_profession = SC_ProfessionEnum.Profession.Doctor;
         m_canDecreaseTimer = true;
     }
+    protected override void EventAction() { }
 }
