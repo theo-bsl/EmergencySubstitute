@@ -9,7 +9,7 @@ public abstract class SC_Event
     protected float m_beginningTimer = 0f;
     protected float m_endTimer = 0f;
     protected float m_eventDuration = 0f;
-    protected SC_ProfessionEnum.Profession m_profession;
+    protected Profession m_profession;
     protected bool m_hasTimer = false;
     protected bool m_canDecreaseTimer = true;
 
@@ -24,7 +24,7 @@ public abstract class SC_Event
     public float BeginningTimer { get { return m_beginningTimer; }}
     public float EventDuration { get { return m_eventDuration; }}   
     public float EndTimer { get { return m_endTimer; } set { m_endTimer = value; } }
-    public SC_ProfessionEnum.Profession Profession { get { return m_profession; }}
+    public Profession Profession { get { return m_profession; }}
     public bool HasTimer { get { return m_hasTimer; }}
     public Sprite Icon { get { return m_icon; }}
     public string Name { get { return m_name; }}

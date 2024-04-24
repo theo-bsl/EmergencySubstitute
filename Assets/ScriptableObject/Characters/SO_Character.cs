@@ -15,10 +15,10 @@ public class SO_Character : ScriptableObject
     [Serializable]
     public struct Ability
     {
-        public SC_ProfessionEnum.Expertise Mechanic;
-        public SC_ProfessionEnum.Expertise Informatician;
-        public SC_ProfessionEnum.Expertise Cook;
-        public SC_ProfessionEnum.Expertise Doctor;
+        public Expertise Mechanic;
+        public Expertise Informatician;
+        public Expertise Cook;
+        public Expertise Doctor;
     }
 
     [SerializeField]
