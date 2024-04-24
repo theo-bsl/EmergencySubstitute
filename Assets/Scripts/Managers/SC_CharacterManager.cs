@@ -21,4 +21,6 @@ public class SC_CharacterManager : MonoBehaviour
     }
 
     public SO_Character SelectedCharacter { get { return m_selectedCharacter; } }
+    
+    public List<SO_Character> Characters { get { return m_characters; } }
 }
