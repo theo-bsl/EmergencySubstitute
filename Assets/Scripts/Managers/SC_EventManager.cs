@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SC_EventManager : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class SC_EventManager : MonoBehaviour
     private int m_nbFatalEvent = 0;
     private int m_nbCrisisEvent = 0;
     private int m_nbDiscretEvent = 0;
+
+    //SC_Event = Event
+    private UnityEvent<SC_Event> m_newEvent = new();
+
+    //SC_Event = Event
+    private UnityEvent<SC_Event> m_deleteEvent = new();
 
     private bool m_isPairing = false;
     private bool m_hasSpawnPairingEvent = false;
@@ -97,6 +104,7 @@ public class SC_EventManager : MonoBehaviour
                 ChangeEventNumber(NewEvent.GetType(), 1);
                 m_events.Add(NewEvent);
                 NewEvent.StartEvent();
+                m_newEvent.Invoke(NewEvent);
             }
         }
 
@@ -165,6 +173,7 @@ public class SC_EventManager : MonoBehaviour
 
     public void DestroyEvent(SC_Event Event)
     {
+        m_deleteEvent.Invoke(Event);
         ChangeEventNumber(Event.GetType(), -1);
         m_events.Remove(Event);
     }
@@ -180,4 +189,7 @@ public class SC_EventManager : MonoBehaviour
             ManageEndEvent(result, Event);
         }
     }
+    public UnityEvent<SC_Event> NewEvent { get { return m_newEvent; } }
+
+    public UnityEvent<SC_Event> DeleteEvent { get { return m_deleteEvent; } }
 }
