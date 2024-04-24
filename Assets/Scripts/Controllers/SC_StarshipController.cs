@@ -1,7 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class SC_CockpitInteractables : MonoBehaviour
+public class SC_StarshipController : MonoBehaviour
 {
+    public static SC_StarshipController Instance;
     [SerializeField] private GameObject m_accelerator;
     [SerializeField] private GameObject m_orientationL;
     [SerializeField] private GameObject m_orientationR;
@@ -13,22 +15,42 @@ public class SC_CockpitInteractables : MonoBehaviour
     [SerializeField] private GameObject m_radioFrequency;
     [SerializeField] private GameObject m_microphone;
     [SerializeField] private GameObject m_ADF;
-    private Vector3 m_mousePos;
+    private Vector3 m_dragDist;
+    private bool m_dragging;
+
     private Camera m_camera;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
         m_camera = Camera.main;
+        m_dragDist = Vector3.zero;
+        m_dragging = false;
     }
 
     private void Update()
     {
-        m_mousePos = m_camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1f));
+        CheckIsDragging();
     }
 
-    public void CheckForInteractable()
+    private void CheckIsDragging()
     {
-        Vector3 dir = m_mousePos - m_camera.transform.position;
+        if (m_dragging)
+        {
+            m_accelerator.transform.localEulerAngles += new Vector3(m_dragDist.y, 0, 0);
+        }
+    }
+
+    public bool CheckForInteractable(Vector3 MousePos)
+    {
+        Vector3 dir = MousePos - m_camera.transform.position;
         Physics.Raycast(m_camera.transform.position, dir, out RaycastHit hit, Mathf.Infinity);
         Debug.DrawRay(m_camera.transform.position, dir * 1000, Color.green, 10);
 
@@ -76,6 +98,7 @@ public class SC_CockpitInteractables : MonoBehaviour
         {
             ADFOnOff();
         }
+        return Physics.Raycast(m_camera.transform.position, dir, Mathf.Infinity);
     }
 
     private void UseAccelerator()
@@ -124,5 +147,13 @@ public class SC_CockpitInteractables : MonoBehaviour
     private void ADFOnOff()
     {
         Debug.Log("adf");
+    }
+    public void SetDragDist(Vector3 value)
+    {
+        m_dragDist = value;
+    }
+    public void SetIsDragging(bool value)
+    {
+        m_dragging = value;
     }
 }
