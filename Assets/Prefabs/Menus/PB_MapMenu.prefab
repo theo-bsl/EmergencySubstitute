@@ -352,7 +352,7 @@ MonoBehaviour:
   m_infirmaryEvent: []
   m_serverEvent: []
   m_eventIconPrefab: {fileID: 4488683820439942682, guid: d5c3044942ee1c04cbbf9e2b074a9857, type: 3}
-  m_eventsParent: {fileID: 7414550839806860868}
+  m_eventIconsContainer: {fileID: 7414550839806860868}
   m_motorRoomWaypoint: {fileID: 2773015041956080959}
   m_cockpitRoomWaypoint: {fileID: 2308784649212989644}
   m_kitchenRoomWaypoint: {fileID: 7594321568784050215}
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   - {fileID: 6282849277504239167}
   m_events: []
   m_eventUIPrefab: {fileID: 8385515010822848622, guid: 342ad54ca1f600b4a9f0ff4aa30acbf7, type: 3}
-  m_eventsParent: {fileID: 2851609030551249914}
+  m_scrollViewContainer: {fileID: 2851609030551249914}
   m_firstEventWaypoint: {fileID: 9180945124864472296}
 --- !u!1 &6518571650480900865
 GameObject:

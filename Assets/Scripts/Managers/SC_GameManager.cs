@@ -37,8 +37,11 @@ public class SC_GameManager : MonoBehaviour
     private void CalculateNextEventTime()
     {
         int offSetTime = Random.Range(-m_maxOffsetTime, m_maxOffsetTime);
-        m_nextTimeToSpawnEvent = m_timeline[m_indexTimeline] + Random.Range(-offSetTime, offSetTime);
-        m_indexTimeline++;
+        if (m_indexTimeline < m_timeline.Count)
+        {
+            m_nextTimeToSpawnEvent = m_timeline[m_indexTimeline] + Random.Range(-offSetTime, offSetTime);
+            m_indexTimeline++;
+        }
     }
 
     public void Win()

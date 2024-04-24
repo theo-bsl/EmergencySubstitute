@@ -16,7 +16,10 @@ public class SC_EventManager : MonoBehaviour
         typeof(SC_EventLowCoolantLevel)
     };
 
-    private List<Type> m_eventCrisisTypes = new List<Type>();
+    private List<Type> m_eventCrisisTypes = new List<Type>()
+    {
+        typeof(SC_EventHunger)
+    };
 
     private List<Type> m_eventDiscretTypes = new List<Type>();
 
