@@ -44,7 +44,7 @@ public class SC_CrisisGaugeManager : MonoBehaviour
 
             if (m_waitTime >= m_timeToWaitBeforeDecreaseGauge)
             {
-                DecreaseGauge(m_gaugeDecrease);
+                DecreaseGauge(m_gaugeDecrease * Time.deltaTime);
             }
         }
         else
