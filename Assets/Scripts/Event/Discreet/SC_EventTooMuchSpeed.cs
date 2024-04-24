@@ -1,4 +1,4 @@
-public class SC_EventTooMuchSpeed : SC_Discreet
+public class SC_EventTooMuchSpeed : SC_EventDiscreet
 {
     protected override void InitEvent()
     {

@@ -37,7 +37,7 @@ public class SC_EventManager : MonoBehaviour
             Instance = this;
     }
 
-    public void SpawnEvent(SC_Event Event = null)
+    public void SpawnEvent(SC_Event NewEvent = null)
     {
         float crisisTimePenalty = 0;
         if (!m_isPairing)
@@ -59,7 +59,7 @@ public class SC_EventManager : MonoBehaviour
             }
         }
 
-        if (Event == null && m_events.Count < m_nbMaxEvent)
+        if (NewEvent == null && m_events.Count < m_nbMaxEvent)
         {
             List<Type> PoolOfEvent = new List<Type>();
             if (m_nbFatalEvent < m_nbMaxFatalEvent)
@@ -77,26 +77,26 @@ public class SC_EventManager : MonoBehaviour
 
             if (PoolOfEvent.Count > 0)
             {
-                Event = PickEvent(PoolOfEvent);
-                Event.ResolutionTimer += Event.ResolutionTimer * crisisTimePenalty / 100;
+                NewEvent = PickEvent(PoolOfEvent);
+                NewEvent.ResolutionTimer += NewEvent.ResolutionTimer * crisisTimePenalty / 100;
             }
         }
-        if (Event != null)
+        if (NewEvent != null)
         {
-            bool detect = true;
+            bool isInEventList = true;
             foreach (SC_Event Element in m_events)
             {
-                if (Element.GetType() == Event.GetType())
+                if (Element.GetType() == NewEvent.GetType())
                 {
-                    detect = false;
+                    isInEventList = false;
                     break;
                 }
             }
-            if (detect)
+            if (isInEventList)
             {
-                ChangeEventNumber(Event);
-                m_events.Add(Event);
-                Event.StartEvent();
+                ChangeEventNumber(NewEvent.GetType(), 1);
+                m_events.Add(NewEvent);
+                NewEvent.StartEvent();
             }
         }
 
@@ -113,22 +113,11 @@ public class SC_EventManager : MonoBehaviour
     }
 
 
-    private void ChangeEventNumber(SC_Event NewEvent, int value = 1)
+    private void ChangeEventNumber(Type EventType, int value)
     {
-        if (NewEvent.GetType().IsSubclassOf(typeof(SC_EventFatal)))
-        {
-            m_nbFatalEvent += value;
-        }
-        /*
-        if (NewEvent.GetType().IsSubclassOf(typeof(SC_EventCrisis)))
-        {
-            m_nbCrisisEvent += value;
-        }
-        if (NewEvent.GetType().IsSubclassOf(typeof(SC_EventDiscret)))
-        {
-            m_nbDiscretEvent += value;
-        }
-        */
+        m_nbFatalEvent += EventType.IsSubclassOf(typeof(SC_EventFatal)) ? value : 0;
+        m_nbCrisisEvent += EventType.IsSubclassOf(typeof(SC_EventCrisis)) ? value : 0;
+        m_nbDiscretEvent += EventType.IsSubclassOf(typeof(SC_EventDiscreet)) ? value : 0;
     }
 
     private SC_Event PickEvent(List<Type> PoolOfEvent)
@@ -176,7 +165,7 @@ public class SC_EventManager : MonoBehaviour
 
     public void DestroyEvent(SC_Event Event)
     {
-        ChangeEventNumber(Event, -1);
+        ChangeEventNumber(Event.GetType(), -1);
         m_events.Remove(Event);
     }
 
