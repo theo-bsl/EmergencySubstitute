@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class SC_Discreet : SC_Event
+public abstract class SC_EventDiscreet : SC_Event
 {
     public override ResultEndEvent UpdateEvent()
     {

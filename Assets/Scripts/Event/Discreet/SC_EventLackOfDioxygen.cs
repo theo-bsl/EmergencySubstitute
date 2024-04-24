@@ -1,4 +1,4 @@
-public class SC_EventLackOfDioxygen : SC_Discreet
+public class SC_EventLackOfDioxygen : SC_EventDiscreet
 {
     protected override void InitEvent()
     {
