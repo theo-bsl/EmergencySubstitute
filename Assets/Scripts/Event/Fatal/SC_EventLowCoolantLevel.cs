@@ -6,7 +6,7 @@ public class SC_EventLowCoolantLevel : SC_EventFatal
         m_resolutionTimer = 5f;
         m_name = "LowCoolantLevel";
         m_profession = SC_ProfessionEnum.Profession.Mechanic;
-        m_room = RoomsEnum.Motor;
+        m_room = Rooms.Motor;
         m_canDecreaseTimer = true;
     }
 

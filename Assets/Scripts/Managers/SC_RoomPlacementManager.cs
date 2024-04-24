@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.VisualScripting.FlowStateWidget;
 
 public class SC_RoomPlacementManager : MonoBehaviour
 {
@@ -26,7 +25,7 @@ public class SC_RoomPlacementManager : MonoBehaviour
     private GameObject m_eventIconPrefab;
 
     [SerializeField]
-    private Transform m_eventsParent;
+    private Transform m_eventIconsContainer;
 
     [SerializeField]
     private Transform m_motorRoomWaypoint;
@@ -68,35 +67,33 @@ public class SC_RoomPlacementManager : MonoBehaviour
 
     public void AddEventToMap(SC_Event Event)
     {
-        RoomsEnum room = Event.Room;
-
-        GameObject EventIcon = Instantiate(m_eventIconPrefab, m_eventsParent);
+        GameObject EventIcon = Instantiate(m_eventIconPrefab, m_eventIconsContainer);
         EventIcon.GetComponent<SC_EventIcon>().InitEventIcon(Event);
 
-        switch (room)
+        switch (Event.Room)
         {
-            case RoomsEnum.Motor:
+            case Rooms.Motor:
                 m_motorEvent.Add(EventIcon.GetComponent<SC_EventIcon>());
                 ReorganiseEvent(m_motorEvent, m_motorRoomWaypoint);
                 break;
-            case RoomsEnum.Cockpit:
+            case Rooms.Cockpit:
                 m_cockpitEvent.Add(EventIcon.GetComponent<SC_EventIcon>());
                 ReorganiseEvent(m_cockpitEvent, m_cockpitRoomWaypoint);
                 break;
-            case RoomsEnum.Kitchen:
+            case Rooms.Kitchen:
                 m_kitchenEvent.Add(EventIcon.GetComponent<SC_EventIcon>());
                 ReorganiseEvent(m_kitchenEvent, m_kitchenRoomWaypoint);
                 break;
-            case RoomsEnum.Infirmary:
+            case Rooms.Infirmary:
                 m_infirmaryEvent.Add(EventIcon.GetComponent<SC_EventIcon>());
                 ReorganiseEvent(m_infirmaryEvent, m_infirmaryRoomWaypoint);
                 break;
-            case RoomsEnum.Server:
+            case Rooms.Server:
                 m_serverEvent.Add(EventIcon.GetComponent<SC_EventIcon>());
                 ReorganiseEvent(m_serverEvent, m_serverRoomWaypoint);
                 break;
             default:
-                throw new Exception("The Event room " + room.ToString() + " isn't supported");
+                throw new Exception("The Event room " + Event.Room.ToString() + " isn't supported");
         }
     }
 
@@ -112,32 +109,30 @@ public class SC_RoomPlacementManager : MonoBehaviour
 
     public void RemoveEventFromMap(SC_Event Event)
     {
-        RoomsEnum room = Event.Room;
-
-        switch (room)
+        switch (Event.Room)
         {
-            case RoomsEnum.Motor:
+            case Rooms.Motor:
                 RemoveEvent(Event, m_motorEvent);
                 ReorganiseEvent(m_motorEvent, m_motorRoomWaypoint);
                 break;
-            case RoomsEnum.Cockpit:
+            case Rooms.Cockpit:
                 RemoveEvent(Event, m_cockpitEvent);
                 ReorganiseEvent(m_cockpitEvent, m_cockpitRoomWaypoint);
                 break;
-            case RoomsEnum.Kitchen:
+            case Rooms.Kitchen:
                 RemoveEvent(Event, m_kitchenEvent);
                 ReorganiseEvent(m_kitchenEvent, m_kitchenRoomWaypoint);
                 break;
-            case RoomsEnum.Infirmary:
+            case Rooms.Infirmary:
                 RemoveEvent(Event, m_infirmaryEvent);
                 ReorganiseEvent(m_infirmaryEvent, m_infirmaryRoomWaypoint);
                 break;
-            case RoomsEnum.Server:
+            case Rooms.Server:
                 RemoveEvent(Event, m_serverEvent);
                 ReorganiseEvent(m_serverEvent, m_serverRoomWaypoint);
                 break;
             default:
-                throw new Exception("The Event room " + room.ToString() + " isn't supported");
+                throw new Exception("The Event room " + Event.Room.ToString() + " isn't supported");
         }
     }
 
@@ -147,6 +142,7 @@ public class SC_RoomPlacementManager : MonoBehaviour
         {
             if (EventList[i].Name == Event.Name)
             {
+                Destroy(EventList[i].gameObject);
                 EventList.RemoveAt(i);
                 break;
             }

@@ -16,7 +16,7 @@ public abstract class SC_Event
     //Graphic Var
     protected Sprite m_icon;
     protected string m_name;
-    protected RoomsEnum m_room;
+    protected Rooms m_room;
     protected Color m_dificulty;
 
     //Getters
@@ -29,7 +29,7 @@ public abstract class SC_Event
     public bool HasTimer { get { return m_hasTimer; }}
     public Sprite Icon { get { return m_icon; }}
     public string Name { get { return m_name; }}
-    public RoomsEnum Room { get { return m_room; }}
+    public Rooms Room { get { return m_room; }}
     public Color Dificulty {  get { return m_dificulty; }}
 
     public void StartEvent()

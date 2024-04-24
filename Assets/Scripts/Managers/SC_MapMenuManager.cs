@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.FlowStateWidget;
 
 public class SC_MapMenuManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class SC_MapMenuManager : MonoBehaviour
     private GameObject m_eventUIPrefab;
 
     [SerializeField]
-    private GameObject m_eventsParent;
+    private GameObject m_scrollViewContainer;
 
     [SerializeField]
     private RectTransform m_firstEventWaypoint;
@@ -41,8 +42,7 @@ public class SC_MapMenuManager : MonoBehaviour
 
         NewEvent.GetComponent<SC_UIEvent>().InitEventIcon(Event);
 
-        NewEvent.transform.localPosition += new Vector3(0, (m_events.Count - 1) * m_viewportOffset, 0);
-        m_eventsParent.GetComponent<RectTransform>().offsetMin += new Vector2(0, m_viewportOffset);
+        ReorganiseEvent();
 
         m_events.Add(NewEvent.GetComponent<SC_UIEvent>());
     }
@@ -53,7 +53,8 @@ public class SC_MapMenuManager : MonoBehaviour
         {
             if (Event.Name == m_events[i].Name)
             {
-                m_events.Remove(m_events[i]);
+                Destroy(m_events[i].gameObject);
+                m_events.RemoveAt(i);
                 break;
             }
         }
@@ -63,19 +64,13 @@ public class SC_MapMenuManager : MonoBehaviour
     private void ReorganiseEvent()
     {
         //Set the bottom of the Event Parent (for the scroll)
-        if (m_events.Count <= 4)
-        {
-            m_eventsParent.GetComponent<RectTransform>().offsetMin = new Vector2(m_eventsParent.GetComponent<RectTransform>().offsetMin.x, 0);
-        }
-        else
-        {
-            m_eventsParent.GetComponent<RectTransform>().offsetMin = new Vector2(m_eventsParent.GetComponent<RectTransform>().offsetMin.x, m_viewportOffset * (m_events.Count - 4));
-        }
+        float bottomScrollViewContainer = m_events.Count <= 4 ? 0 : m_viewportOffset * (m_events.Count - 4);
+        m_scrollViewContainer.GetComponent<RectTransform>().offsetMin = new Vector2(m_scrollViewContainer.GetComponent<RectTransform>().offsetMin.x, bottomScrollViewContainer);
 
         //Reorganise the events in the scrollview
         for (int i = 0;  i < m_events.Count; i++)
         {
-            Transform Event = m_eventsParent.transform.GetChild(i+1);
+            Transform Event = m_scrollViewContainer.transform.GetChild(i+1);
             Event.localPosition = m_firstEventWaypoint.localPosition + new Vector3(0, i * m_viewportOffset, 0);
         }
     }

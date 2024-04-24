@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +10,9 @@ public class SC_EventIcon : MonoBehaviour
 
     public void InitEventIcon(SC_Event Event)
     {
-        GetComponent<Image>().sprite = Event.Icon;
         m_event = Event;
-        m_name = Event.Name;
+        GetComponent<Image>().sprite = m_event.Icon;
+        m_name = m_event.Name;
     }
 
     public void ProcessEventIcon()

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Character
   m_EditorClassIdentifier: 
   m_name: test
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 972aad96ae40d0c4c9f9dde11159226f, type: 3}
   m_workTime: 0
   m_skills:
     Mechanic: 2

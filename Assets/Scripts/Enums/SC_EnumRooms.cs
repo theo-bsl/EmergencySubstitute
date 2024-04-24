@@ -1,4 +1,4 @@
-public enum RoomsEnum
+public enum Rooms
 {
     Motor,
     Cockpit,

@@ -6,7 +6,7 @@ public class SC_EventEpidemic : SC_EventFatal
         m_resolutionTimer = 5f;
         m_name = "Epidemic";
         m_profession = SC_ProfessionEnum.Profession.Doctor;
-        m_room = RoomsEnum.Infirmary;
+        m_room = Rooms.Infirmary;
         m_canDecreaseTimer = true;
     }
 }

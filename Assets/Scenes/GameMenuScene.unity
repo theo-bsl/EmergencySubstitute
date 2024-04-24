@@ -176,6 +176,53 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee22c83344142044190df956d8b428f5, type: 2}
   - {fileID: 11400000, guid: ee22c83344142044190df956d8b428f5, type: 2}
   - {fileID: 11400000, guid: ee22c83344142044190df956d8b428f5, type: 2}
+--- !u!1 &982786701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982786702}
+  - component: {fileID: 982786703}
+  m_Layer: 0
+  m_Name: EventProcessor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982786702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982786701}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 511.46484, y: 215.3141, z: -2.2116096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &982786703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982786701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc4d209c7ea8774599367e779696b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_updateCharacterWorkTime:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1322245333
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,5 +531,6 @@ SceneRoots:
   - {fileID: 1322245336}
   - {fileID: 1612983090}
   - {fileID: 627795505}
+  - {fileID: 982786702}
   - {fileID: 7023823953551331082}
   - {fileID: 1912541533}

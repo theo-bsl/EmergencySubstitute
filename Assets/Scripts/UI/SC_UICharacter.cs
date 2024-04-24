@@ -9,7 +9,7 @@ public class SC_UICharacter : MonoBehaviour
     private string m_name;
 
     [SerializeField]
-    private Sprite m_head;
+    private Image m_head;
 
     [SerializeField] 
     private Slider m_workTime;
@@ -18,7 +18,7 @@ public class SC_UICharacter : MonoBehaviour
     {
         m_textName.text = Name;
         m_name = Name;
-        m_head = Head;
+        m_head.sprite = Head;
     }
 
     public void UpdateWorkTime(float EventDuration, float WorkTime)
