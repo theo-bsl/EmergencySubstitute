@@ -57,13 +57,13 @@ public class SC_EventProcessor : MonoBehaviour
             yield return null;
         }
 
-        if (Event != null && hasWrongExpertise)
+        if (Event != null)
         {
             if (Event.GetType() == typeof(SC_EventFatal))
             {
-                // game manager. game over
+                SC_GameManager.Instance.Lose();
             }
-            else
+            else if (hasWrongExpertise)
             {
                 for (int i = 0; i < Event.ProvokedEvents.Count; i++)
                 {
