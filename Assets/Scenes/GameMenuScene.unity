@@ -468,22 +468,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5022536138059997377, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_events.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022536138059997377, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_events.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022536138059997377, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_events.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022536138059997377, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_events.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5565209665911435569, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
       propertyPath: m_Name
       value: PB_MainCanvas

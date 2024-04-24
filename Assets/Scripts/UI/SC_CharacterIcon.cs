@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class SC_CharacterIcon : MonoBehaviour
@@ -58,7 +56,7 @@ public class SC_CharacterIcon : MonoBehaviour
         m_character = Character;
     }
 
-    public void SetSelectableCharacter()
+    public void SetCharacterSelected()
     {
         SC_CharacterManager.Instance.SelectCharacter(m_character);
     }

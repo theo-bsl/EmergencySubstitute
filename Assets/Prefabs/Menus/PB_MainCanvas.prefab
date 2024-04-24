@@ -741,30 +741,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4177104014426432274}
     m_Modifications:
-    - target: {fileID: 2722521160332899278, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-      propertyPath: m_events.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722521160332899278, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-      propertyPath: m_events.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722521160332899278, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-      propertyPath: m_events.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722521160332899278, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-      propertyPath: m_events.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5467453082377986889, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -812
-      objectReference: {fileID: 0}
-    - target: {fileID: 5467453082377986889, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 406
-      objectReference: {fileID: 0}
     - target: {fileID: 6510328605883704409, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
       propertyPath: m_Name
       value: PB_MapMenu
@@ -850,11 +826,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2289574667820513236, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-    - {fileID: 4575628016569654429, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-    - {fileID: 633593805080788303, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
-    - {fileID: 4203303409794723511, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}

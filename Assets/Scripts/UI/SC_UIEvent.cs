@@ -8,6 +8,8 @@ public class SC_UIEvent : MonoBehaviour
     private Image m_eventIcon;
     private TextMeshProUGUI m_name;
 
+    public string Name { get { return m_name.text; } }
+
     private void Start()
     {
         m_eventIcon = transform.GetChild(0).GetComponent<Image>();
@@ -21,5 +23,4 @@ public class SC_UIEvent : MonoBehaviour
         m_name.text = Event.Name;
     }
 
-    public string Name { get { return m_name.text; } }
 }

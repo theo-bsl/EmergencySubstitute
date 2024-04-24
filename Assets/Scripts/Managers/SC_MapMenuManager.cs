@@ -19,7 +19,6 @@ public class SC_MapMenuManager : MonoBehaviour
     private RectTransform m_firstEventWaypoint;
 
     private readonly int m_viewportOffset = -203;
-    private readonly int m_eventsParentFirstPos = 812;
 
     private void Start()
     {
@@ -31,7 +30,9 @@ public class SC_MapMenuManager : MonoBehaviour
 
         SC_EventManager.Instance.NewEvent.AddListener(AddEventToUI);
 
-        SC_EventManager.Instance.DeleteEvent.AddListener(RemoveEvent);
+        SC_EventManager.Instance.DeleteEvent.AddListener(RemoveEventFromUI);
+
+        ReorganiseEvent();
     }
 
     public void AddEventToUI(SC_Event Event)
@@ -46,7 +47,7 @@ public class SC_MapMenuManager : MonoBehaviour
         m_events.Add(NewEvent.GetComponent<SC_UIEvent>());
     }
 
-    public void RemoveEvent(SC_Event Event)
+    public void RemoveEventFromUI(SC_Event Event)
     {
         for (int i = 0; i < m_events.Count; i--)
         {
@@ -61,12 +62,21 @@ public class SC_MapMenuManager : MonoBehaviour
 
     private void ReorganiseEvent()
     {
-        m_eventsParent.GetComponent<RectTransform>().offsetMin = new Vector2(0, m_eventsParentFirstPos + (m_viewportOffset * m_events.Count));
-        
+        //Set the bottom of the Event Parent (for the scroll)
+        if (m_events.Count <= 4)
+        {
+            m_eventsParent.GetComponent<RectTransform>().offsetMin = new Vector2(m_eventsParent.GetComponent<RectTransform>().offsetMin.x, 0);
+        }
+        else
+        {
+            m_eventsParent.GetComponent<RectTransform>().offsetMin = new Vector2(m_eventsParent.GetComponent<RectTransform>().offsetMin.x, m_viewportOffset * (m_events.Count - 4));
+        }
+
+        //Reorganise the events in the scrollview
         for (int i = 0;  i < m_events.Count; i++)
         {
-            Transform Event = m_eventsParent.transform.GetChild(i);
-            Event.localPosition = m_firstEventWaypoint.position + new Vector3(0, i * m_viewportOffset, 0);
+            Transform Event = m_eventsParent.transform.GetChild(i+1);
+            Event.localPosition = m_firstEventWaypoint.localPosition + new Vector3(0, i * m_viewportOffset, 0);
         }
     }
 }
