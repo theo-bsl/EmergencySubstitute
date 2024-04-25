@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ch_Ibrahim
   m_EditorClassIdentifier: 
   m_name: Ibrahim Mahomet
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 415fbc33fb9fc9e44a762e966ecfea3b, type: 3}
   m_skills:
     Mechanic: 1
     Informatician: 0

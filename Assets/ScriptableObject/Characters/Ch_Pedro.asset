@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ch_Pedro
   m_EditorClassIdentifier: 
   m_name: Pedro El Rico
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 824bcafe230ca5546bd3976aed9bf673, type: 3}
   m_skills:
     Mechanic: 2
     Informatician: 0

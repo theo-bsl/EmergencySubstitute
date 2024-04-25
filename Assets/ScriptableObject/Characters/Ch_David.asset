@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ch_David
   m_EditorClassIdentifier: 
   m_name: David Samuel
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 11e5c107882a173479f31ddf7ace397a, type: 3}
   m_skills:
     Mechanic: 2
     Informatician: 1
