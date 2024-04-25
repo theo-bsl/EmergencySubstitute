@@ -43,13 +43,9 @@ public class SC_StarshipManager : MonoBehaviour
 
     public void ChangeTemperature(float value)
     {
-        if (m_currentTemperature + value <= m_minTemperature)
+        if (m_currentTemperature + value <= m_minTemperature || m_currentTemperature + value >= m_maxTemperature)
         {
-            m_currentTemperature = m_minTemperature;
-        }
-        else if (m_currentTemperature + value >= m_maxTemperature)
-        {
-            SC_GameManager.Instance.Lose();
+            //Invoquer events
         }
         else
         {
@@ -59,13 +55,9 @@ public class SC_StarshipManager : MonoBehaviour
 
     public void ChangeOxygen(float value)
     {
-        if (m_currentOxygen + value <= m_minOxygen)
+        if (m_currentOxygen + value <= m_minOxygen || m_currentOxygen + value >= m_maxOxygen)
         {
-            SC_GameManager.Instance.Lose();
-        }
-        else if (m_currentOxygen + value >= m_maxOxygen)
-        {
-            m_currentOxygen = m_maxOxygen;
+            //Invoquer events
         }
         else
         {
@@ -76,11 +68,23 @@ public class SC_StarshipManager : MonoBehaviour
     {
         if (m_currentPressure + value <= m_minPressure || m_currentPressure + value >= m_maxPressure)
         {
-            SC_GameManager.Instance.Lose();
+            //Invoquer events
         }
         else
         {
             m_currentPressure += value;
+        }
+    }
+
+    public void ChangeSpeed(float value)
+    {
+        if (m_currentSpeed + value <= m_minSpeed || m_currentSpeed + value >= m_maxSpeed)
+        {
+            //Invoquer events
+        }
+        else
+        {
+            m_currentSpeed += value;
         }
     }
 }

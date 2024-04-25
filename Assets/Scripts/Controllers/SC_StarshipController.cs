@@ -1,18 +1,17 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SC_StarshipController : MonoBehaviour
 {
     public static SC_StarshipController Instance;
-    [SerializeField] private GameObject m_accelerator;
+    [SerializeField] private SC_InteractableLeverThrottle m_accelerator;
     [SerializeField] private GameObject m_orientationL;
     [SerializeField] private GameObject m_orientationR;
     [SerializeField] private GameObject m_circuitBreaker;
-    [SerializeField] private GameObject m_heater;
+    [SerializeField] private SC_InteractableLeverHeater m_heater;
     [SerializeField] private GameObject m_radio;
     [SerializeField] private GameObject m_joystick;
     [SerializeField] private GameObject m_lights;
-    [SerializeField] private GameObject m_radioFrequency;
+    [SerializeField] private SC_InteractableLeverFrequency m_radioFrequency;
     [SerializeField] private GameObject m_microphone;
     [SerializeField] private GameObject m_ADF;
     private Vector3 m_dragDist;
@@ -44,7 +43,18 @@ public class SC_StarshipController : MonoBehaviour
     {
         if (m_dragging)
         {
-            m_accelerator.transform.localEulerAngles += new Vector3(m_dragDist.y, 0, 0);
+            if (m_accelerator.GetIsSelected())
+            {
+                m_accelerator.OnDragLever(m_dragDist);
+            }
+            if (m_heater.GetIsSelected())
+            {
+                m_heater.OnDragLever(m_dragDist);
+            }
+            if (m_radioFrequency.GetIsSelected())
+            {
+                m_radioFrequency.OnDragLever(m_dragDist);
+            }
         }
     }
 
@@ -103,7 +113,7 @@ public class SC_StarshipController : MonoBehaviour
 
     private void UseAccelerator()
     {
-        Debug.Log("used accelerator");
+        m_accelerator.OnSelected();
     }
 
     private void OrientateLeft()
@@ -122,7 +132,7 @@ public class SC_StarshipController : MonoBehaviour
     }
     private void temperature()
     {
-        Debug.Log("heat up");
+        m_heater.OnSelected();
     }
     private void SwitchRadio()
     {
@@ -138,7 +148,7 @@ public class SC_StarshipController : MonoBehaviour
     }
     private void ChangeFrequency()
     {
-        Debug.Log("Changed Frequency");
+        m_radioFrequency.OnSelected();
     }
     private void MicOnOff()
     {
@@ -154,6 +164,12 @@ public class SC_StarshipController : MonoBehaviour
     }
     public void SetIsDragging(bool value)
     {
+        if (!value)
+        {
+            m_accelerator.OnUnSelected();
+            m_heater.OnUnSelected();
+            m_radioFrequency.OnUnSelected();
+        }
         m_dragging = value;
     }
 }
