@@ -12,6 +12,7 @@ public abstract class SC_Event
     protected Profession m_profession;
     protected bool m_hasTimer = false;
     protected bool m_canDecreaseTimer = true;
+    protected bool m_isGettingProcessed = false;
 
     //Graphic Var
     protected Sprite m_icon;
@@ -27,6 +28,7 @@ public abstract class SC_Event
     public float EndTimer { get { return m_endTimer; } set { m_endTimer = value; } }
     public Profession Profession { get { return m_profession; }}
     public bool HasTimer { get { return m_hasTimer; }}
+    public bool IsGettingProcessed { get { return m_isGettingProcessed; } set { m_isGettingProcessed = value; } }
     public Sprite Icon { get { return m_icon; }}
     public string Name { get { return m_name; }}
     public Rooms Room { get { return m_room; } }

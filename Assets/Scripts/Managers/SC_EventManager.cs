@@ -88,11 +88,12 @@ public class SC_EventManager : MonoBehaviour
             if (PoolOfEvent.Count > 0)
             {
                 NewEvent = PickEvent(PoolOfEvent);
-                NewEvent.ResolutionTimer += NewEvent.ResolutionTimer * crisisTimePenalty / 100;
             }
         }
         if (NewEvent != null)
         {
+            NewEvent.ResolutionTimer += NewEvent.ResolutionTimer * crisisTimePenalty / 100;
+
             bool isInEventList = true;
             foreach (SC_Event Element in m_events)
             {
@@ -162,7 +163,7 @@ public class SC_EventManager : MonoBehaviour
         {
             Debug.Log(Event.Name + " killed you !");
             DestroyEvent(Event);
-            //GameOver
+            SC_GameManager.Instance.Lose();
         }
         else if (ResultEndEvent == ResultEndEvent.CreateEvent)
         {
@@ -181,7 +182,6 @@ public class SC_EventManager : MonoBehaviour
         m_events.Remove(Event);
     }
 
-    public int NumberOfActiveCrisisEvent { get { return m_nbCrisisEvent; } }
 
     private void Update()
     {
@@ -192,6 +192,9 @@ public class SC_EventManager : MonoBehaviour
             ManageEndEvent(result, Event);
         }
     }
+    
+    public int NumberOfActiveCrisisEvent { get { return m_nbCrisisEvent; } }
+
     public UnityEvent<SC_Event> NewEvent { get { return m_newEvent; } }
 
     public UnityEvent<SC_Event> DeleteEvent { get { return m_deleteEvent; } }
