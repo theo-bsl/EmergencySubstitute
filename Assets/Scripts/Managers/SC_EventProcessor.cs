@@ -86,7 +86,10 @@ public class SC_EventProcessor : MonoBehaviour
                     SC_EventManager.Instance.SpawnEvent(Event.ProvokedEvents[i]);
                 }
             }
-            SC_EventManager.Instance.DestroyEvent(Event);
+            if (Event.GetType() != typeof(SC_EventCrisis) || !hasWrongExpertise)
+            {
+                SC_EventManager.Instance.DestroyEvent(Event);
+            }
         }
 
         yield return null;

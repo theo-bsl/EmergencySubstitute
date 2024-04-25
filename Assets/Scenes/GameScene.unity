@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13802bcf049e144a8aece2c493a2464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeToWaitBeforeDecreaseGauge: 0
+  m_timeToWaitBeforeDecreaseGauge: 30
 --- !u!1 &772940967
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +740,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PB_MainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -857,7 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3fd33f79e073b4ea19ad9189f2f864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeline: 010000000f0000001e0000002300000028000000
+  m_timeline: 010000000f00000019000000230000001e000000280000003700000046000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

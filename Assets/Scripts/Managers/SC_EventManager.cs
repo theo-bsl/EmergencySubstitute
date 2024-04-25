@@ -7,6 +7,7 @@ public class SC_EventManager : MonoBehaviour
 {
     public static SC_EventManager Instance;
 
+    [SerializeField]
     private List<SC_Event> m_events = new List<SC_Event>();
 
     private List<Type> m_eventFatalTypes = new List<Type>() 
