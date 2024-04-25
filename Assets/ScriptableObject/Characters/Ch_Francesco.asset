@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ch_Francesco
   m_EditorClassIdentifier: 
   m_name: Francesco Frerari
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 551f018f3a8a7bb4c884fc339590df58, type: 3}
   m_skills:
     Mechanic: 0
     Informatician: 0

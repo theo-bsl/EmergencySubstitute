@@ -313,9 +313,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61ec025c9e66ce142b533e53d61665ce, type: 2}
   - {fileID: 11400000, guid: b36bf8d665b332b4283c74b2caa5ddfd, type: 2}
   - {fileID: 11400000, guid: ee22c83344142044190df956d8b428f5, type: 2}
-  - {fileID: 11400000, guid: 2dfa5d688e204b74c95f3a07049fb600, type: 2}
+  - {fileID: 11400000, guid: 5f886850e3d7972418dbd0b0c6e3af48, type: 2}
   - {fileID: 11400000, guid: 85ad4cc5f3c6cfb4597192ec4dcdc092, type: 2}
-  - {fileID: 11400000, guid: 36b5dd83e61d8f54380dd1b73ec1b1cd, type: 2}
+  - {fileID: 11400000, guid: 1f7ed0e0a245bb14e8bb9224be1dcfa6, type: 2}
   - {fileID: 11400000, guid: c248fd59012b62748bd47426a0ba2182, type: 2}
 --- !u!1 &570010224
 GameObject:
@@ -644,6 +644,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2378825234571803394, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378825234571803394, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 60f389458d3944b4cbe94c33d87202f8, type: 3}
+    - target: {fileID: 2631184002859987579, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599096489533517199, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599096489533517199, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4177104014426432274, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -724,9 +744,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4189088502685874006, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336733415682417175, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336733415682417175, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c42609ec09e6fc34b8afff44d9939cee, type: 3}
     - target: {fileID: 5565209665911435569, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
       propertyPath: m_Name
       value: PB_MainCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821086466609682843, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821086466609682843, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09f5bf21d30754149ab40b4d966a0003, type: 3}
+    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -845,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3fd33f79e073b4ea19ad9189f2f864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeline: 1e0000003c000000
+  m_timeline: 0500000008000000808d5b00
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

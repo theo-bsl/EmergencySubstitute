@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ch_Baptiste
   m_EditorClassIdentifier: 
   m_name: "Baptiste Contigu\xEB"
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: a9fe8ff23ca9be74ba4c63816dd365b2, type: 3}
   m_skills:
     Mechanic: 0
     Informatician: 1

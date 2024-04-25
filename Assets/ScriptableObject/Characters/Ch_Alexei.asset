@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ch_Alexei
   m_EditorClassIdentifier: 
   m_name: Alexei Donnov
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 9f95fb91142a72e4a908fa79c7a0cabe, type: 3}
   m_skills:
     Mechanic: 2
     Informatician: 0
