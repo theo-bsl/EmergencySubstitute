@@ -22,6 +22,9 @@ public class SC_RoomPlacementManager : MonoBehaviour
     private List<SC_EventIcon> m_serverEvent = new List<SC_EventIcon>();
 
     [SerializeField]
+    private List<SC_EventIcon> m_cabinEvent = new List<SC_EventIcon>();
+
+    [SerializeField]
     private GameObject m_eventIconPrefab;
 
     [SerializeField]
@@ -41,6 +44,9 @@ public class SC_RoomPlacementManager : MonoBehaviour
 
     [SerializeField]
     private Transform m_serverRoomWaypoint;
+
+    [SerializeField]
+    private Transform m_cabinRoomWaypoint;
 
     private readonly int m_eventOffset = 50;
 
@@ -92,6 +98,10 @@ public class SC_RoomPlacementManager : MonoBehaviour
                 m_serverEvent.Add(EventIcon.GetComponent<SC_EventIcon>());
                 ReorganiseEvent(m_serverEvent, m_serverRoomWaypoint);
                 break;
+            case Rooms.Cabin:
+                m_cabinEvent.Add(EventIcon.GetComponent<SC_EventIcon>());
+                ReorganiseEvent(m_cabinEvent, m_cabinRoomWaypoint);
+                break;
             default:
                 throw new Exception("The Event room " + Event.Room.ToString() + " isn't supported");
         }
@@ -130,6 +140,10 @@ public class SC_RoomPlacementManager : MonoBehaviour
             case Rooms.Server:
                 RemoveEvent(Event, m_serverEvent);
                 ReorganiseEvent(m_serverEvent, m_serverRoomWaypoint);
+                break;
+            case Rooms.Cabin:
+                RemoveEvent(Event, m_cabinEvent);
+                ReorganiseEvent(m_cabinEvent, m_cabinRoomWaypoint);
                 break;
             default:
                 throw new Exception("The Event room " + Event.Room.ToString() + " isn't supported");

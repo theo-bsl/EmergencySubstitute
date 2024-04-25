@@ -5,4 +5,5 @@ public enum Rooms
     Kitchen,
     Infirmary,
     Server,
+    Cabin,
 }

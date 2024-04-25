@@ -636,6 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a6486e6f01a154bb3045f49b5d8d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_distanceToDestination: 100
 --- !u!1001 &1652222808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -644,10 +645,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3142315238360199238, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
-      objectReference: {fileID: 0}
     - target: {fileID: 3599096489533517199, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -869,7 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3fd33f79e073b4ea19ad9189f2f864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeline: 010000000f00000019000000230000001e000000280000003700000046000000
+  m_timeline: 05000000140000001e000000280000002d000000320000003c0000004b000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
