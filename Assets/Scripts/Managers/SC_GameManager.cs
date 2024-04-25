@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SC_GameManager : MonoBehaviour
@@ -12,6 +13,9 @@ public class SC_GameManager : MonoBehaviour
     private int m_maxOffsetTime;
     private SC_EventManager m_eventManager;
     private bool m_endGame = false;
+
+    private UnityEvent m_gameLose = new UnityEvent();
+    private UnityEvent m_gameWin = new UnityEvent();
 
     private void Awake()
     {
@@ -52,11 +56,23 @@ public class SC_GameManager : MonoBehaviour
 
     public void Win()
     {
-        SceneManager.LoadScene("Win_Scene");
+        PauseGame();
+        m_gameWin.Invoke();
+        //SceneManager.LoadScene("Win_Scene");
     }
 
     public void Lose()
     {
-        SceneManager.LoadScene("Defeat_Scene");
+        PauseGame();
+        m_gameLose.Invoke();
+        //SceneManager.LoadScene("Defeat_Scene");
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = Time.timeScale > 0 ? 0 : 1;
+    }
+
+    public UnityEvent GameLose { get {  return m_gameLose; } }
+    public UnityEvent GameWin { get {  return m_gameWin; } }
 }
