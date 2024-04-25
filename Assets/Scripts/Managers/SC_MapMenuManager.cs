@@ -42,14 +42,14 @@ public class SC_MapMenuManager : MonoBehaviour
 
         NewEvent.GetComponent<SC_UIEvent>().InitEventIcon(Event);
 
-        ReorganiseEvent();
-
         m_events.Add(NewEvent.GetComponent<SC_UIEvent>());
+
+        ReorganiseEvent();
     }
 
     public void RemoveEventFromUI(SC_Event Event)
     {
-        for (int i = 0; i < m_events.Count; i--)
+        for (int i = 0; i < m_events.Count; i++)
         {
             if (Event.Name == m_events[i].Name)
             {
@@ -70,7 +70,7 @@ public class SC_MapMenuManager : MonoBehaviour
         //Reorganise the events in the scrollview
         for (int i = 0; i < m_events.Count; i++)
         {
-            Transform Event = m_scrollViewContainer.transform.GetChild(i + 1);
+            Transform Event = m_events[i].gameObject.transform;
             Event.localPosition = m_firstEventWaypoint.localPosition + new Vector3(0, i * m_viewportOffset, 0);
         }
     }
