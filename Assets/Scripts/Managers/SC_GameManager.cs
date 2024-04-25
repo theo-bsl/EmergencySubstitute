@@ -11,6 +11,7 @@ public class SC_GameManager : MonoBehaviour
     private int m_nextTimeToSpawnEvent;
     private int m_maxOffsetTime;
     private SC_EventManager m_eventManager;
+    private bool m_endGame = false;
 
     private void Awake()
     {
@@ -27,16 +28,24 @@ public class SC_GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= m_nextTimeToSpawnEvent)
+        if (Time.time >= m_nextTimeToSpawnEvent && !m_endGame)
         {
             m_eventManager.SpawnEvent();
-            CalculateNextEventTime();
+            if (m_indexTimeline < m_timeline.Count) 
+            { 
+                CalculateNextEventTime();
+            }
+            else
+            {
+                m_endGame = true;
+            }
         }
     }
 
     private void CalculateNextEventTime()
     {
         int offSetTime = Random.Range(-m_maxOffsetTime, m_maxOffsetTime);
+        
         m_nextTimeToSpawnEvent = m_timeline[m_indexTimeline] + Random.Range(-offSetTime, offSetTime);
         m_indexTimeline++;
     }

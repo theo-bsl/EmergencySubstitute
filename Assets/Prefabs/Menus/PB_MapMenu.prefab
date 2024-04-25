@@ -352,7 +352,7 @@ MonoBehaviour:
   m_infirmaryEvent: []
   m_serverEvent: []
   m_eventIconPrefab: {fileID: 4488683820439942682, guid: d5c3044942ee1c04cbbf9e2b074a9857, type: 3}
-  m_eventsParent: {fileID: 7414550839806860868}
+  m_eventIconsContainer: {fileID: 7414550839806860868}
   m_motorRoomWaypoint: {fileID: 2773015041956080959}
   m_cockpitRoomWaypoint: {fileID: 2308784649212989644}
   m_kitchenRoomWaypoint: {fileID: 7594321568784050215}
@@ -391,7 +391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.00012207031}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3010618179515371900
@@ -884,9 +884,9 @@ RectTransform:
   m_Father: {fileID: 1361822404232980402}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8679418698934693267
 CanvasRenderer:
@@ -1034,7 +1034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8522460370667686005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   - {fileID: 6282849277504239167}
   m_events: []
   m_eventUIPrefab: {fileID: 8385515010822848622, guid: 342ad54ca1f600b4a9f0ff4aa30acbf7, type: 3}
-  m_eventsParent: {fileID: 2851609030551249914}
+  m_scrollViewContainer: {fileID: 2851609030551249914}
   m_firstEventWaypoint: {fileID: 9180945124864472296}
 --- !u!1 &6518571650480900865
 GameObject:
@@ -1339,7 +1339,7 @@ RectTransform:
   m_Father: {fileID: 6788894155311093613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}

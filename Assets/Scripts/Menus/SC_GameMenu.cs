@@ -16,6 +16,11 @@ public class SC_GameMenu : MonoBehaviour
 
     public bool InMenu { get { return m_inMenu; } }
 
+    private void Start()
+    {
+        CloseAllMenus();
+    }
+
     public void SettingsMenu()
     {
         bool MenuState = m_settingsMenu.activeSelf;

@@ -21,8 +21,9 @@ public class SC_EventProcessor : MonoBehaviour
     public void ProcessEvent(SC_Event Event)
     {
         SO_Character Character = SC_CharacterManager.Instance.SelectedCharacter;
-        if (Character.IsAvailable)
+        if (Character.IsAvailable && !Event.IsGettingProcessed)
         {
+            Event.IsGettingProcessed = true;
             StartCoroutine(Process(Event, Character));
         }
     }
@@ -85,8 +86,8 @@ public class SC_EventProcessor : MonoBehaviour
                     SC_EventManager.Instance.SpawnEvent(Event.ProvokedEvents[i]);
                 }
             }
+            SC_EventManager.Instance.DestroyEvent(Event);
         }
-
 
         yield return null;
     }
