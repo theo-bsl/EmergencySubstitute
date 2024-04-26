@@ -958,6 +958,11 @@ MonoBehaviour:
   m_sideButton5: {fileID: 1008028846}
   m_sideButton6: {fileID: 835411777}
   m_sideButton7: {fileID: 296715603}
+  m_switch1: {fileID: 1468022573}
+  m_switch2: {fileID: 490504236}
+  m_switch3: {fileID: 1273685817}
+  m_switch4: {fileID: 490504234}
+  m_switch5: {fileID: 282443627}
 --- !u!1001 &1008028837
 PrefabInstance:
   m_ObjectHideFlags: 0
