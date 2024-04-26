@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f735828b00f8a4cb6a35d76867fc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
 --- !u!114 &282443627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
 --- !u!65 &282443628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -461,6 +465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
 --- !u!65 &490504235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -494,6 +500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
 --- !u!65 &490504237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -548,6 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1bbdde2fe93c94283d8bd4194442c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
 --- !u!1 &543235399
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80785af4df575b48adec8528bd73260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
 --- !u!65 &627719773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1595,6 +1607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
 --- !u!65 &1273685818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1824,6 +1838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
 --- !u!1 &1497226644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6853187483784304166, guid: 54e1b562c3fea284f8a0ec8cdc70057c, type: 3}
@@ -1858,6 +1874,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62048bad7d59b248909c414ce9a1211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
 --- !u!1 &1612983088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,6 +1937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d051b89287d00284c8c030fae9c32fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
 --- !u!65 &1670848102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2051,6 +2071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1bbdde2fe93c94283d8bd4194442c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

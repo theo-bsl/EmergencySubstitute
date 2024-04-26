@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class SC_StarshipInteractable : MonoBehaviour
+public abstract class SC_StarshipInteractable : MonoBehaviour
 {
-    protected string m_name;
     protected bool m_hasBeenChosen;
+
+    protected abstract void StarshipInteractableAction();
 }
