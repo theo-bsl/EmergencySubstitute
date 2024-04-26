@@ -12,6 +12,6 @@ public class SC_EventLowCoolantLevel : SC_EventFatal
 
     protected override void EventAction()
     {
-        SC_StarshipManager.Instance.ChangeTemperature(m_temperatureChange);
+        //SC_StarshipManager.Instance.ChangeTemperature(m_temperatureChange);
     }
 }

@@ -7,18 +7,22 @@ public class SC_StarshipManager : MonoBehaviour
     private float m_currentSpeed;
     private float m_minSpeed;
     private float m_maxSpeed;
+    private int m_speedInd;
 
     private float m_currentOxygen;
     private float m_minOxygen;
     private float m_maxOxygen;
+    private int m_oxygenInd;
 
     private float m_currentPressure;
     private float m_minPressure;
     private float m_maxPressure;
+    private int m_pressureInd;
 
     private float m_currentTemperature;
     private float m_minTemperature;
     private float m_maxTemperature;
+    private int m_temperatureInd;
 
     public float GetCurrentSpeed { get { return m_currentSpeed; } }
     public float GetMinSpeed { get { return m_minSpeed; } }
@@ -41,50 +45,102 @@ public class SC_StarshipManager : MonoBehaviour
         }
     }
 
-    public void ChangeTemperature(float value)
+    private void Update()
     {
-        if (m_currentTemperature + value <= m_minTemperature || m_currentTemperature + value >= m_maxTemperature)
+        SpeedUpdate();
+        TemperatureUpdate();
+        PressureUpdate();
+        OxygenUpdate();
+    }
+
+    public void ChangeTemperature(int ind)
+    {
+        m_temperatureInd = ind;
+    }
+
+    public void ChangeOxygen(int ind)
+    {
+        m_oxygenInd = ind;
+    }
+    public void ChangePressure(int ind)
+    {
+        m_pressureInd = ind;
+    }
+
+    public void ChangeSpeed(int ind)
+    {
+        m_speedInd = ind;
+    }
+
+    private void SpeedUpdate()
+    {
+        if(m_speedInd > 0)
         {
-            //Invoquer events
+            if (m_currentSpeed < m_maxSpeed)
+            {
+                m_currentSpeed++;
+            }
         }
-        else
+        else if (m_speedInd < 0)
         {
-            m_currentTemperature += value;
+            if (m_currentSpeed > m_minSpeed)
+            {
+                m_currentSpeed--;
+            }
         }
     }
 
-    public void ChangeOxygen(float value)
+    private void TemperatureUpdate()
     {
-        if (m_currentOxygen + value <= m_minOxygen || m_currentOxygen + value >= m_maxOxygen)
+        if(m_temperatureInd > 0)
         {
-            //Invoquer events
+            if (m_currentTemperature < m_maxTemperature)
+            {
+                m_currentTemperature++;
+            }
         }
-        else
+        else if(m_temperatureInd < 0)
         {
-            m_currentOxygen += value;
-        }
-    }
-    public void ChangePressure(float value)
-    {
-        if (m_currentPressure + value <= m_minPressure || m_currentPressure + value >= m_maxPressure)
-        {
-            //Invoquer events
-        }
-        else
-        {
-            m_currentPressure += value;
+            if ( m_currentTemperature > m_minTemperature)
+            {
+                m_currentTemperature--;
+            }
         }
     }
 
-    public void ChangeSpeed(float value)
+    private void PressureUpdate()
     {
-        if (m_currentSpeed + value <= m_minSpeed || m_currentSpeed + value >= m_maxSpeed)
+        if(m_pressureInd > 0)
         {
-            //Invoquer events
+            if (m_currentPressure < m_maxPressure)
+            {
+                m_currentPressure++;
+            }
         }
-        else
+        else if (m_pressureInd < 0)
         {
-            m_currentSpeed += value;
+            if (m_currentPressure > m_minPressure)
+            {
+                m_currentPressure--;
+            }
+        }
+    }
+
+    private void OxygenUpdate()
+    {
+        if(m_oxygenInd > 0)
+        {
+            if (m_currentOxygen < m_maxOxygen)
+            {
+                m_currentOxygen++;
+            }
+        }
+        else if (m_oxygenInd < 0)
+        {
+            if (m_currentOxygen > m_minOxygen)
+            {
+                m_currentOxygen--;
+            }
         }
     }
 }

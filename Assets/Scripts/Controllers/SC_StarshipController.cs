@@ -4,16 +4,24 @@ public class SC_StarshipController : MonoBehaviour
 {
     public static SC_StarshipController Instance;
     [SerializeField] private SC_InteractableLeverThrottle m_accelerator;
-    [SerializeField] private GameObject m_orientationL;
-    [SerializeField] private GameObject m_orientationR;
-    [SerializeField] private GameObject m_circuitBreaker;
     [SerializeField] private SC_InteractableLeverHeater m_heater;
-    [SerializeField] private GameObject m_radio;
-    [SerializeField] private GameObject m_joystick;
-    [SerializeField] private GameObject m_lights;
-    [SerializeField] private SC_InteractableLeverFrequency m_radioFrequency;
-    [SerializeField] private GameObject m_microphone;
-    [SerializeField] private GameObject m_ADF;
+    [SerializeField] private SC_InteractableLeverOxygen m_oxygen;
+    [SerializeField] private SC_InteractableLeverPressure m_pressure;
+    [SerializeField] private SC_InteractableLeverUseless m_lever;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonUp1;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonUp2;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonA1;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonA2;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonA3;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonB1;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonB2;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonB3;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonC1;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonC2;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonC3;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonD1;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonD2;
+    [SerializeField] private SC_InteractableButtonUseless m_buttonD3;
     private Vector3 m_dragDist;
     private bool m_dragging;
 
@@ -51,9 +59,17 @@ public class SC_StarshipController : MonoBehaviour
             {
                 m_heater.OnDragLever(m_dragDist);
             }
-            if (m_radioFrequency.GetIsSelected())
+            if (m_oxygen.GetIsSelected())
             {
-                m_radioFrequency.OnDragLever(m_dragDist);
+                m_oxygen.OnDragLever(m_dragDist);
+            }
+            if (m_pressure.GetIsSelected())
+            {
+                m_pressure.OnDragLever(m_dragDist);
+            }
+            if (m_lever.GetIsSelected())
+            {
+                m_lever.OnDragLever(m_dragDist);
             }
         }
     }
@@ -68,45 +84,77 @@ public class SC_StarshipController : MonoBehaviour
         {
             UseAccelerator();
         }
-        else if (hit.collider == m_orientationL.GetComponent<Collider>())
-        {
-            OrientateLeft();
-        }
-        else if (hit.collider == m_orientationR.GetComponent<Collider>())
-        {
-            OrientateRight();
-        }
-        else if (hit.collider == m_circuitBreaker.GetComponent<Collider>())
-        {
-            Breakcircuit();
-        }
         else if (hit.collider == m_heater.GetComponent<Collider>())
         {
             temperature();
         }
-        else if (hit.collider == m_radio.GetComponent<Collider>())
+        else if (hit.collider == m_oxygen.GetComponent<Collider>())
         {
-            SwitchRadio();
+            ChangeOxygen();
         }
-        else if (hit.collider == m_joystick.GetComponent<Collider>())
+        else if (hit.collider == m_pressure.GetComponent<Collider>())
         {
-            UseJoystick();
+            ChangePressure();
         }
-        else if (hit.collider == m_lights.GetComponent<Collider>())
+        else if (hit.collider == m_lever.GetComponent<Collider>())
         {
-            SwitchLights();
+            PullLever();
         }
-        else if (hit.collider == m_radioFrequency.GetComponent<Collider>())
+        else if (hit.collider == m_buttonUp2.GetComponent<Collider>())
         {
-            ChangeFrequency();
+            m_buttonUp2.OnButtonPressed();
         }
-        else if (hit.collider == m_microphone.GetComponent<Collider>())
+        else if (hit.collider == m_buttonUp1.GetComponent<Collider>())
         {
-            MicOnOff();
+            m_buttonUp1.OnButtonPressed();
         }
-        else if (hit.collider == m_ADF.GetComponent<Collider>())
+        else if (hit.collider == m_buttonA1.GetComponent<Collider>())
         {
-            ADFOnOff();
+            m_buttonA1.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonA2.GetComponent<Collider>())
+        {
+            m_buttonA2.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonA3.GetComponent<Collider>())
+        {
+            m_buttonA3.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonB1.GetComponent<Collider>())
+        {
+            m_buttonB1.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonB2.GetComponent<Collider>())
+        {
+            m_buttonB2.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonB3.GetComponent<Collider>())
+        {
+            m_buttonB3.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonC1.GetComponent<Collider>())
+        {
+            m_buttonC1.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonC2.GetComponent<Collider>())
+        {
+            m_buttonC2.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonC3.GetComponent<Collider>())
+        {
+            m_buttonC3.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonD1.GetComponent<Collider>())
+        {
+            m_buttonD1.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonD2.GetComponent<Collider>())
+        {
+            m_buttonD2.OnButtonPressed();
+        }
+        else if (hit.collider == m_buttonD3.GetComponent<Collider>())
+        {
+            m_buttonD3.OnButtonPressed();
         }
         return Physics.Raycast(m_camera.transform.position, dir, Mathf.Infinity);
     }
@@ -115,48 +163,21 @@ public class SC_StarshipController : MonoBehaviour
     {
         m_accelerator.OnSelected();
     }
-
-    private void OrientateLeft()
-    {
-        Debug.Log("orientation Left");
-    }
-
-    private void OrientateRight()
-    {
-        Debug.Log("orientation Right");
-    }
-
-    private void Breakcircuit()
-    {
-        Debug.Log("Broke circuit");
-    }
     private void temperature()
     {
         m_heater.OnSelected();
     }
-    private void SwitchRadio()
+    private void ChangeOxygen()
     {
-        Debug.Log("radio");
+        m_oxygen.OnSelected();
     }
-    private void UseJoystick()
+    private void ChangePressure()
     {
-        Debug.Log("joystick");
+        m_pressure.OnSelected();
     }
-    private void SwitchLights()
+    private void PullLever()
     {
-        Debug.Log("lights");
-    }
-    private void ChangeFrequency()
-    {
-        m_radioFrequency.OnSelected();
-    }
-    private void MicOnOff()
-    {
-        Debug.Log("Mic");
-    }
-    private void ADFOnOff()
-    {
-        Debug.Log("adf");
+        m_lever.OnSelected();
     }
     public void SetDragDist(Vector3 value)
     {
@@ -168,7 +189,7 @@ public class SC_StarshipController : MonoBehaviour
         {
             m_accelerator.OnUnSelected();
             m_heater.OnUnSelected();
-            m_radioFrequency.OnUnSelected();
+            m_oxygen.OnUnSelected();
         }
         m_dragging = value;
     }

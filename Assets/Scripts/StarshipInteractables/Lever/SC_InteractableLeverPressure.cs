@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SC_InteractableLeverThrottle : SC_InteractableLever
+public class SC_InteractableLeverPressure : SC_InteractableLever
 {
     private Vector3 m_dragDirection = Vector3.zero;
 
@@ -29,14 +29,14 @@ public class SC_InteractableLeverThrottle : SC_InteractableLever
     {
         if (m_hasBeenChosen)
         {
-            m_dragDirection.y = DragDist.y;
-            m_deltaRotation = Quaternion.Euler(m_dragDirection.y, 0, 0);
+            m_dragDirection.x = DragDist.x;
+            m_deltaRotation = Quaternion.Euler(0, m_dragDirection.x, 0);
             m_transform.rotation = m_transform.rotation * m_deltaRotation;
-            if (m_transform.eulerAngles.x >= 30 && m_transform.eulerAngles.x <= 180)
+            if (m_transform.eulerAngles.y >= 90 && m_transform.eulerAngles.y <= 180)
             {
                 m_stateInd = 1;
             }
-            else if (m_transform.eulerAngles.x <= 330 && m_transform.eulerAngles.x > 180)
+            else if (m_transform.eulerAngles.y <= 270 && m_transform.eulerAngles.y > 180)
             {
                 m_stateInd = -1;
             }
@@ -45,6 +45,6 @@ public class SC_InteractableLeverThrottle : SC_InteractableLever
                 m_stateInd = 0;
             }
         }
-        SC_StarshipManager.Instance.ChangeSpeed(m_stateInd);
+        SC_StarshipManager.Instance.ChangePressure(m_stateInd);
     }
 }

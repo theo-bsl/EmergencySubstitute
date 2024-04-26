@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class SC_InteractableLeverHeater : SC_InteractableLever
+public class SC_InteractableLeverUseless : SC_InteractableLever
 {
     private Vector3 m_dragDirection = Vector3.zero;
 
     private Transform m_transform;
 
     private Quaternion m_deltaRotation;
-
-    private int m_stateInd;
 
     private void Awake()
     {
@@ -31,20 +29,7 @@ public class SC_InteractableLeverHeater : SC_InteractableLever
         {
             m_dragDirection.x = DragDist.x;
             m_deltaRotation = Quaternion.Euler(0, m_dragDirection.x, 0);
-            m_transform.rotation =  m_transform.rotation * m_deltaRotation;
-            if (m_transform.eulerAngles.y >= 90 && m_transform.eulerAngles.y <= 180)
-            {
-                m_stateInd = 1;
-            }
-            else if (m_transform.eulerAngles.y <= 270 && m_transform.eulerAngles.y > 180)
-            {
-                m_stateInd = -1;
-            }
-            else
-            {
-                m_stateInd = 0;
-            }
+            m_transform.rotation = m_transform.rotation * m_deltaRotation;
         }
-        SC_StarshipManager.Instance.ChangeTemperature(m_stateInd);
     }
 }

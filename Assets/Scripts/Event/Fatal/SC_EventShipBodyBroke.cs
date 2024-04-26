@@ -13,8 +13,8 @@ public class SC_ShipBodyBroke : SC_EventFatal
 
     protected override void EventAction()
     {
-        SC_StarshipManager.Instance.ChangeOxygen(m_oxygenDecrease);
-        SC_StarshipManager.Instance.ChangePressure(m_pressureDecrease);
+        //SC_StarshipManager.Instance.ChangeOxygen(m_oxygenDecrease);
+        //SC_StarshipManager.Instance.ChangePressure(m_pressureDecrease);
     }
 
 }

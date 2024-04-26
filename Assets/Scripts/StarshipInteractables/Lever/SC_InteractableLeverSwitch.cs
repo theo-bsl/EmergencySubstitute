@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SC_InteractableLeverFrequency : SC_InteractableLever
+public class SC_InteractableLeverSwitch : SC_InteractableLever
 {
     private Vector3 m_dragDirection = Vector3.zero;
 
@@ -27,8 +27,8 @@ public class SC_InteractableLeverFrequency : SC_InteractableLever
     {
         if (m_hasBeenChosen)
         {
-            m_dragDirection.x = DragDist.x;
-            m_deltaRotation = Quaternion.Euler(0, m_dragDirection.x, 0);
+            m_dragDirection.y = DragDist.y;
+            m_deltaRotation = Quaternion.Euler(m_dragDirection.y, 0, 0);
             m_transform.rotation = m_transform.rotation * m_deltaRotation;
         }
     }
