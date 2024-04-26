@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public abstract class SC_InteractableLever : SC_StarshipInteractable
 {
     private Vector3 m_dragDirection = Vector3.zero;
@@ -52,6 +53,7 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
         {
             m_stateInd = 0;
         }
+        StarshipInteractableAction();
     }
 
     public bool GetIsSelected()

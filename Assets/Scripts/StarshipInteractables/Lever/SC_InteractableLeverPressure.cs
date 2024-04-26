@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class SC_InteractableLeverPressure : SC_InteractableLever
 {
     protected override void StarshipInteractableAction()
