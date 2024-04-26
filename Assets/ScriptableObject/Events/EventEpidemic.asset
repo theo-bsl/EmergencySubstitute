@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864b8c68761e5054d9306d2843404300, type: 3}
+  m_Name: EventEpidemic
+  m_EditorClassIdentifier: 
+  m_resolutionTimer: 0
+  m_increasePercentage: 0
+  m_eventDuration: 0
+  m_profession: 0
+  m_eventAction: 0
+  m_isVisible: 0
+  m_icon: {fileID: 0}
+  m_name: 
+  m_room: 0
+  m_dificulty: {r: 0, g: 0, b: 0, a: 0}

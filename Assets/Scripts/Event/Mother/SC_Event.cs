@@ -9,14 +9,10 @@ public abstract class SC_Event : ScriptableObject
     protected float m_resolutionTimer = 0f;
 
     [SerializeField]
-    protected float m_eventDuration = 0f;
-    protected float m_eventTimer = 0f;
-
-    [SerializeField]
-    protected float m_increasePercentage = 0f;
-
-    [SerializeField]
     protected Profession m_profession;
+
+    [SerializeField]
+    protected EventAction m_eventAction;
 
     [SerializeField]
     protected bool m_isVisible = false;
@@ -37,9 +33,6 @@ public abstract class SC_Event : ScriptableObject
 
     //Getters
     public float ResolutionTimer { get { return m_resolutionTimer; } set { m_resolutionTimer = value; } }
-    public float EventTimer { get { return m_eventTimer; }}
-    public float EventDuration { get { return m_eventDuration; }}   
-    public float IncreasePercentage { get { return m_increasePercentage; }}
     public Profession Profession { get { return m_profession; }}
     public bool IsGettingProcessed { get { return m_isGettingProcessed; } set { m_isGettingProcessed = value; } }
     public bool IsVisible { get { return m_isVisible; } }
@@ -48,14 +41,8 @@ public abstract class SC_Event : ScriptableObject
     public Rooms Room { get { return m_room; } }
     public Color Dificulty {  get { return m_dificulty; }}
 
-    public void StartEvent()
-    {
-        InitEvent();
+    public abstract void StartEvent();
+    
 
-        m_eventTimer = m_eventDuration;
-    }
-
-    protected abstract void InitEvent();
     public abstract ResultEndEvent UpdateEvent();
-    protected abstract void EventAction();
 }
