@@ -351,6 +351,7 @@ MonoBehaviour:
   m_kitchenEvent: []
   m_infirmaryEvent: []
   m_serverEvent: []
+  m_cabinEvent: []
   m_eventIconPrefab: {fileID: 4488683820439942682, guid: d5c3044942ee1c04cbbf9e2b074a9857, type: 3}
   m_eventIconsContainer: {fileID: 7414550839806860868}
   m_motorRoomWaypoint: {fileID: 2773015041956080959}
@@ -358,6 +359,7 @@ MonoBehaviour:
   m_kitchenRoomWaypoint: {fileID: 7594321568784050215}
   m_infirmaryRoomWaypoint: {fileID: 6148466318895039447}
   m_serverRoomWaypoint: {fileID: 2763770643957430198}
+  m_cabinRoomWaypoint: {fileID: 6657217922441292406}
 --- !u!1 &2851609030551249914
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00012207031}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3010618179515371900
@@ -538,6 +540,7 @@ RectTransform:
   - {fileID: 2763770643957430198}
   - {fileID: 7594321568784050215}
   - {fileID: 6148466318895039447}
+  - {fileID: 6657217922441292406}
   m_Father: {fileID: 3467448064024924311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -578,6 +581,41 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -240, y: 80}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &4866706900763365161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6657217922441292406}
+  m_Layer: 5
+  m_Name: CabinWaypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6657217922441292406
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866706900763365161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7426093559886541084}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5285984442633216255

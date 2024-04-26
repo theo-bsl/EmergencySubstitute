@@ -18,7 +18,7 @@ public class SC_CrisisGaugeManager : MonoBehaviour
 
     public void IncreaseGauge(float percentage)
     {
-        m_percentage += percentage;
+        m_percentage += percentage * Time.deltaTime;
         if (m_percentage >= 100)
         {
             SC_GameManager.Instance.Lose();

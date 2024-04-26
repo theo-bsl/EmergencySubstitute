@@ -20,6 +20,8 @@ public class SC_StarshipManager : MonoBehaviour
     private float m_minTemperature;
     private float m_maxTemperature;
 
+    [SerializeField] private float m_distanceToDestination;
+
     public float GetCurrentSpeed { get { return m_currentSpeed; } }
     public float GetMinSpeed { get { return m_minSpeed; } }
     public float GetMaxSpeed { get { return m_maxSpeed; } }
@@ -82,5 +84,18 @@ public class SC_StarshipManager : MonoBehaviour
         {
             m_currentPressure += value;
         }
+    }
+    private void Travel()
+    {
+        m_distanceToDestination -= m_currentSpeed * Time.deltaTime;
+        if (m_distanceToDestination <= 0)
+        {
+            SC_GameManager.Instance.Win();
+        }
+    }
+
+    private void Update()
+    {
+        Travel();
     }
 }
