@@ -8,7 +8,6 @@ public class SC_EventLowCoolantLevel : SC_EventFatal
         m_name = "LowCoolantLevel";
         m_profession = Profession.Mechanic;
         m_room = Rooms.Motor;
-        m_canDecreaseTimer = true;
     }
 
     protected override void EventAction()

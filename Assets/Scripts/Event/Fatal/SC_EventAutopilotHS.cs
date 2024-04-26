@@ -7,7 +7,6 @@ public class SC_EventAutopilotHS : SC_EventFatal
         m_name = "AutopilotHS";
         m_room = Rooms.Cockpit;
         m_profession = Profession.Informatician;
-        m_canDecreaseTimer = true;
     }
 
     protected override void EventAction() { }

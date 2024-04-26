@@ -9,7 +9,6 @@ public class SC_ShipBodyBroke : SC_EventFatal
         m_name = "BodyBreaking";
         m_profession = Profession.Mechanic;
         m_room = Rooms.Cabin;
-        m_canDecreaseTimer = true;
     }
 
     protected override void EventAction()

@@ -1,3 +1,6 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "EventEpidemic", menuName = "ScriptableObjects/Event", order = 1)]
 public class SC_EventEpidemic : SC_EventFatal
 {
     protected override void InitEvent()
@@ -7,7 +10,6 @@ public class SC_EventEpidemic : SC_EventFatal
         m_name = "Epidemic";
         m_profession = Profession.Doctor;
         m_room = Rooms.Infirmary;
-        m_canDecreaseTimer = true;
     }
     protected override void EventAction() { }
 }
