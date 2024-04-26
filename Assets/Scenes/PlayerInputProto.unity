@@ -936,6 +936,7 @@ MonoBehaviour:
   m_oxygen: {fileID: 1625432848}
   m_pressure: {fileID: 627719772}
   m_lever: {fileID: 490504239}
+  m_lever2: {fileID: 2105667179}
   m_buttonUp1: {fileID: 1219082733}
   m_buttonUp2: {fileID: 1497226645}
   m_buttonA1: {fileID: 1227943944}
@@ -950,6 +951,13 @@ MonoBehaviour:
   m_buttonD1: {fileID: 292886485}
   m_buttonD2: {fileID: 1748002443}
   m_buttonD3: {fileID: 1332659469}
+  m_sideButton1: {fileID: 1008028850}
+  m_sideButton2: {fileID: 1405382143}
+  m_sideButton3: {fileID: 1008028848}
+  m_sideButton4: {fileID: 887766269}
+  m_sideButton5: {fileID: 1008028846}
+  m_sideButton6: {fileID: 835411777}
+  m_sideButton7: {fileID: 296715603}
 --- !u!1001 &1008028837
 PrefabInstance:
   m_ObjectHideFlags: 0

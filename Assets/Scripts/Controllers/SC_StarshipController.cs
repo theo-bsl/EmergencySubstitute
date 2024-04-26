@@ -8,6 +8,7 @@ public class SC_StarshipController : MonoBehaviour
     [SerializeField] private SC_InteractableLeverOxygen m_oxygen;
     [SerializeField] private SC_InteractableLeverPressure m_pressure;
     [SerializeField] private SC_InteractableLeverUseless m_lever;
+    [SerializeField] private SC_InteractableLeverUseless m_lever2;
     [SerializeField] private SC_InteractableButtonUseless m_buttonUp1;
     [SerializeField] private SC_InteractableButtonUseless m_buttonUp2;
     [SerializeField] private SC_InteractableButtonUseless m_buttonA1;
@@ -22,6 +23,13 @@ public class SC_StarshipController : MonoBehaviour
     [SerializeField] private SC_InteractableButtonUseless m_buttonD1;
     [SerializeField] private SC_InteractableButtonUseless m_buttonD2;
     [SerializeField] private SC_InteractableButtonUseless m_buttonD3;
+    [SerializeField] private SC_InteractableButtonUseless m_sideButton1;
+    [SerializeField] private SC_InteractableButtonUseless m_sideButton2;
+    [SerializeField] private SC_InteractableButtonUseless m_sideButton3;
+    [SerializeField] private SC_InteractableButtonUseless m_sideButton4;
+    [SerializeField] private SC_InteractableButtonUseless m_sideButton5;
+    [SerializeField] private SC_InteractableButtonUseless m_sideButton6;
+    [SerializeField] private SC_InteractableButtonUseless m_sideButton7;
     private Vector3 m_dragDist;
     private bool m_dragging;
 
@@ -71,6 +79,10 @@ public class SC_StarshipController : MonoBehaviour
             {
                 m_lever.OnDragLever(m_dragDist);
             }
+            if (m_lever2.GetIsSelected())
+            {
+                m_lever2.OnDragLever(m_dragDist);
+            }
         }
     }
 
@@ -99,6 +111,10 @@ public class SC_StarshipController : MonoBehaviour
         else if (hit.collider == m_lever.GetComponent<Collider>())
         {
             PullLever();
+        }
+        else if (hit.collider == m_lever2.GetComponent<Collider>())
+        {
+            PullLever2();
         }
         else if (hit.collider == m_buttonUp2.GetComponent<Collider>())
         {
@@ -156,6 +172,34 @@ public class SC_StarshipController : MonoBehaviour
         {
             m_buttonD3.OnButtonPressed();
         }
+        else if (hit.collider == m_sideButton1.GetComponent<Collider>())
+        {
+            m_sideButton1.OnButtonPressed();
+        }
+        else if (hit.collider == m_sideButton2.GetComponent<Collider>())
+        {
+            m_sideButton2.OnButtonPressed();
+        }
+        else if (hit.collider == m_sideButton3.GetComponent<Collider>())
+        {
+            m_sideButton3.OnButtonPressed();
+        }
+        else if (hit.collider == m_sideButton4.GetComponent<Collider>())
+        {
+            m_sideButton4.OnButtonPressed();
+        }
+        else if (hit.collider == m_sideButton5.GetComponent<Collider>())
+        {
+            m_sideButton5.OnButtonPressed();
+        }
+        else if (hit.collider == m_sideButton6.GetComponent<Collider>())
+        {
+            m_sideButton6.OnButtonPressed();
+        }
+        else if (hit.collider == m_sideButton7.GetComponent<Collider>())
+        {
+            m_sideButton7.OnButtonPressed();
+        }
         return Physics.Raycast(m_camera.transform.position, dir, Mathf.Infinity);
     }
 
@@ -178,6 +222,10 @@ public class SC_StarshipController : MonoBehaviour
     private void PullLever()
     {
         m_lever.OnSelected();
+    }
+    private void PullLever2()
+    {
+        m_lever2.OnSelected();
     }
     public void SetDragDist(Vector3 value)
     {
