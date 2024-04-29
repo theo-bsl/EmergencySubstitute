@@ -79,6 +79,7 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
 
     private void OnMouseExit()
     {
-        Cursor.SetCursor(m_baseMouseTexture, Vector2.zero, CursorMode.Auto);
+        if (!m_hasBeenChosen)
+            Cursor.SetCursor(m_baseMouseTexture, Vector2.zero, CursorMode.Auto);
     }
 }
