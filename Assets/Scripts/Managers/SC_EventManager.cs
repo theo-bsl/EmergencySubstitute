@@ -18,8 +18,7 @@ public class SC_EventManager : MonoBehaviour
     //SC_Event = Event
     private UnityEvent<SC_Event> m_deleteEvent = new();
 
-    //private bool m_isPairing = false;
-    //private bool m_hasSpawnPairingEvent = false;
+    private UnityEvent<string> m_gameOverEvent = new();
 
     private void Awake()
     {
@@ -107,7 +106,7 @@ public class SC_EventManager : MonoBehaviour
         {
             Debug.Log(Event.Name + " killed you !");
             DestroyEvent(Event);
-            SC_GameManager.Instance.Lose();
+            m_gameOverEvent.Invoke(Event.Name + " killed you !");
         }
     }
 
@@ -126,7 +125,6 @@ public class SC_EventManager : MonoBehaviour
         Destroy(Event);
     }
 
-
     private void Update()
     {
         for (int i = m_events.Count - 1; i >= 0; i--)
@@ -143,5 +141,7 @@ public class SC_EventManager : MonoBehaviour
 
     public UnityEvent<SC_Event> DeleteEvent { get { return m_deleteEvent; } }
 
+    public UnityEvent<string> GameOverEvent { get { return m_gameOverEvent; } }
+    
     public List<SC_Event> Events { get {  return m_events; } }
 }

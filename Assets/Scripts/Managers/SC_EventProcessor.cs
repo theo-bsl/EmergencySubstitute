@@ -74,7 +74,7 @@ public class SC_EventProcessor : MonoBehaviour
         {
             if (Event.GetType() == typeof(SC_EventFatal))
             {
-                SC_GameManager.Instance.Lose();
+                SC_GameManager.Instance.Lose(Event.Name + " killed you !");
             }
             else if (Event.GetType() != typeof(SC_EventCrisis) || !hasWrongExpertise)
             {
