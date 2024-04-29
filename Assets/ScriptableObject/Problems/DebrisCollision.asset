@@ -25,4 +25,6 @@ MonoBehaviour:
     EventActions:
     - EventActionType: 3
       EventActionValue: -1
+    - EventActionType: 4
+      EventActionValue: 1
   m_blockerEvents: []

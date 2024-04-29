@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Hunger
   m_EditorClassIdentifier: 
   m_eventConfigurations:
-  - SC_Event: {fileID: 11400000, guid: 79163e2272927c947b68891cf1d5155c, type: 2}
-    EventActions: []
+  - SC_Event: {fileID: 11400000, guid: 43be9e74a5f277c408de4eec311266e6, type: 2}
+    EventActions:
+    - EventActionType: 4
+      EventActionValue: 1
   m_blockerEvents:
-  - {fileID: 11400000, guid: 79163e2272927c947b68891cf1d5155c, type: 2}
-  - {fileID: 11400000, guid: bfd97f08e757aee4ba527ac7574d86ae, type: 2}
+  - {fileID: 11400000, guid: 43be9e74a5f277c408de4eec311266e6, type: 2}

@@ -17,7 +17,301 @@ MonoBehaviour:
   m_profession: 0
   m_eventAction:
   - EventActionType: 0
-    EventActionValue: 1
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
+  - EventActionType: 0
+    EventActionValue: -1
   m_isVisible: 1
   m_icon: {fileID: 0}
   m_name: manque de liquide de refroidissement

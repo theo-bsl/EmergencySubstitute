@@ -15,9 +15,7 @@ MonoBehaviour:
   m_resolutionTimer: 0
   m_eventDuration: Infinity
   m_profession: 0
-  m_eventAction:
-  - EventActionType: 4
-    EventActionValue: 1
+  m_eventAction: []
   m_isVisible: 1
   m_icon: {fileID: 0}
   m_name: manque de chaleur

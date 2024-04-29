@@ -407,7 +407,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_problems:
+  - {fileID: 11400000, guid: cbdba064c3c4d244b9f345c859c0915b, type: 2}
+  - {fileID: 11400000, guid: bc56d1977489654439419610dfc1651a, type: 2}
+  - {fileID: 11400000, guid: b8a79258f05b77041bbcc1953d7ed11f, type: 2}
+  - {fileID: 11400000, guid: 20f4bc1f45682a54f912d44daa88049b, type: 2}
+  - {fileID: 11400000, guid: 5ff973eb596c65f46944f0d114907918, type: 2}
+  - {fileID: 11400000, guid: d1afb5b14fa7ed4408dcf055db5c9536, type: 2}
+  - {fileID: 11400000, guid: 1f18edca16f01754280c477d3713a888, type: 2}
   - {fileID: 11400000, guid: 3334103a55772e0478dc52560e477c44, type: 2}
+  - {fileID: 11400000, guid: 54d25006a067a854c827cd2afd3ff0eb, type: 2}
 --- !u!1 &772940967
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a6486e6f01a154bb3045f49b5d8d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_distanceToDestination: 100
+  m_distanceToDestination: 6030000
 --- !u!1 &1626768493
 GameObject:
   m_ObjectHideFlags: 0

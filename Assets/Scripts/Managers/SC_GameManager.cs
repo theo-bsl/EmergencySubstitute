@@ -27,6 +27,7 @@ public class SC_GameManager : MonoBehaviour
     private void Start()
     {
         m_problemManager = SC_ProblemsManager.Instance;
+        SC_StarshipManager.Instance.Win.AddListener(Win);
         CalculateNextEventTime();
     }
 

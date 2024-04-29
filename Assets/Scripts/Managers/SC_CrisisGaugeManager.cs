@@ -18,6 +18,9 @@ public class SC_CrisisGaugeManager : MonoBehaviour
 
     public void IncreaseGauge(float percentage)
     {
+        Debug.Log(percentage);
+        Debug.Log(percentage * Time.deltaTime);
+        Debug.Log(Time.time);
         m_percentage += percentage * Time.deltaTime;
         if (m_percentage >= 100)
         {

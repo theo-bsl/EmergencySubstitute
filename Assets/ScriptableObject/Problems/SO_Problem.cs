@@ -14,10 +14,7 @@ public class SO_Problem : ScriptableObject
     {
         for (int i = 0; i < m_eventConfigurations.Count; ++i)
         {
-            for (int j = 0; j < m_eventConfigurations[i].EventActions.Count; ++j)
-            {
-                m_eventConfigurations[i].SC_Event.EventAction.Add(m_eventConfigurations[i].EventActions[j]);
-            }
+            m_eventConfigurations[i].SC_Event.EventAction = m_eventConfigurations[i].EventActions;
         }
     }
 
