@@ -69,17 +69,17 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
     {
         if (!m_hasBeenChosen)
         {
-            Cursor.SetCursor(m_mouseLeverHoverTexture, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(m_mouseLeverHoverTexture, new Vector2(20,20), CursorMode.Auto);
         }
         else
         {
-            Cursor.SetCursor(m_mouseLeverDragTexture, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(m_mouseLeverDragTexture, new Vector2(20,20), CursorMode.Auto);
         }
     }
 
     private void OnMouseExit()
     {
         if (!m_hasBeenChosen)
-            Cursor.SetCursor(m_baseMouseTexture, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(m_baseMouseTexture, new Vector2(20, 20), CursorMode.Auto);
     }
 }

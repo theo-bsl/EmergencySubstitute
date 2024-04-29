@@ -32,16 +32,16 @@ public abstract class SC_InteractableButton : SC_StarshipInteractable
     {
         if (!m_hasBeenChosen)
         {
-            Cursor.SetCursor(m_mouseButtonHoverTexture, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(m_mouseButtonHoverTexture, new Vector2(20, 20), CursorMode.Auto);
         }
         else
         {
-            Cursor.SetCursor(m_mouseButtonClickTexture, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(m_mouseButtonClickTexture, new Vector2(20, 20), CursorMode.Auto);
         }
     }
 
     private void OnMouseExit()
     {
-        Cursor.SetCursor(m_baseMouseTexture, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(m_baseMouseTexture, new Vector2(20, 20), CursorMode.Auto);
     }
 }
