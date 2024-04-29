@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 public class SC_GameManager : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class SC_GameManager : MonoBehaviour
     private SC_EventManager m_eventManager;
     private bool m_endGame = false;
 
-    private UnityEvent m_gameLose = new UnityEvent();
+    private UnityEvent<string> m_gameLose = new UnityEvent<string>();
     private UnityEvent m_gameWin = new UnityEvent();
 
     private void Awake()
@@ -27,6 +26,7 @@ public class SC_GameManager : MonoBehaviour
     private void Start()
     {
         m_eventManager = SC_EventManager.Instance;
+        m_eventManager.GameOverEvent.AddListener(Lose);
         CalculateNextEventTime();
     }
 
@@ -61,10 +61,10 @@ public class SC_GameManager : MonoBehaviour
         //SceneManager.LoadScene("Win_Scene");
     }
 
-    public void Lose()
+    public void Lose(string LoseMessage)
     {
         PauseGame();
-        m_gameLose.Invoke();
+        m_gameLose.Invoke(LoseMessage);
         //SceneManager.LoadScene("Defeat_Scene");
     }
 
@@ -73,6 +73,6 @@ public class SC_GameManager : MonoBehaviour
         Time.timeScale = Time.timeScale > 0 ? 0 : 1;
     }
 
-    public UnityEvent GameLose { get {  return m_gameLose; } }
+    public UnityEvent<string> GameLose { get {  return m_gameLose; } }
     public UnityEvent GameWin { get {  return m_gameWin; } }
 }
