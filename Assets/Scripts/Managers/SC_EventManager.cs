@@ -27,32 +27,37 @@ public class SC_EventManager : MonoBehaviour
             Instance = this;
     }
 
-    public void SpawnEvent(SC_Event NewEvent = null)
+    public void SpawnEvent(SC_Event NewEvent)
     {
         if (NewEvent != null)
         {
-            float crisisTimePenalty = 0;
-            if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 25 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 50)
-            {
-                crisisTimePenalty = 16.6f;
-            }
-            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 50 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 75)
-            {
-                crisisTimePenalty = 33.2f;
-            }
-            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 75 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 100)
-            {
-                crisisTimePenalty = 50f;
-            }
-
-            NewEvent.ResolutionTimer += NewEvent.ResolutionTimer * crisisTimePenalty / 100;
-            
             if (!IsEventInList(NewEvent))
             {
-                SC_Event InstantiatedEvent = Instantiate(NewEvent);
-                m_events.Add(InstantiatedEvent);
+                float crisisTimePenalty = 0;
 
-                InstantiatedEvent.StartEvent();
+                switch (SC_CrisisGaugeManager.Instance.GetCrisisPercentage())
+                {
+                    case < 25:
+                        crisisTimePenalty = 0;
+                        break;
+                    case < 50:
+                        crisisTimePenalty = 16.6f;
+                        break;
+                    case < 75:
+                        crisisTimePenalty = 33.2f;
+                        break;
+                    case < 100:
+                        crisisTimePenalty = 50f;
+                        break;
+                    default:
+                        throw new Exception("Crisis Gauge too high ! ");
+                }
+
+                
+
+                SC_Event InstantiatedEvent = Instantiate(NewEvent);
+                InstantiatedEvent.ResolutionTimer += InstantiatedEvent.ResolutionTimer * crisisTimePenalty / 100;
+                m_events.Add(InstantiatedEvent);
 
                 if (InstantiatedEvent.GetType() == typeof(SC_EventCrisis))
                 {
@@ -69,16 +74,14 @@ public class SC_EventManager : MonoBehaviour
 
     private bool IsEventInList(SC_Event Event)
     {
-        bool isInEventList = false;
         foreach (SC_Event Element in m_events)
         {
             if (Element.GetType() == NewEvent.GetType())
             {
-                isInEventList = true;
-                break;
+                return true;
             }
         }
-        return isInEventList;
+        return false;
     }
 
     private SC_Event PickEvent(List<Type> PoolOfEvent)

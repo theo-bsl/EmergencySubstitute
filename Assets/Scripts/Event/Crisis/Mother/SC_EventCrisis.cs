@@ -13,7 +13,5 @@ public class SC_EventCrisis : SC_Event
         return ResultEndEvent.Nothing;
     }
 
-    public override void StartEvent(){ }
-
     public float IncreasePercentage { get { return m_increasePercentage; } }
 }

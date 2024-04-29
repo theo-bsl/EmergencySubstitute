@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,17 +33,23 @@ public class SC_ProblemsManager : MonoBehaviour
 
             //Chance to spawn a seconde problem
             bool m_shouldCreateAgain = false;
-            if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 25 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 50)
+
+            switch (SC_CrisisGaugeManager.Instance.GetCrisisPercentage())
             {
-                m_shouldCreateAgain = Random.Range(0, 100) < 16.6f;
-            }
-            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 50 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 75)
-            {
-                m_shouldCreateAgain = Random.Range(0, 100) < 33.2f;
-            }
-            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 75 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 100)
-            {
-                m_shouldCreateAgain = Random.Range(0, 100) < 50f;
+                case < 25:
+                    m_shouldCreateAgain = false;
+                    break;
+                case < 50:
+                    m_shouldCreateAgain = UnityEngine.Random.Range(0, 100) < 16.6f;
+                    break;
+                case < 75:
+                    m_shouldCreateAgain = UnityEngine.Random.Range(0, 100) < 33.2f;
+                    break;
+                case < 100:
+                    m_shouldCreateAgain = UnityEngine.Random.Range(0, 100) < 50f;
+                    break;
+                default:
+                    throw new Exception("Crisis Gauge too high ! ");
             }
 
             if (m_shouldCreateAgain && !m_hasBeenCreated)
@@ -59,7 +66,7 @@ public class SC_ProblemsManager : MonoBehaviour
         SO_Problem NewProblem = null;
         if (PoolOfProblems.Count > 0)
         {
-            NewProblem = PoolOfProblems[Random.Range(0, PoolOfProblems.Count)];
+            NewProblem = PoolOfProblems[UnityEngine.Random.Range(0, PoolOfProblems.Count)];
             if (ProblemIsBlocked(NewProblem))
             {
                 PoolOfProblems.Remove(NewProblem);

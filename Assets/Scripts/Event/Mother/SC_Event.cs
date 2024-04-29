@@ -41,8 +41,5 @@ public abstract class SC_Event : ScriptableObject
     public Rooms Room { get { return m_room; } }
     public Color Dificulty {  get { return m_dificulty; }}
 
-    public abstract void StartEvent();
-    
-
     public abstract ResultEndEvent UpdateEvent();
 }
