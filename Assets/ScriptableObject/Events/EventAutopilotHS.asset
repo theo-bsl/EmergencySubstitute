@@ -15,7 +15,7 @@ MonoBehaviour:
   m_resolutionTimer: 5
   m_profession: 1
   m_eventAction: 2
-  m_isVisible: 0
+  m_isVisible: 1
   m_icon: {fileID: 0}
   m_name: AutopilotHS
   m_room: 1

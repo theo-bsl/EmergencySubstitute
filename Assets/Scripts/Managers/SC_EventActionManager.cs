@@ -29,14 +29,14 @@ public class SC_EventActionManager : MonoBehaviour
 
     private void LowCoolantLevelAction()
     {
-        SC_StarshipManager.Instance.ChangeTemperature(1f / 2f);
+        SC_StarshipManager.Instance.ChangeTemperature((1f / 2f) * Time.deltaTime);
         Debug.Log("LowCoolant !");
     }
 
     private void ShipBodyBrokeAction()
     {
-        SC_StarshipManager.Instance.ChangeOxygen(1f/2f);
-        SC_StarshipManager.Instance.ChangePressure(1f/2f);
+        SC_StarshipManager.Instance.ChangeOxygen(-(1f / 2f) * Time.deltaTime);
+        SC_StarshipManager.Instance.ChangePressure(-(1f / 2f) * Time.deltaTime);
         Debug.Log("Ship Body is Broken !");
     }
 }

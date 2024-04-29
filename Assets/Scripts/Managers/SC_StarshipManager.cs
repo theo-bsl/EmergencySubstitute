@@ -4,21 +4,21 @@ public class SC_StarshipManager : MonoBehaviour
 {
     public static SC_StarshipManager Instance;
 
-    private float m_currentSpeed;
-    private float m_minSpeed;
-    private float m_maxSpeed;
+    private float m_currentSpeed = 0f;
+    private float m_minSpeed = 0f;
+    private float m_maxSpeed = 8500f;
 
-    private float m_currentOxygen;
-    private float m_minOxygen;
-    private float m_maxOxygen;
+    private float m_currentOxygen = 50f;
+    private float m_minOxygen = 13f;
+    private float m_maxOxygen = 80f;
 
-    private float m_currentPressure;
-    private float m_minPressure;
-    private float m_maxPressure;
+    private float m_currentPressure = 1f;
+    private float m_minPressure = 0f;
+    private float m_maxPressure = 2.00f;
 
-    private float m_currentTemperature;
-    private float m_minTemperature;
-    private float m_maxTemperature;
+    private float m_currentTemperature = 20f;
+    private float m_minTemperature = -5f;
+    private float m_maxTemperature = 30f;
 
     [SerializeField] private float m_distanceToDestination;
 
@@ -76,13 +76,17 @@ public class SC_StarshipManager : MonoBehaviour
     }
     public void ChangePressure(float value)
     {
-        if (m_currentPressure + value <= m_minPressure || m_currentPressure + value >= m_maxPressure)
+        if (m_currentPressure + value >= m_maxPressure)
         {
             SC_GameManager.Instance.Lose();
         }
-        else
+        else if (m_currentPressure + value <= m_minPressure)
         {
-            m_currentPressure += value;
+            m_currentPressure = m_minPressure;
+        }
+        else 
+        { 
+            m_currentPressure += value; 
         }
     }
     private void Travel()

@@ -63,7 +63,7 @@ public class SC_EventManager : MonoBehaviour
                 {
                     m_nbCrisisEvent++;
                 }
-
+                Debug.Log("Spawn");
                 if (InstantiatedEvent.IsVisible)
                 {
                     m_newEvent.Invoke(InstantiatedEvent);

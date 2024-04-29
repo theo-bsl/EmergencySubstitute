@@ -15,7 +15,7 @@ public abstract class SC_Event : ScriptableObject
     protected EventAction m_eventAction;
 
     [SerializeField]
-    protected bool m_isVisible = false;
+    protected bool m_isVisible = true;
 
 
     //Graphic Var
