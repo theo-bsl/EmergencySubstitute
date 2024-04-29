@@ -121,77 +121,29 @@ public class SC_StarshipManager : MonoBehaviour
 
     private void SpeedUpdate()
     {
-        if(m_speedInd > 0)
-        {
-            if (m_currentSpeed < m_maxSpeed)
-            {
-                m_currentSpeed++;
-            }
-        }
-        else if (m_speedInd < 0)
-        {
-            if (m_currentSpeed > m_minSpeed)
-            {
-                m_currentSpeed--;
-            }
-        }
+        m_currentSpeed += m_speedInd;
+
         ManageSpeedEvent();
     }
 
     private void TemperatureUpdate()
     {
-        if(m_temperatureInd > 0)
-        {
-            if (m_currentTemperature < m_maxTemperature)
-            {
-                m_currentTemperature++;
-            }
-        }
-        else if(m_temperatureInd < 0)
-        {
-            if ( m_currentTemperature > m_minTemperature)
-            {
-                m_currentTemperature--;
-            }
-        }
+        m_currentTemperature += m_temperatureInd;
+
         ManageTemperatureEvent();
     }
 
     private void PressureUpdate()
     {
-        if(m_pressureInd > 0)
-        {
-            if (m_currentPressure < m_maxPressure)
-            {
-                m_currentPressure++;
-            }
-        }
-        else if (m_pressureInd < 0)
-        {
-            if (m_currentPressure > m_minPressure)
-            {
-                m_currentPressure--;
-            }
-        }
+        m_currentPressure += m_pressureInd;
+
         ManagePressureEvent();
     }
 
     private void OxygenUpdate()
     {
-        if(m_oxygenInd > 0)
-        {
-            if (m_currentOxygen < m_maxOxygen)
-            {
-                m_currentOxygen++;
-            }
-        }
-        else if (m_oxygenInd < 0)
-        {
-            if (m_currentOxygen > m_minOxygen)
-            {
-                m_currentOxygen--;
-            }
-        }
+        m_currentOxygen += m_oxygenInd;
+
         ManageOxygenEvent();
     }
     
