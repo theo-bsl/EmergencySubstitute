@@ -76,6 +76,12 @@ public class SC_StarshipManager : MonoBehaviour
         m_speedInd = ind;
     }
 
+    public void ChangeSpeed(float value)
+    {
+        m_currentSpeed += value;
+        ManageSpeedEvent();
+    }
+
     public void ChangeOxygen(float value)
     {
         m_currentOxygen += value;

@@ -1,6 +1,8 @@
-public enum EventAction
+public enum EventActionType
 {
-    LowCoolantLevel,
-    ShipBodyBroke,
-    None,
+    ChangeTemperature,
+    ChangeOxygen,
+    ChangePressure,
+    ChangeSpeed,
+    IncreaseGauge,
 }

@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d28aa68e2b0d4da43bf7c4746dc4bb94, type: 3}
-  m_Name: EventLowCoolantLevel
+  m_Name: EventCriticallyNotEnoughDioxygene
   m_EditorClassIdentifier: 
-  m_resolutionTimer: 5
-  m_eventDuration: 20
+  m_resolutionTimer: 0
+  m_eventDuration: 60
   m_profession: 0
-  m_eventAction:
-  - EventActionType: 0
-    EventActionValue: 1
-  m_isVisible: 1
+  m_eventAction: []
+  m_isVisible: 0
   m_icon: {fileID: 0}
-  m_name: manque de liquide de refroidissement
+  m_name: "manque d'oxyg\xE8ne critique"
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

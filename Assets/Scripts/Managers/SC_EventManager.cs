@@ -59,10 +59,13 @@ public class SC_EventManager : MonoBehaviour
                 InstantiatedEvent.ResolutionTimer += InstantiatedEvent.ResolutionTimer * crisisTimePenalty / 100;
                 m_events.Add(InstantiatedEvent);
 
-                if (InstantiatedEvent.GetType() == typeof(SC_EventCrisis))
+                //verify if Instanciated Event Is Crisis
+                
+                if (CheckIfCrisis(InstantiatedEvent))
                 {
                     m_nbCrisisEvent++;
                 }
+
                 Debug.Log("Spawn");
                 if (InstantiatedEvent.IsVisible)
                 {
@@ -70,6 +73,18 @@ public class SC_EventManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool CheckIfCrisis(SC_Event Event)
+    {
+        for (int i = 0; i < Event.EventAction.Count; i++)
+        {
+            if (Event.EventAction[i].EventActionType == EventActionType.IncreaseGauge)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private bool IsEventInList(SC_Event Event)
@@ -113,7 +128,7 @@ public class SC_EventManager : MonoBehaviour
 
     public void DestroyEvent(SC_Event Event)
     {
-        if (NewEvent.GetType() == typeof(SC_EventCrisis))
+        if (CheckIfCrisis(Event))
         {
             m_nbCrisisEvent--;
         }

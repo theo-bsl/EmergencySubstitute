@@ -10,15 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9599628664b24a499a1926e36750a73, type: 3}
-  m_Name: ShipBodyBroke
+  m_Name: Hunger
   m_EditorClassIdentifier: 
   m_eventConfigurations:
-  - SC_Event: {fileID: 11400000, guid: 3c1350250a4aaf043b339de3864f6562, type: 2}
-    EventActions:
-    - EventActionType: 0
-      EventActionValue: -1
-    - EventActionType: 1
-      EventActionValue: -1
-    - EventActionType: 2
-      EventActionValue: -1
-  m_blockerEvents: []
+  - SC_Event: {fileID: 11400000, guid: 79163e2272927c947b68891cf1d5155c, type: 2}
+    EventActions: []
+  m_blockerEvents:
+  - {fileID: 11400000, guid: 79163e2272927c947b68891cf1d5155c, type: 2}
+  - {fileID: 11400000, guid: bfd97f08e757aee4ba527ac7574d86ae, type: 2}

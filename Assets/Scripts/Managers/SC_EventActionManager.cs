@@ -12,31 +12,27 @@ public class SC_EventActionManager : MonoBehaviour
         }
     }
 
-    public void Action(EventAction Action)
+    public void Action(EventAction eventAction)
     {
-        switch (Action)
+        switch (eventAction.EventActionType)
         {
-            case EventAction.LowCoolantLevel:
-                LowCoolantLevelAction();
+            case EventActionType.ChangeTemperature:
+                SC_StarshipManager.Instance.ChangeTemperature(eventAction.EventActionValue * Time.deltaTime);
                 break;
-            case EventAction.ShipBodyBroke:
-                ShipBodyBrokeAction();
+            case EventActionType.ChangeOxygen:
+                SC_StarshipManager.Instance.ChangeOxygen(eventAction.EventActionValue * Time.deltaTime);
+                break;
+            case EventActionType.ChangePressure:
+                SC_StarshipManager.Instance.ChangePressure(eventAction.EventActionValue * Time.deltaTime);
+                break;
+            case EventActionType.ChangeSpeed:
+                SC_StarshipManager.Instance.ChangeSpeed(eventAction.EventActionValue * Time.deltaTime);
+                break;
+            case EventActionType.IncreaseGauge:
+                SC_CrisisGaugeManager.Instance.IncreaseGauge(eventAction.EventActionValue);
                 break;
             default: 
                 break;
         }
-    }
-
-    private void LowCoolantLevelAction()
-    {
-        SC_StarshipManager.Instance.ChangeTemperature((1f / 2f) * Time.deltaTime);
-        Debug.Log("LowCoolant !");
-    }
-
-    private void ShipBodyBrokeAction()
-    {
-        SC_StarshipManager.Instance.ChangeOxygen(-(1f / 2f) * Time.deltaTime);
-        SC_StarshipManager.Instance.ChangePressure(-(1f / 2f) * Time.deltaTime);
-        Debug.Log("Ship Body is Broken !");
     }
 }
