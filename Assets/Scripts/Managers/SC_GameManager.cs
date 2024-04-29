@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SC_GameManager : MonoBehaviour
@@ -11,6 +12,10 @@ public class SC_GameManager : MonoBehaviour
     private int m_nextTimeToSpawnEvent;
     private int m_maxOffsetTime;
     private SC_EventManager m_eventManager;
+    private bool m_endGame = false;
+
+    private UnityEvent m_gameLose = new UnityEvent();
+    private UnityEvent m_gameWin = new UnityEvent();
 
     private void Awake()
     {
@@ -27,27 +32,47 @@ public class SC_GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= m_nextTimeToSpawnEvent)
+        if (Time.time >= m_nextTimeToSpawnEvent && !m_endGame)
         {
             m_eventManager.SpawnEvent();
-            CalculateNextEventTime();
+            if (m_indexTimeline < m_timeline.Count) 
+            { 
+                CalculateNextEventTime();
+            }
+            else
+            {
+                m_endGame = true;
+            }
         }
     }
 
     private void CalculateNextEventTime()
     {
         int offSetTime = Random.Range(-m_maxOffsetTime, m_maxOffsetTime);
+        
         m_nextTimeToSpawnEvent = m_timeline[m_indexTimeline] + Random.Range(-offSetTime, offSetTime);
         m_indexTimeline++;
     }
 
     public void Win()
     {
-        SceneManager.LoadScene("Win_Scene");
+        PauseGame();
+        m_gameWin.Invoke();
+        //SceneManager.LoadScene("Win_Scene");
     }
 
     public void Lose()
     {
-        SceneManager.LoadScene("Defeat_Scene");
+        PauseGame();
+        m_gameLose.Invoke();
+        //SceneManager.LoadScene("Defeat_Scene");
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = Time.timeScale > 0 ? 0 : 1;
+    }
+
+    public UnityEvent GameLose { get {  return m_gameLose; } }
+    public UnityEvent GameWin { get {  return m_gameWin; } }
 }

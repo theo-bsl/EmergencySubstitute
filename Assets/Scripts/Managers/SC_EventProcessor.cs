@@ -1,14 +1,29 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SC_EventProcessor : MonoBehaviour
 {
+    public static SC_EventProcessor Instance;
+
+    //SO_Character = Character, float = EventDuration, float = WorkTime
+    public UnityEvent<SO_Character, float, float> m_updateCharacterWorkTime = new UnityEvent<SO_Character, float, float>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     public void ProcessEvent(SC_Event Event)
     {
         SO_Character Character = SC_CharacterManager.Instance.SelectedCharacter;
-        if (Character.IsAvailable)
+        if (Character.IsAvailable && !Event.IsGettingProcessed)
         {
+            Event.IsGettingProcessed = true;
             StartCoroutine(Process(Event, Character));
         }
     }
@@ -52,8 +67,9 @@ public class SC_EventProcessor : MonoBehaviour
         while (Event != null && Character.WorkTime >= 0)
         {
             Character.WorkTime -= Time.deltaTime;
-            
-            
+
+            m_updateCharacterWorkTime.Invoke(Character, Event.ResolutionTimer, Character.WorkTime);
+
             yield return null;
         }
 
@@ -70,9 +86,13 @@ public class SC_EventProcessor : MonoBehaviour
                     SC_EventManager.Instance.SpawnEvent(Event.ProvokedEvents[i]);
                 }
             }
+            if (Event.GetType() != typeof(SC_EventCrisis) || !hasWrongExpertise)
+            {
+                SC_EventManager.Instance.DestroyEvent(Event);
+            }
         }
-
 
         yield return null;
     }
+    public UnityEvent<SO_Character, float, float> UpdateCharacterWorkTime { get { return m_updateCharacterWorkTime; } }
 }

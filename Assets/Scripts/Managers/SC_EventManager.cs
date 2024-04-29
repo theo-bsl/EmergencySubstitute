@@ -1,21 +1,27 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SC_EventManager : MonoBehaviour
 {
     public static SC_EventManager Instance;
 
+    [SerializeField]
     private List<SC_Event> m_events = new List<SC_Event>();
 
     private List<Type> m_eventFatalTypes = new List<Type>() 
     {
         typeof(SC_EventEpidemic), 
         typeof(SC_EventAutopilotHS),
-        typeof(SC_EventLowCoolantLevel)
+        typeof(SC_EventLowCoolantLevel),
+        typeof(SC_ShipBodyBroke)
     };
 
-    private List<Type> m_eventCrisisTypes = new List<Type>();
+    private List<Type> m_eventCrisisTypes = new List<Type>()
+    {
+        typeof(SC_EventHunger)
+    };
 
     private List<Type> m_eventDiscretTypes = new List<Type>();
 
@@ -27,6 +33,12 @@ public class SC_EventManager : MonoBehaviour
     private int m_nbFatalEvent = 0;
     private int m_nbCrisisEvent = 0;
     private int m_nbDiscretEvent = 0;
+
+    //SC_Event = Event
+    private UnityEvent<SC_Event> m_newEvent = new();
+
+    //SC_Event = Event
+    private UnityEvent<SC_Event> m_deleteEvent = new();
 
     private bool m_isPairing = false;
     private bool m_hasSpawnPairingEvent = false;
@@ -78,11 +90,12 @@ public class SC_EventManager : MonoBehaviour
             if (PoolOfEvent.Count > 0)
             {
                 NewEvent = PickEvent(PoolOfEvent);
-                NewEvent.ResolutionTimer += NewEvent.ResolutionTimer * crisisTimePenalty / 100;
             }
         }
         if (NewEvent != null)
         {
+            NewEvent.ResolutionTimer += NewEvent.ResolutionTimer * crisisTimePenalty / 100;
+
             bool isInEventList = true;
             foreach (SC_Event Element in m_events)
             {
@@ -97,6 +110,7 @@ public class SC_EventManager : MonoBehaviour
                 ChangeEventNumber(NewEvent.GetType(), 1);
                 m_events.Add(NewEvent);
                 NewEvent.StartEvent();
+                m_newEvent.Invoke(NewEvent);
             }
         }
 
@@ -151,7 +165,7 @@ public class SC_EventManager : MonoBehaviour
         {
             Debug.Log(Event.Name + " killed you !");
             DestroyEvent(Event);
-            //GameOver
+            SC_GameManager.Instance.Lose();
         }
         else if (ResultEndEvent == ResultEndEvent.CreateEvent)
         {
@@ -165,11 +179,11 @@ public class SC_EventManager : MonoBehaviour
 
     public void DestroyEvent(SC_Event Event)
     {
+        m_deleteEvent.Invoke(Event);
         ChangeEventNumber(Event.GetType(), -1);
         m_events.Remove(Event);
     }
 
-    public int NumberOfActiveCrisisEvent { get { return m_nbCrisisEvent; } }
 
     private void Update()
     {
@@ -180,4 +194,10 @@ public class SC_EventManager : MonoBehaviour
             ManageEndEvent(result, Event);
         }
     }
+    
+    public int NumberOfActiveCrisisEvent { get { return m_nbCrisisEvent; } }
+
+    public UnityEvent<SC_Event> NewEvent { get { return m_newEvent; } }
+
+    public UnityEvent<SC_Event> DeleteEvent { get { return m_deleteEvent; } }
 }
