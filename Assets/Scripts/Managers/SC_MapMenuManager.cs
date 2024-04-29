@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.VisualScripting.FlowStateWidget;
 
 public class SC_MapMenuManager : MonoBehaviour
 {

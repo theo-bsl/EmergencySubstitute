@@ -8,7 +8,7 @@ public class SC_EventProcessor : MonoBehaviour
     public static SC_EventProcessor Instance;
 
     //SO_Character = Character, float = EventDuration, float = WorkTime
-    public UnityEvent<SO_Character, float, float> m_updateCharacterWorkTime = new UnityEvent<SO_Character, float, float>();
+    private UnityEvent<SO_Character, float, float> m_updateCharacterWorkTime = new UnityEvent<SO_Character, float, float>();
 
     private void Awake()
     {
@@ -21,10 +21,14 @@ public class SC_EventProcessor : MonoBehaviour
     public void ProcessEvent(SC_Event Event)
     {
         SO_Character Character = SC_CharacterManager.Instance.SelectedCharacter;
-        if (Character.IsAvailable && !Event.IsGettingProcessed)
+        
+        if (Character != null)
         {
-            Event.IsGettingProcessed = true;
-            StartCoroutine(Process(Event, Character));
+            if (Character.IsAvailable && !Event.IsGettingProcessed)
+            {
+                Event.IsGettingProcessed = true;
+                StartCoroutine(Process(Event, Character));
+            }
         }
     }
 
