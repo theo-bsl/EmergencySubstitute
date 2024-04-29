@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9599628664b24a499a1926e36750a73, type: 3}
   m_Name: ShipBodyBroke
   m_EditorClassIdentifier: 
-  m_events: []
+  m_events:
+  - {fileID: 11400000, guid: d6dcd52675cda034b8d43e60724c48b9, type: 2}
   m_blockerEvents: []

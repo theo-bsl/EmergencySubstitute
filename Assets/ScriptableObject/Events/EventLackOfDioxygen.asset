@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: EventLackOfDioxygen
   m_EditorClassIdentifier: 
   m_resolutionTimer: 0
-  m_increasePercentage: 0
-  m_eventDuration: 0
   m_profession: 0
   m_eventAction: 0
-  m_isVisible: 0
+  m_isVisible: 1
   m_icon: {fileID: 0}
-  m_name: 
+  m_name: LackOfDioxygen
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}
+  m_eventDuration: 30

@@ -62,6 +62,7 @@ public class SC_ProblemsManager : MonoBehaviour
             NewProblem = PoolOfProblems[Random.Range(0, PoolOfProblems.Count)];
             if (ProblemIsBlocked(NewProblem))
             {
+                PoolOfProblems.Remove(NewProblem);
                 NewProblem = PickProblem(PoolOfProblems);
             }
         }
