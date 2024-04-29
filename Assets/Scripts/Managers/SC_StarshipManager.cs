@@ -11,18 +11,21 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isOverOxygenAlreadyActive = false;
     private bool m_isLowOxygenAlreadyActive = false;
     private bool m_isCriticalOxygenAlreadyActive = false;
+    private int m_oxygenInd;
 
     private float m_currentSpeed;
     private float m_lowSpeed = 0f;
     private float m_overSpeed = 8500f;
     private bool m_isOverSpeedAlreadyActive = false;
     private bool m_isLowSpeedAlreadyActive = false;
+    private int m_speedInd;
 
     private float m_currentPressure;
     private float m_overPressure = 1.6f;
     private float m_criticalPressure = 2.0f;
     private bool m_isOverPressureAlreadyActive = false;
     private bool m_isCriticalPressureAlreadyActive = false;
+    private int m_pressureInd;
 
     private float m_currentTemperature;
     private float m_criticalUnderTemperature;
@@ -33,6 +36,7 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isUnderTemperatureAlreadyActive = false;
     private bool m_isOverTemperatureAlreadyActive = false;
     private bool m_isCriticalOverTemperatureAlreadyActive = false;
+    private int m_temperatureInd;
 
     [SerializeField] private float m_distanceToDestination;
 
@@ -46,150 +50,218 @@ public class SC_StarshipManager : MonoBehaviour
 
     private void Update()
     {
+        TemperatureUpdate();
+        PressureUpdate();
+        OxygenUpdate();
+        SpeedUpdate();
         Travel();
+    }
+
+    public void ChangeTemperature(int ind)
+    {
+        m_temperatureInd = ind;
+    }
+
+    public void ChangeOxygen(int ind)
+    {
+        m_oxygenInd = ind;
+    }
+    public void ChangePressure(int ind)
+    {
+        m_pressureInd = ind;
+    }
+
+    public void ChangeSpeed(int ind)
+    {
+        m_speedInd = ind;
     }
 
     public void ChangeOxygen(float value)
     {
         m_currentOxygen += value;
-
-        //Catégorie oxygène trop élevé (>80%)
-        if (m_currentOxygen > m_overOxygen && !m_isOverOxygenAlreadyActive)
-        {
-            m_isOverOxygenAlreadyActive = true;
-            //Ajouter l'event "Oxygène trop élevé"
-        }
-        else if (m_currentOxygen < m_overOxygen && m_isOverOxygenAlreadyActive)
-        {
-            m_isOverOxygenAlreadyActive = false;
-            //Retirer l'event "Oxygène trop élevé"
-        }
-        //Catégorie oxygène bas (<17%)
-        else if (m_currentOxygen < m_lowOxygen && !m_isLowOxygenAlreadyActive)
-        {
-            m_isLowOxygenAlreadyActive = true;
-            //Ajouter l'event "Manque d'oxygène"
-        }
-        else if (m_currentOxygen > m_lowOxygen && m_isLowOxygenAlreadyActive)
-        {
-            m_isLowOxygenAlreadyActive = false;
-            //Retirer l'event "Manque d'oxygène"
-        }
-        //Catégorie oxygène critique (<13%)
-        else if (m_currentOxygen < m_criticalOxygen && !m_isCriticalOxygenAlreadyActive)
-        {
-            m_isCriticalOxygenAlreadyActive = true;
-            //Ajouter l'event "Manque d'oxygène critique"
-        }
-        else if (m_currentOxygen > m_criticalOxygen && m_isCriticalOxygenAlreadyActive)
-        {
-            m_isCriticalOxygenAlreadyActive = false;
-            //Retirer l'event "Manque d'oxygène critique"
-        }
-
+        ManageOxygenEvent();
     }
-
-    private void Travel()
+    
+    private void ManageOxygenEvent()
+{
+    //CatÃ©gorie oxygÃ¨ne trop Ã©levÃ© (>80%)
+    if (m_currentOxygen > m_overOxygen && !m_isOverOxygenAlreadyActive)
     {
-        m_distanceToDestination -= m_currentSpeed * Time.deltaTime;
-
-        //Catégorie vitesse trop élevée (>8500)
-        if (m_currentSpeed > m_overSpeed && !m_isOverSpeedAlreadyActive)
-        {
-            m_isOverSpeedAlreadyActive = true;
-            //Ajouter l'event "Vitesse trop élevée"
-        }
-        else if (m_currentSpeed < m_overSpeed && m_isOverSpeedAlreadyActive)
-        {
-            m_isOverSpeedAlreadyActive = false;
-            //Retirer l'event "Vitesse trop élevée"
-        }
-        //Catégorie Vitesse trop basse (=0)
-        else if (m_currentSpeed < m_lowSpeed && !m_isLowSpeedAlreadyActive)
-        {
-            m_isLowSpeedAlreadyActive = true;
-            //Ajouter l'event "Vitesse trop basse"
-        }
-        else if (m_currentSpeed > m_lowSpeed && m_isLowSpeedAlreadyActive)
-        {
-            m_isLowSpeedAlreadyActive = false;
-            //Retirer l'event "Vitesse trop basse"
-        }
+        m_isOverOxygenAlreadyActive = true;
+        //Ajouter l'event "OxygÃ¨ne trop Ã©levÃ©"
     }
+    else if (m_currentOxygen < m_overOxygen && m_isOverOxygenAlreadyActive)
+    {
+        m_isOverOxygenAlreadyActive = false;
+        //Retirer l'event "OxygÃ¨ne trop Ã©levÃ©"
+    }
+    //CatÃ©gorie oxygÃ¨ne bas (<17%)
+    else if (m_currentOxygen < m_lowOxygen && !m_isLowOxygenAlreadyActive)
+    {
+        m_isLowOxygenAlreadyActive = true;
+        //Ajouter l'event "Manque d'oxygÃ¨ne"
+    }
+    else if (m_currentOxygen > m_lowOxygen && m_isLowOxygenAlreadyActive)
+    {
+        m_isLowOxygenAlreadyActive = false;
+        //Retirer l'event "Manque d'oxygÃ¨ne"
+    }
+    //CatÃ©gorie oxygÃ¨ne critique (<13%)
+    else if (m_currentOxygen < m_criticalOxygen && !m_isCriticalOxygenAlreadyActive)
+    {
+        m_isCriticalOxygenAlreadyActive = true;
+        //Ajouter l'event "Manque d'oxygÃ¨ne critique"
+    }
+    else if (m_currentOxygen > m_criticalOxygen && m_isCriticalOxygenAlreadyActive)
+    {
+        m_isCriticalOxygenAlreadyActive = false;
+        //Retirer l'event "Manque d'oxygÃ¨ne critique"
+    }
+}
+
+    private void SpeedUpdate()
+    {
+        m_currentSpeed += m_speedInd;
+
+        ManageSpeedEvent();
+    }
+
+    private void TemperatureUpdate()
+    {
+        m_currentTemperature += m_temperatureInd;
+
+        ManageTemperatureEvent();
+    }
+
+    private void PressureUpdate()
+    {
+        m_currentPressure += m_pressureInd;
+
+        ManagePressureEvent();
+    }
+
+    private void OxygenUpdate()
+    {
+        m_currentOxygen += m_oxygenInd;
+
+        ManageOxygenEvent();
+    }
+    
+    private void Travel()
+{
+    m_distanceToDestination -= m_currentSpeed * Time.deltaTime;
+    ManageSpeedEvent();
+}
+
+private void ManageSpeedEvent()
+{
+    //CatÃ©gorie vitesse trop Ã©levÃ©e (>8500)
+    if (m_currentSpeed > m_overSpeed && !m_isOverSpeedAlreadyActive)
+    {
+        m_isOverSpeedAlreadyActive = true;
+        //Ajouter l'event "Vitesse trop Ã©levÃ©e"
+    }
+    else if (m_currentSpeed < m_overSpeed && m_isOverSpeedAlreadyActive)
+    {
+        m_isOverSpeedAlreadyActive = false;
+        //Retirer l'event "Vitesse trop Ã©levÃ©e"
+    }
+    //CatÃ©gorie Vitesse trop basse (=0)
+    else if (m_currentSpeed < m_lowSpeed && !m_isLowSpeedAlreadyActive)
+    {
+        m_isLowSpeedAlreadyActive = true;
+        //Ajouter l'event "Vitesse trop basse"
+    }
+    else if (m_currentSpeed > m_lowSpeed && m_isLowSpeedAlreadyActive)
+    {
+        m_isLowSpeedAlreadyActive = false;
+        //Retirer l'event "Vitesse trop basse"
+    }
+}
 
     public void ChangePressure(float value)
-    {
-        m_currentPressure += value;
+{
+    m_currentPressure += value;
+    ManagePressureEvent();
+}
 
-        //Catégorie surpression (>1.60 bar)
-        if (m_currentPressure > m_overPressure && !m_isOverPressureAlreadyActive)
-        {
-            m_isOverPressureAlreadyActive = true;
-            //Ajouter l'event "Surpression"
-        }
-        else if (m_currentPressure < m_overPressure && m_isOverPressureAlreadyActive)
-        {
-            m_isOverPressureAlreadyActive = false;
-            //Retirer l'event "Surpression"
-        }
-        //Catégorie surpression critique (>2.0 bar)
-        else if (m_currentPressure < m_criticalPressure && !m_isCriticalPressureAlreadyActive)
-        {
-            m_isCriticalPressureAlreadyActive = true;
-            //Ajouter l'event "Surpression critique"
-        }
-        else if (m_currentPressure > m_criticalPressure && m_isCriticalPressureAlreadyActive)
-        {
-            m_isCriticalPressureAlreadyActive = false;
-            //Retirer l'event "Surpression critique"
-        }
+private void ManagePressureEvent()
+{
+    //CatÃ©gorie surpression (>1.60 bar)
+    if (m_currentPressure > m_overPressure && !m_isOverPressureAlreadyActive)
+    {
+        m_isOverPressureAlreadyActive = true;
+        //Ajouter l'event "Surpression"
     }
+    else if (m_currentPressure < m_overPressure && m_isOverPressureAlreadyActive)
+    {
+        m_isOverPressureAlreadyActive = false;
+        //Retirer l'event "Surpression"
+    }
+    //CatÃ©gorie surpression critique (>2.0 bar)
+    else if (m_currentPressure < m_criticalPressure && !m_isCriticalPressureAlreadyActive)
+    {
+        m_isCriticalPressureAlreadyActive = true;
+        //Ajouter l'event "Surpression critique"
+    }
+    else if (m_currentPressure > m_criticalPressure && m_isCriticalPressureAlreadyActive)
+    {
+        m_isCriticalPressureAlreadyActive = false;
+        //Retirer l'event "Surpression critique"
+    }
+}
 
     public void ChangeTemperature(float value)
+{
+    m_currentTemperature += value;
+    ManageTemperatureEvent();
+}
+
+private void ManageTemperatureEvent()
+{
+    //CatÃ©gorie tempÃ©rature critiquement trop basse (<-10Â°C)
+    if (m_currentTemperature > m_criticalUnderTemperature && !m_isCriticalUnderTemperatureAlreadyActive)
     {
-        //Catégorie température critiquement trop basse (<-10°C)
-        if (m_currentTemperature > m_criticalUnderTemperature && !m_isCriticalUnderTemperatureAlreadyActive)
-        {
-            m_isCriticalUnderTemperatureAlreadyActive = true;
-            //Ajouter l'event "Température critiquement basse"
-        }
-        else if (m_currentTemperature < m_criticalUnderTemperature && m_isCriticalUnderTemperatureAlreadyActive)
-        {
-            m_isCriticalUnderTemperatureAlreadyActive = false;
-            //Retirer l'event "Température critiquement basse"
-        }
-        //Catégorie température bas (<-5°C)
-        else if (m_currentTemperature < m_underTemperature && !m_isUnderTemperatureAlreadyActive)
-        {
-            m_isUnderTemperatureAlreadyActive = true;
-            //Ajouter l'event "Température basse"
-        }
-        else if (m_currentTemperature > m_underTemperature && m_isUnderTemperatureAlreadyActive)
-        {
-            m_isUnderTemperatureAlreadyActive = false;
-            //Retirer l'event "Température basse"
-        }
-        //Catégorie température haute (>30°C)
-        else if (m_currentTemperature > m_overTemperature && !m_isOverTemperatureAlreadyActive)
-        {
-            m_isOverTemperatureAlreadyActive = true;
-            //Ajouter l'event "Température élevée"
-        }
-        else if (m_currentTemperature < m_overTemperature && m_isOverTemperatureAlreadyActive)
-        {
-            m_isOverTemperatureAlreadyActive = false;
-            //Retirer l'event "Température élevée"
-        }
-        //Catégorie température critiquement haute (>50°C)
-        else if (m_currentTemperature < m_criticalOverTemperature && !m_isCriticalOverTemperatureAlreadyActive)
-        {
-            m_isCriticalOverTemperatureAlreadyActive = true;
-            //Ajouter l'event "Vitesse trop basse"
-        }
-        else if (m_currentTemperature > m_criticalOverTemperature && m_isCriticalOverTemperatureAlreadyActive)
-        {
-            m_isCriticalOverTemperatureAlreadyActive = false;
-            //Retirer l'event "Vitesse trop basse"
-        }
+        m_isCriticalUnderTemperatureAlreadyActive = true;
+        //Ajouter l'event "TempÃ©rature critiquement basse"
     }
+    else if (m_currentTemperature < m_criticalUnderTemperature && m_isCriticalUnderTemperatureAlreadyActive)
+    {
+        m_isCriticalUnderTemperatureAlreadyActive = false;
+        //Retirer l'event "TempÃ©rature critiquement basse"
+    }
+    //CatÃ©gorie tempÃ©rature bas (<-5Â°C)
+    else if (m_currentTemperature < m_underTemperature && !m_isUnderTemperatureAlreadyActive)
+    {
+        m_isUnderTemperatureAlreadyActive = true;
+        //Ajouter l'event "TempÃ©rature basse"
+    }
+    else if (m_currentTemperature > m_underTemperature && m_isUnderTemperatureAlreadyActive)
+    {
+        m_isUnderTemperatureAlreadyActive = false;
+        //Retirer l'event "TempÃ©rature basse"
+    }
+    //CatÃ©gorie tempÃ©rature haute (>30Â°C)
+    else if (m_currentTemperature > m_overTemperature && !m_isOverTemperatureAlreadyActive)
+    {
+        m_isOverTemperatureAlreadyActive = true;
+        //Ajouter l'event "TempÃ©rature Ã©levÃ©e"
+    }
+    else if (m_currentTemperature < m_overTemperature && m_isOverTemperatureAlreadyActive)
+    {
+        m_isOverTemperatureAlreadyActive = false;
+        //Retirer l'event "TempÃ©rature Ã©levÃ©e"
+    }
+    //CatÃ©gorie tempÃ©rature critiquement haute (>50Â°C)
+    else if (m_currentTemperature < m_criticalOverTemperature && !m_isCriticalOverTemperatureAlreadyActive)
+    {
+        m_isCriticalOverTemperatureAlreadyActive = true;
+        //Ajouter l'event "Vitesse trop basse"
+    }
+    else if (m_currentTemperature > m_criticalOverTemperature && m_isCriticalOverTemperatureAlreadyActive)
+    {
+        m_isCriticalOverTemperatureAlreadyActive = false;
+        //Retirer l'event "Vitesse trop basse"
+    }
+}
 }

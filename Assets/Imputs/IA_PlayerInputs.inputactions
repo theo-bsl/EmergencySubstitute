@@ -6,13 +6,31 @@
             "id": "cd770cab-aac6-46a1-b8f1-54164bb6994b",
             "actions": [
                 {
-                    "name": "mouse",
+                    "name": "InteractWithCockpit",
                     "type": "Button",
                     "id": "93e00999-8084-42a9-9fe4-0012676ee27b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MouseMove",
+                    "type": "Value",
+                    "id": "3afdba85-73fc-48b2-b414-affcfc9f0c3a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MouseDrag",
+                    "type": "Value",
+                    "id": "a66bbac2-934d-4a04-822d-4aa69704a5b7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -23,7 +41,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "mouse",
+                    "action": "InteractWithCockpit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85ede937-e34b-4ec9-898b-8e0ca6cdf159",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "583da4b2-20ca-4224-bdc5-8abfa75c0583",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseDrag",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

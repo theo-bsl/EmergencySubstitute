@@ -10,7 +10,7 @@ public class SC_GameManager : MonoBehaviour
     private int m_indexTimeline = 0;
     private int m_nextTimeToSpawnEvent;
     private int m_maxOffsetTime;
-    private SC_EventManager m_eventManager;
+    private SC_ProblemsManager m_problemManager;
     private bool m_endGame = false;
 
     private UnityEvent<string> m_gameLose = new UnityEvent<string>();
@@ -27,6 +27,9 @@ public class SC_GameManager : MonoBehaviour
     {
         m_eventManager = SC_EventManager.Instance;
         m_eventManager.GameOverEvent.AddListener(Lose);
+        
+        m_problemManager = SC_ProblemsManager.Instance;
+        
         CalculateNextEventTime();
     }
 
@@ -34,7 +37,7 @@ public class SC_GameManager : MonoBehaviour
     {
         if (Time.time >= m_nextTimeToSpawnEvent && !m_endGame)
         {
-            m_eventManager.SpawnEvent();
+            m_problemManager.CreateProblem();
             if (m_indexTimeline < m_timeline.Count) 
             { 
                 CalculateNextEventTime();

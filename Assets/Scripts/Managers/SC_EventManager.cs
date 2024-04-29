@@ -10,29 +10,7 @@ public class SC_EventManager : MonoBehaviour
     [SerializeField]
     private List<SC_Event> m_events = new List<SC_Event>();
 
-    private List<Type> m_eventFatalTypes = new List<Type>() 
-    {
-        typeof(SC_EventEpidemic), 
-        typeof(SC_EventAutopilotHS),
-        typeof(SC_EventLowCoolantLevel),
-        typeof(SC_ShipBodyBroke)
-    };
-
-    private List<Type> m_eventCrisisTypes = new List<Type>()
-    {
-        typeof(SC_EventHunger)
-    };
-
-    private List<Type> m_eventDiscretTypes = new List<Type>();
-
-    private int m_nbMaxEvent = 5;
-    private int m_nbMaxFatalEvent = 3;
-    private int m_nbMaxCrisisEvent = 3;
-    private int m_nbMaxDiscretEvent = 3;
-
-    private int m_nbFatalEvent = 0;
     private int m_nbCrisisEvent = 0;
-    private int m_nbDiscretEvent = 0;
 
     //SC_Event = Event
     private UnityEvent<SC_Event> m_newEvent = new();
@@ -42,98 +20,67 @@ public class SC_EventManager : MonoBehaviour
 
     private UnityEvent<string> m_gameOverEvent = new();
 
-    private bool m_isPairing = false;
-    private bool m_hasSpawnPairingEvent = false;    
-
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
     }
 
-    public void SpawnEvent(SC_Event NewEvent = null)
+    public void SpawnEvent(SC_Event NewEvent)
     {
-        float crisisTimePenalty = 0;
-        if (!m_isPairing)
-        {
-            if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 25 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 50)
-            {
-                m_isPairing = UnityEngine.Random.Range(0, 100) <= 16.6f;
-                crisisTimePenalty = 16.6f;
-            }
-            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 50 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 75)
-            {
-                m_isPairing = UnityEngine.Random.Range(0, 100) <= 33.2f;
-                crisisTimePenalty = 33.2f;
-            }
-            else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 75 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 100)
-            {
-                m_isPairing = UnityEngine.Random.Range(0, 100) <= 50f;
-                crisisTimePenalty = 50f;
-            }
-        }
-
-        if (NewEvent == null && m_events.Count < m_nbMaxEvent)
-        {
-            List<Type> PoolOfEvent = new List<Type>();
-            if (m_nbFatalEvent < m_nbMaxFatalEvent)
-            {
-                PoolOfEvent.AddRange(m_eventFatalTypes);
-            }
-            if (m_nbCrisisEvent < m_nbMaxCrisisEvent)
-            {
-                PoolOfEvent.AddRange(m_eventCrisisTypes);
-            }
-            if (m_nbDiscretEvent < m_nbMaxDiscretEvent)
-            {
-                PoolOfEvent.AddRange(m_eventDiscretTypes);
-            }
-
-            if (PoolOfEvent.Count > 0)
-            {
-                NewEvent = PickEvent(PoolOfEvent);
-            }
-        }
         if (NewEvent != null)
         {
-            NewEvent.ResolutionTimer += NewEvent.ResolutionTimer * crisisTimePenalty / 100;
-
-            bool isInEventList = true;
-            foreach (SC_Event Element in m_events)
+            if (!IsEventInList(NewEvent))
             {
-                if (Element.GetType() == NewEvent.GetType())
+                float crisisTimePenalty = 0;
+
+                switch (SC_CrisisGaugeManager.Instance.GetCrisisPercentage())
                 {
-                    isInEventList = false;
-                    break;
+                    case < 25:
+                        crisisTimePenalty = 0;
+                        break;
+                    case < 50:
+                        crisisTimePenalty = 16.6f;
+                        break;
+                    case < 75:
+                        crisisTimePenalty = 33.2f;
+                        break;
+                    case < 100:
+                        crisisTimePenalty = 50f;
+                        break;
+                    default:
+                        throw new Exception("Crisis Gauge too high ! ");
+                }
+
+                
+
+                SC_Event InstantiatedEvent = Instantiate(NewEvent);
+                InstantiatedEvent.ResolutionTimer += InstantiatedEvent.ResolutionTimer * crisisTimePenalty / 100;
+                m_events.Add(InstantiatedEvent);
+
+                if (InstantiatedEvent.GetType() == typeof(SC_EventCrisis))
+                {
+                    m_nbCrisisEvent++;
+                }
+                Debug.Log("Spawn");
+                if (InstantiatedEvent.IsVisible)
+                {
+                    m_newEvent.Invoke(InstantiatedEvent);
                 }
             }
-            if (isInEventList)
-            {
-                ChangeEventNumber(NewEvent.GetType(), 1);
-                m_events.Add(NewEvent);
-                NewEvent.StartEvent();
-                m_newEvent.Invoke(NewEvent);
-            }
-        }
-
-        if (m_isPairing && !m_hasSpawnPairingEvent)
-        {
-            m_hasSpawnPairingEvent = true;
-            SpawnEvent();
-        }
-        if (m_isPairing && m_hasSpawnPairingEvent)
-        {
-            m_isPairing = false;
-            m_hasSpawnPairingEvent = false;
         }
     }
 
-
-    private void ChangeEventNumber(Type EventType, int value)
+    private bool IsEventInList(SC_Event Event)
     {
-        m_nbFatalEvent += EventType.IsSubclassOf(typeof(SC_EventFatal)) ? value : 0;
-        m_nbCrisisEvent += EventType.IsSubclassOf(typeof(SC_EventCrisis)) ? value : 0;
-        m_nbDiscretEvent += EventType.IsSubclassOf(typeof(SC_EventDiscreet)) ? value : 0;
+        foreach (SC_Event Element in m_events)
+        {
+            if (Element.GetType() == NewEvent.GetType())
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private SC_Event PickEvent(List<Type> PoolOfEvent)
@@ -141,22 +88,14 @@ public class SC_EventManager : MonoBehaviour
         if (PoolOfEvent.Count > 0)
         {
             Type eventType = PoolOfEvent[UnityEngine.Random.Range(0, PoolOfEvent.Count)];
-            SC_Event Event1 = (SC_Event)Activator.CreateInstance(eventType);
-            bool detect = true;
-            foreach (SC_Event Element in m_events)
-            {
-                if (Element.GetType() == Event1.GetType())
-                {
-                    detect = false;
-                    break;
-                }
-            }
-            if (!detect)
+            SC_Event Event = (SC_Event)Activator.CreateInstance(eventType);
+            
+            if (IsEventInList(Event))
             {
                 PoolOfEvent.Remove(eventType);
-                Event1 = PickEvent(PoolOfEvent);
+                Event = PickEvent(PoolOfEvent);
             }
-            return Event1;
+            return Event;
         }
         return null;
     }
@@ -169,21 +108,21 @@ public class SC_EventManager : MonoBehaviour
             DestroyEvent(Event);
             m_gameOverEvent.Invoke(Event.Name + " killed you !");
         }
-        else if (ResultEndEvent == ResultEndEvent.CreateEvent)
-        {
-            foreach (SC_Event spawnEvent in Event.ProvokedEvents)
-            {
-                SpawnEvent(spawnEvent);
-            }
-            DestroyEvent(Event);
-        }
     }
 
     public void DestroyEvent(SC_Event Event)
     {
-        m_deleteEvent.Invoke(Event);
-        ChangeEventNumber(Event.GetType(), -1);
+        if (NewEvent.GetType() == typeof(SC_EventCrisis))
+        {
+            m_nbCrisisEvent--;
+        }
+
+        if (Event.IsVisible)
+        {
+            m_deleteEvent.Invoke(Event);
+        }
         m_events.Remove(Event);
+        Destroy(Event);
     }
 
     private void Update()
@@ -203,4 +142,6 @@ public class SC_EventManager : MonoBehaviour
     public UnityEvent<SC_Event> DeleteEvent { get { return m_deleteEvent; } }
 
     public UnityEvent<string> GameOverEvent { get { return m_gameOverEvent; } }
+    
+    public List<SC_Event> Events { get {  return m_events; } }
 }

@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public abstract class SC_EventFatal : SC_Event
+[CreateAssetMenu(fileName = "EventFatal", menuName = "ScriptableObjects/Event/EventFatal", order = 1)]
+public class SC_EventFatal : SC_Event
 {
+    [SerializeField]
+    private float m_eventDuration = 0f;
+
     public override ResultEndEvent UpdateEvent()
     {
-        if (m_canDecreaseTimer)
+        m_eventDuration -= Time.deltaTime;
+        if (m_eventDuration <= 0f)
         {
-            if (m_endTimer < Time.time)
-            {
-                return ResultEndEvent.GameOver;
-            }
+            return ResultEndEvent.GameOver;
         }
+        SC_EventActionManager.Instance.Action(m_eventAction);
         return ResultEndEvent.Nothing;
     }
 }
