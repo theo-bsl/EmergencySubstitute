@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864b8c68761e5054d9306d2843404300, type: 3}
+  m_Script: {fileID: 11500000, guid: d28aa68e2b0d4da43bf7c4746dc4bb94, type: 3}
   m_Name: EventEpidemic
   m_EditorClassIdentifier: 
   m_resolutionTimer: 5
+  m_eventDuration: 20
   m_profession: 3
-  m_eventAction: 2
+  m_eventAction: []
   m_isVisible: 1
   m_icon: {fileID: 0}
-  m_name: Epidemic
+  m_name: Epidemie
   m_room: 3
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}
-  m_eventDuration: 20

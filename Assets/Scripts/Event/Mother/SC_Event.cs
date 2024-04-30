@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SC_Event : ScriptableObject
+[CreateAssetMenu(fileName = "Event", menuName = "ScriptableObjects/Event", order = 1)]
+public class SC_Event : ScriptableObject
 {
     //Fonction Var
     protected bool m_isGettingProcessed = false;
@@ -9,14 +11,16 @@ public abstract class SC_Event : ScriptableObject
     protected float m_resolutionTimer = 0f;
 
     [SerializeField]
+    private float m_eventDuration = 0f;
+
+    [SerializeField]
     protected Profession m_profession;
 
     [SerializeField]
-    protected EventAction m_eventAction;
+    protected List<EventAction> m_eventAction = new List<EventAction>();
 
     [SerializeField]
     protected bool m_isVisible = true;
-
 
     //Graphic Var
     [SerializeField]
@@ -35,11 +39,25 @@ public abstract class SC_Event : ScriptableObject
     public float ResolutionTimer { get { return m_resolutionTimer; } set { m_resolutionTimer = value; } }
     public Profession Profession { get { return m_profession; }}
     public bool IsGettingProcessed { get { return m_isGettingProcessed; } set { m_isGettingProcessed = value; } }
+    public List<EventAction> EventAction {  get { return m_eventAction; } set { m_eventAction = value; } }
     public bool IsVisible { get { return m_isVisible; } }
     public Sprite Icon { get { return m_icon; }}
     public string Name { get { return m_name; }}
     public Rooms Room { get { return m_room; } }
     public Color Dificulty {  get { return m_dificulty; }}
 
-    public abstract ResultEndEvent UpdateEvent();
+    public ResultEndEvent UpdateEvent()
+    {
+        m_eventDuration -= Time.deltaTime;
+        if (m_eventDuration <= 0f)
+        {
+            return ResultEndEvent.GameOver;
+        }
+
+        for (int i = 0; i < m_eventAction.Count; i++)
+        {
+            SC_EventActionManager.Instance.Action(m_eventAction[i]);
+        }
+        return ResultEndEvent.Nothing;
+    }
 }

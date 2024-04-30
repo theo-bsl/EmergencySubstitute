@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d28aa68e2b0d4da43bf7c4746dc4bb94, type: 3}
-  m_Name: EventHunger
+  m_Name: EventNotEnoughDioxygene
   m_EditorClassIdentifier: 
-  m_resolutionTimer: 10
+  m_resolutionTimer: 0
   m_eventDuration: Infinity
-  m_profession: 2
-  m_eventAction:
-  - EventActionType: 4
-    EventActionValue: 1
-  m_isVisible: 1
+  m_profession: 0
+  m_eventAction: []
+  m_isVisible: 0
   m_icon: {fileID: 0}
-  m_name: Faim
-  m_room: 2
+  m_name: "manque d'oxyg\xE8ne"
+  m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

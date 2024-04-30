@@ -25,9 +25,10 @@ public class SC_ProblemsManager : MonoBehaviour
         SO_Problem Problem = PickProblem(PoolOfProblems);
         if (Problem != null)
         {
-            for (int i = 0; i < Problem.Events.Count; i++)
+            Problem.ConfigureEvents();
+            for (int i = 0; i < Problem.EventConfigurations.Count; i++)
             {
-                SC_EventManager.Instance.SpawnEvent(Problem.Events[i]);
+                SC_EventManager.Instance.SpawnEvent(Problem.EventConfigurations[i].SC_Event);
             }
 
 

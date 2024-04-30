@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class SC_GameManager : MonoBehaviour
 {
     public static SC_GameManager Instance;
+    
     [SerializeField]
     private List<int> m_timeline;
     private int m_indexTimeline = 0;
@@ -25,10 +26,11 @@ public class SC_GameManager : MonoBehaviour
     }
     private void Start()
     {
-        m_eventManager = SC_EventManager.Instance;
-        m_eventManager.GameOverEvent.AddListener(Lose);
+        SC_EventManager.Instance.GameOverEvent.AddListener(Lose);
         
         m_problemManager = SC_ProblemsManager.Instance;
+        
+        SC_StarshipManager.Instance.Win.AddListener(Win);
         
         CalculateNextEventTime();
     }
