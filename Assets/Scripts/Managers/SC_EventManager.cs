@@ -65,7 +65,6 @@ public class SC_EventManager : MonoBehaviour
                     m_nbCrisisEvent++;
                 }
 
-                Debug.Log("Spawn");
                 if (InstantiatedEvent.IsVisible)
                 {
                     m_newEvent.Invoke(InstantiatedEvent);
@@ -119,7 +118,6 @@ public class SC_EventManager : MonoBehaviour
     {
         if (ResultEndEvent == ResultEndEvent.GameOver)
         {
-            Debug.Log(Event.Name + " killed you !");
             DestroyEvent(Event);
             m_gameOverEvent.Invoke(Event.Name + " killed you !");
         }

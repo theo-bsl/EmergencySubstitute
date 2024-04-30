@@ -21,7 +21,8 @@ public class SC_ProblemsManager : MonoBehaviour
 
     public void CreateProblem()
     {
-        List<SO_Problem> PoolOfProblems = m_problems;
+        List<SO_Problem> PoolOfProblems = new List<SO_Problem>();
+        PoolOfProblems.AddRange(m_problems);
         SO_Problem Problem = PickProblem(PoolOfProblems);
         if (Problem != null)
         {
@@ -85,7 +86,7 @@ public class SC_ProblemsManager : MonoBehaviour
         {
             for (int j = 0; j < ActiveEvents.Count; j++)
             {
-                if (BlockerEvents[i] == ActiveEvents[j])
+                if (BlockerEvents[i].Name == ActiveEvents[j].Name)
                 {
                     return true;
                 }
