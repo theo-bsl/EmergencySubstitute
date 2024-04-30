@@ -35,6 +35,9 @@ public class SC_StarshipController : MonoBehaviour
     [SerializeField] private SC_InteractableLeverSwitch m_switch3;
     [SerializeField] private SC_InteractableLeverSwitch m_switch4;
     [SerializeField] private SC_InteractableLeverSwitch m_switch5;
+    [SerializeField] private GameObject m_screen;
+    [SerializeField] private Animator m_animator;
+    private bool m_isZooming = false;
     private Vector3 m_dragDist;
     private bool m_dragging;
 
@@ -244,6 +247,11 @@ public class SC_StarshipController : MonoBehaviour
         else if (hit.collider == m_sideButton7.GetComponent<Collider>())
         {
             m_sideButton7.OnButtonPressed();
+        }
+        else if (hit.collider == m_screen.GetComponent<Collider>())
+        {
+            m_isZooming = !m_isZooming;
+            m_animator.SetBool("ZoomInScreen", m_isZooming);
         }
         return Physics.Raycast(m_camera.transform.position, dir, Mathf.Infinity);
     }
