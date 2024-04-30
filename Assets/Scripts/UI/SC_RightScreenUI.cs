@@ -11,6 +11,14 @@ public class SC_RightScreenUI : MonoBehaviour
     [SerializeField] private Sprite _gaugeContainerBlue;
     [SerializeField] private Sprite _gaugeContainerOrange;
     [SerializeField] private Sprite _gaugeContainerRed;
+    [SerializeField] private Image _crewContainer;
+    [SerializeField] private Image _shipContainer;
+    [SerializeField] private Image _container3;
+    [SerializeField] private Image _container4;
+    [SerializeField] private Image _container5;
+    [SerializeField] private Sprite _blueContainer;
+    [SerializeField] private Sprite _yellowContainer;
+    [SerializeField] private Sprite _redContainer;
 
     private void Start()
     {
