@@ -8,6 +8,9 @@ public class SC_CrisisGaugeManager : MonoBehaviour
     private float m_waitTime;
     [SerializeField] private float m_timeToWaitBeforeDecreaseGauge;
 
+    private string m_loseMessage = "PAAAAANIQUE !!!!";
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,7 +27,7 @@ public class SC_CrisisGaugeManager : MonoBehaviour
         m_percentage += percentage * Time.deltaTime;
         if (m_percentage >= 100)
         {
-            SC_GameManager.Instance.Lose();
+            SC_GameManager.Instance.Lose(m_loseMessage);
         }
     }
 

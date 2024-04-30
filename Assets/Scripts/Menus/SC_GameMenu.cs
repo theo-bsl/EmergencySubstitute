@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class SC_GameMenu : MonoBehaviour
@@ -18,10 +19,9 @@ public class SC_GameMenu : MonoBehaviour
     private GameObject m_winMenu;
 
     [SerializeField]
-    private GameObject m_loseMenu;
+    private TextMeshProUGUI m_loseMessage;
 
     public bool InMenu { get { return m_inMenu; } }
-
     private void Start()
     {
         CloseAllMenus();
@@ -63,8 +63,9 @@ public class SC_GameMenu : MonoBehaviour
         m_winMenu.SetActive(true);
     }
 
-    private void ShowLoseMenu()
+    private void ShowLoseMenu(string LoseMessage)
     {
-        m_loseMenu.SetActive(true);
+        m_loseMessage.text = LoseMessage;
+        m_loseMessage.transform.parent.gameObject.SetActive(true);
     }
 }
