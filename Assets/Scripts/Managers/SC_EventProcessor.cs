@@ -10,6 +10,9 @@ public class SC_EventProcessor : MonoBehaviour
     //SO_Character = Character, float = EventDuration, float = WorkTime
     private UnityEvent<SO_Character, float, float> m_updateCharacterWorkTime = new UnityEvent<SO_Character, float, float>();
 
+    //SC_Event = Event (this event is used to update the character that is shown on the event in the map)
+    private UnityEvent<SC_Event> m_updateCharacterAttribution = new UnityEvent<SC_Event>();
+
     private void Awake()
     {
         if (Instance == null)
@@ -78,6 +81,10 @@ public class SC_EventProcessor : MonoBehaviour
                 {
                     SC_EventManager.Instance.DestroyEvent(Event);
                 }
+                else
+                {
+                    m_updateCharacterAttribution.Invoke(Event);
+                }
             }
             else
             {
@@ -90,9 +97,11 @@ public class SC_EventProcessor : MonoBehaviour
                     SC_EventManager.Instance.DestroyEvent(Event);
                 }
             }
+            Event.IsGettingProcessed = false;
         }
 
         yield return null;
     }
     public UnityEvent<SO_Character, float, float> UpdateCharacterWorkTime { get { return m_updateCharacterWorkTime; } }
+    public UnityEvent<SC_Event> UpdateCharacterAttribution {  get { return m_updateCharacterAttribution; } }
 }
