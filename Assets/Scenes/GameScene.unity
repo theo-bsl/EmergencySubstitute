@@ -261,9 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc4d209c7ea8774599367e779696b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_updateCharacterWorkTime:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &398745432
 GameObject:
   m_ObjectHideFlags: 0

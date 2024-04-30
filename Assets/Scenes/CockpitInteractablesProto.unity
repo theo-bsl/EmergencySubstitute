@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &513324451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1261112435149368, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_Name
+      value: Skybox_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097872901787916, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 061d872e8801dbb4c8efc0820bdc4786, type: 3}
 --- !u!1 &543235399
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,16 +403,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_accelerator: {fileID: 1365883810}
-  m_orientationL: {fileID: 1326121577}
-  m_orientationR: {fileID: 1625136322}
-  m_circuitBreaker: {fileID: 596120859}
   m_heater: {fileID: 1480524035}
-  m_radio: {fileID: 1468022572}
-  m_joystick: {fileID: 810210359}
-  m_lights: {fileID: 1889372291}
-  m_radioFrequency: {fileID: 1625432843}
-  m_microphone: {fileID: 1219082732}
-  m_ADF: {fileID: 1497226644}
+  m_oxygen: {fileID: 0}
+  m_pressure: {fileID: 0}
+  m_lever: {fileID: 0}
+  m_lever2: {fileID: 0}
+  m_buttonUp1: {fileID: 0}
+  m_buttonUp2: {fileID: 0}
+  m_buttonA1: {fileID: 0}
+  m_buttonA2: {fileID: 0}
+  m_buttonA3: {fileID: 0}
+  m_buttonB1: {fileID: 0}
+  m_buttonB2: {fileID: 0}
+  m_buttonB3: {fileID: 0}
+  m_buttonC1: {fileID: 0}
+  m_buttonC2: {fileID: 0}
+  m_buttonC3: {fileID: 0}
+  m_buttonD1: {fileID: 0}
+  m_buttonD2: {fileID: 0}
+  m_buttonD3: {fileID: 0}
+  m_sideButton1: {fileID: 0}
+  m_sideButton2: {fileID: 0}
+  m_sideButton3: {fileID: 0}
+  m_sideButton4: {fileID: 0}
+  m_sideButton5: {fileID: 0}
+  m_sideButton6: {fileID: 0}
+  m_sideButton7: {fileID: 0}
+  m_switch1: {fileID: 0}
+  m_switch2: {fileID: 0}
+  m_switch3: {fileID: 0}
+  m_switch4: {fileID: 0}
+  m_switch5: {fileID: 0}
 --- !u!114 &990156064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,6 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29905a71cd33aab4ca72785dffb51271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_events: []
 --- !u!4 &1612983090
 Transform:
   m_ObjectHideFlags: 0
@@ -1036,3 +1115,4 @@ SceneRoots:
   - {fileID: 1008028837}
   - {fileID: 990156062}
   - {fileID: 543235401}
+  - {fileID: 513324451}
