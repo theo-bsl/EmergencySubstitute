@@ -17,7 +17,7 @@ MonoBehaviour:
   m_profession: 3
   m_eventAction: []
   m_isVisible: 1
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: aab855b24248a66488d8eb184fccc6f8, type: 3}
   m_name: Epidemie
   m_room: 3
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

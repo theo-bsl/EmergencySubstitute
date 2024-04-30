@@ -4,14 +4,14 @@ using UnityEngine;
 public class SC_CharacterMenuManager : MonoBehaviour
 {
     [SerializeField]
-    private List<SC_UICharacter> m_characters = new List<SC_UICharacter>();
+    private List<SC_CharacterIcon> m_characters = new List<SC_CharacterIcon>();
 
     private void Start()
     {
         for (int i = 0; i < m_characters.Count; i++)
         {
             SO_Character Character = SC_CharacterManager.Instance.Characters[i];
-            m_characters[i].InitCharacter(Character.Name, Character.Icon);
+            m_characters[i].InitCharacterIcon(Character);
         }
 
         SC_EventProcessor.Instance.UpdateCharacterWorkTime.AddListener(UpdateWorkTime);
