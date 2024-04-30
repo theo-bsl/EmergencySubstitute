@@ -14,8 +14,8 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: EmergencySubstitute
-  defaultCursor: {fileID: 2800000, guid: 25f6b132f8b37924aa62a4447f36d42d, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  defaultCursor: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
+  cursorHotspot: {x: 20, y: 20}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
