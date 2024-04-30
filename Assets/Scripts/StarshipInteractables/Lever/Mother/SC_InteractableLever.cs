@@ -17,6 +17,7 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
     [SerializeField] private Texture2D m_mouseLeverHoverTexture;
     [SerializeField] private Texture2D m_mouseLeverDragTexture;
     [SerializeField] private Texture2D m_baseMouseTexture;
+    private Vector2 m_mouseCenter = new Vector2(20, 20);
 
     private void Awake()
     {
@@ -69,17 +70,17 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
     {
         if (!m_hasBeenChosen)
         {
-            Cursor.SetCursor(m_mouseLeverHoverTexture, new Vector2(20,20), CursorMode.Auto);
+            Cursor.SetCursor(m_mouseLeverHoverTexture, m_mouseCenter, CursorMode.Auto);
         }
         else
         {
-            Cursor.SetCursor(m_mouseLeverDragTexture, new Vector2(20,20), CursorMode.Auto);
+            Cursor.SetCursor(m_mouseLeverDragTexture, m_mouseCenter, CursorMode.Auto);
         }
     }
 
     private void OnMouseExit()
     {
         if (!m_hasBeenChosen)
-            Cursor.SetCursor(m_baseMouseTexture, new Vector2(20, 20), CursorMode.Auto);
+            Cursor.SetCursor(m_baseMouseTexture, m_mouseCenter, CursorMode.Auto);
     }
 }

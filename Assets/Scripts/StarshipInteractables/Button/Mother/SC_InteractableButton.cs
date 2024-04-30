@@ -9,6 +9,7 @@ public abstract class SC_InteractableButton : SC_StarshipInteractable
     [SerializeField] private Texture2D m_mouseButtonHoverTexture;
     [SerializeField] private Texture2D m_mouseButtonClickTexture;
     [SerializeField] private Texture2D m_baseMouseTexture;
+    private Vector2 m_mouseCenter = new Vector2(20,20);
 
     private void Awake()
     {
@@ -32,16 +33,16 @@ public abstract class SC_InteractableButton : SC_StarshipInteractable
     {
         if (!m_hasBeenChosen)
         {
-            Cursor.SetCursor(m_mouseButtonHoverTexture, new Vector2(20, 20), CursorMode.Auto);
+            Cursor.SetCursor(m_mouseButtonHoverTexture, m_mouseCenter, CursorMode.Auto);
         }
         else
         {
-            Cursor.SetCursor(m_mouseButtonClickTexture, new Vector2(20, 20), CursorMode.Auto);
+            Cursor.SetCursor(m_mouseButtonClickTexture, m_mouseCenter, CursorMode.Auto);
         }
     }
 
     private void OnMouseExit()
     {
-        Cursor.SetCursor(m_baseMouseTexture, new Vector2(20, 20), CursorMode.Auto);
+        Cursor.SetCursor(m_baseMouseTexture, m_mouseCenter, CursorMode.Auto);
     }
 }
