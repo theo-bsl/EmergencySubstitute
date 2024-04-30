@@ -15,6 +15,7 @@ MonoBehaviour:
   m_resolutionTimer: 60
   m_eventDuration: Infinity
   m_profession: 0
+  m_starshipState: 2
   m_eventAction:
   - EventActionType: 3
     EventActionValue: -1

@@ -94,6 +94,8 @@ GameObject:
   - component: {fileID: 4890983395974382}
   - component: {fileID: 33720534396539452}
   - component: {fileID: 23373129344444116}
+  - component: {fileID: 4425913834825940673}
+  - component: {fileID: 1823432882500850791}
   m_Layer: 0
   m_Name: CockpitEquipments_Button4-5
   m_TagString: Untagged
@@ -166,6 +168,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4425913834825940673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017576715294374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &1823432882500850791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017576715294374}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.031206997, y: 0.00415398, z: 0.009042969}
+  m_Center: {x: 0, y: -0.00000023841858, z: 0}
 --- !u!1 &1037055224290210
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +298,8 @@ GameObject:
   - component: {fileID: 4800033867179070}
   - component: {fileID: 33206631938287644}
   - component: {fileID: 23057406435828740}
+  - component: {fileID: 7819047335133778488}
+  - component: {fileID: 2643379175113706052}
   m_Layer: 0
   m_Name: CockpitEquipments_Button4-6
   m_TagString: Untagged
@@ -332,6 +372,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7819047335133778488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069603725134158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &2643379175113706052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069603725134158}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.031206997, y: 0.00415398, z: 0.009042969}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1072200920100400
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +585,8 @@ GameObject:
   - component: {fileID: 4461257934423660}
   - component: {fileID: 33661947394950390}
   - component: {fileID: 23126720129995186}
+  - component: {fileID: 2667624863936140121}
+  - component: {fileID: 8831854187778361836}
   m_Layer: 0
   m_Name: CockpitEquipments_Button4-4
   m_TagString: Untagged
@@ -581,6 +659,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2667624863936140121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111103821061344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &8831854187778361836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111103821061344}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.031206997, y: 0.00415398, z: 0.009042969}
+  m_Center: {x: 0, y: -0.00000023841858, z: 0.00000047683716}
 --- !u!1 &1142884884712948
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +789,8 @@ GameObject:
   - component: {fileID: 4133010129092332}
   - component: {fileID: 33578292080727638}
   - component: {fileID: 23667553376899820}
+  - component: {fileID: 6924261307237839923}
+  - component: {fileID: 5263898487650994398}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch1-2
   m_TagString: Untagged
@@ -691,7 +807,7 @@ Transform:
   m_GameObject: {fileID: 1160076271026490}
   serializedVersion: 2
   m_LocalRotation: {x: -0.18692729, y: 0.4706014, z: -0.10115233, w: 0.85636485}
-  m_LocalPosition: {x: -0.4092, y: -0.1089, z: -0.9701004}
+  m_LocalPosition: {x: -0.4318, y: -0.0357, z: -0.8098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -747,6 +863,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6924261307237839923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160076271026490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f735828b00f8a4cb6a35d76867fc49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &5263898487650994398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160076271026490}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0727511, y: 0.07595147, z: 0.06181097}
+  m_Center: {x: -0.016301984, y: -4.026057e-10, z: 0.0000000018098204}
 --- !u!1 &1168394374627820
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +912,8 @@ GameObject:
   - component: {fileID: 4156849312914196}
   - component: {fileID: 33183143715414680}
   - component: {fileID: 23268006496692980}
+  - component: {fileID: 8811615375119028951}
+  - component: {fileID: 7427775533759220091}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-1
   m_TagString: Untagged
@@ -830,6 +986,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8811615375119028951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168394374627820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &7427775533759220091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168394374627820}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1168450754309862
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +1151,8 @@ GameObject:
   - component: {fileID: 4887795131684880}
   - component: {fileID: 33298681426054132}
   - component: {fileID: 23357663633103144}
+  - component: {fileID: 2635280311194591375}
+  - component: {fileID: 3560779492165896233}
   m_Layer: 0
   m_Name: CockpitEquipments_Button4-3
   m_TagString: Untagged
@@ -1031,6 +1225,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2635280311194591375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184447347210110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &3560779492165896233
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184447347210110}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.031206997, y: 0.00415398, z: 0.009042969}
+  m_Center: {x: 0, y: -0.00000023841858, z: 0}
 --- !u!1 &1192740203084828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1272,8 @@ GameObject:
   - component: {fileID: 4876903838890718}
   - component: {fileID: 33982110220980064}
   - component: {fileID: 23890796029281896}
+  - component: {fileID: 7662113875769001061}
+  - component: {fileID: 1464814672914769817}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch1-1
   m_TagString: Untagged
@@ -1058,7 +1290,7 @@ Transform:
   m_GameObject: {fileID: 1192740203084828}
   serializedVersion: 2
   m_LocalRotation: {x: -0.21643952, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: -0.4742, y: -0.1089, z: -0.9701004}
+  m_LocalPosition: {x: -0.4417, y: -0.0691, z: -0.8846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1114,6 +1346,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7662113875769001061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192740203084828}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.054182, y: 0.022352051, z: 0.055018004}
+  m_Center: {x: 0.0000000027939677, y: -4.656613e-10, z: 0}
+--- !u!114 &1464814672914769817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192740203084828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80785af4df575b48adec8528bd73260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &1205894175047900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1566,8 @@ GameObject:
   - component: {fileID: 4593790423127764}
   - component: {fileID: 33185417322170434}
   - component: {fileID: 23969991739764634}
+  - component: {fileID: 1884609135022241659}
+  - component: {fileID: 1832652645936081249}
   m_Layer: 0
   m_Name: CockpitEquipments_Button7
   m_TagString: Untagged
@@ -1368,6 +1640,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1884609135022241659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244928253050104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &1832652645936081249
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244928253050104}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355641, y: 0.0068274457, z: 0.026355643}
+  m_Center: {x: 0, y: -0.00000023841858, z: -0.0000009536743}
 --- !u!1 &1254115263499000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1803,8 @@ GameObject:
   - component: {fileID: 4477373221914630}
   - component: {fileID: 33425037045028230}
   - component: {fileID: 23985936506956944}
+  - component: {fileID: 6399623357542603524}
+  - component: {fileID: 8843032126442652772}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-7
   m_TagString: Untagged
@@ -1567,6 +1877,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6399623357542603524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312314941756628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &8843032126442652772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312314941756628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1331410884666426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1924,8 @@ GameObject:
   - component: {fileID: 4541680877112428}
   - component: {fileID: 33468473061917418}
   - component: {fileID: 23581026281790626}
+  - component: {fileID: 3837979708331681858}
+  - component: {fileID: 8670203508330400006}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-10
   m_TagString: Untagged
@@ -1650,6 +1998,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3837979708331681858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331410884666426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &8670203508330400006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331410884666426}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1333593203885146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +2045,8 @@ GameObject:
   - component: {fileID: 4696320106837922}
   - component: {fileID: 33618106305807302}
   - component: {fileID: 23402096026816374}
+  - component: {fileID: 4782815075764116430}
+  - component: {fileID: 5767911193948549696}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-2
   m_TagString: Untagged
@@ -1733,6 +2119,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4782815075764116430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333593203885146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &5767911193948549696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333593203885146}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1347898868842504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +2166,8 @@ GameObject:
   - component: {fileID: 4653126885321144}
   - component: {fileID: 33908410294914134}
   - component: {fileID: 23283676127988720}
+  - component: {fileID: 6717156539098284272}
+  - component: {fileID: 2663866922234161442}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch2-1
   m_TagString: Untagged
@@ -1816,6 +2240,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6717156539098284272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347898868842504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1bbdde2fe93c94283d8bd4194442c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &2663866922234161442
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347898868842504}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.054182, y: 0.026112044, z: 0.05501802}
+  m_Center: {x: 0, y: -9.313228e-10, z: 0.000000009313226}
 --- !u!1 &1350031909469762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +2289,8 @@ GameObject:
   - component: {fileID: 4264059707384082}
   - component: {fileID: 33109198612410202}
   - component: {fileID: 23907784767677766}
+  - component: {fileID: 3809870131045443634}
+  - component: {fileID: 1880874133408831106}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch2-3
   m_TagString: Untagged
@@ -1899,6 +2363,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3809870131045443634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350031909469762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1bbdde2fe93c94283d8bd4194442c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &1880874133408831106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350031909469762}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.054182, y: 0.026112039, z: 0.055018004}
+  m_Center: {x: -0.000000007450581, y: -9.313226e-10, z: 0.0000000018626451}
 --- !u!1 &1358794444735162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +2412,8 @@ GameObject:
   - component: {fileID: 4610901643236960}
   - component: {fileID: 33409061303317274}
   - component: {fileID: 23065538422041718}
+  - component: {fileID: 5402958804365423674}
+  - component: {fileID: 3036956495488482939}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-4
   m_TagString: Untagged
@@ -1982,6 +2486,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5402958804365423674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358794444735162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.032041002, y: 0.02797899, z: 0.01657623}
+  m_Center: {x: 0, y: 0.0057019615, z: 0.00000047683716}
+--- !u!114 &3036956495488482939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358794444735162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &1367871687056184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,6 +2535,8 @@ GameObject:
   - component: {fileID: 4604352576073732}
   - component: {fileID: 33121675667469666}
   - component: {fileID: 23524671320640694}
+  - component: {fileID: 7955829647269608705}
+  - component: {fileID: 2190338413557844944}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-3
   m_TagString: Untagged
@@ -2065,6 +2609,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7955829647269608705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367871687056184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &2190338413557844944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367871687056184}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1412403527189412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,6 +2657,7 @@ GameObject:
   - component: {fileID: 33477700686416810}
   - component: {fileID: 23386512325320948}
   - component: {fileID: 2205926958754767103}
+  - component: {fileID: 5951787700300863800}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-1
   m_TagString: Untagged
@@ -2170,6 +2751,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.032041002, y: 0.027979, z: 0.016576236}
   m_Center: {x: 0, y: 0.0057019633, z: 0}
+--- !u!114 &5951787700300863800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412403527189412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &1415473733803048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,7 +2777,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4142973414190356}
-  - component: {fileID: 6174746465043883476}
   m_Layer: 0
   m_Name: CockpitEquipments_Buttons
   m_TagString: Untagged
@@ -2196,7 +2793,7 @@ Transform:
   m_GameObject: {fileID: 1415473733803048}
   serializedVersion: 2
   m_LocalRotation: {x: -0.21643952, y: 0, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: -0.4495, y: -0.1553, z: -1.048}
+  m_LocalPosition: {x: -0.4495, y: -0.1515, z: -1.0498}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2221,27 +2818,6 @@ Transform:
   - {fileID: 4593790423127764}
   m_Father: {fileID: 4712275422966510}
   m_LocalEulerAnglesHint: {x: -25, y: 0, z: 0}
---- !u!65 &6174746465043883476
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415473733803048}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22436023, y: 0.021186452, z: 0.15008047}
-  m_Center: {x: -0.04849589, y: -0.024923602, z: -0.01754648}
 --- !u!1 &1419078004907126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2829,8 @@ GameObject:
   - component: {fileID: 4121769237608558}
   - component: {fileID: 33006387650359260}
   - component: {fileID: 23047830752719230}
+  - component: {fileID: 3911334062083641940}
+  - component: {fileID: 5119680468032289395}
   m_Layer: 0
   m_Name: CockpitEquipments_Button4-2
   m_TagString: Untagged
@@ -2325,6 +2903,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3911334062083641940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419078004907126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &5119680468032289395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419078004907126}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.031206997, y: 0.00415398, z: 0.009042969}
+  m_Center: {x: 0, y: 0, z: 0.00000047683716}
 --- !u!1 &1425557840447360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,6 +3199,8 @@ GameObject:
   - component: {fileID: 4078308279140300}
   - component: {fileID: 33755374736913526}
   - component: {fileID: 23334241443251178}
+  - component: {fileID: 1125035253884386672}
+  - component: {fileID: 3382562564690142099}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-3
   m_TagString: Untagged
@@ -2657,6 +3273,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1125035253884386672
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466316065527910}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.032041002, y: 0.027979001, z: 0.016576238}
+  m_Center: {x: 0, y: 0.005701487, z: -0.000000007450581}
+--- !u!114 &3382562564690142099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466316065527910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &1476175444296818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,6 +3438,8 @@ GameObject:
   - component: {fileID: 4128105491739090}
   - component: {fileID: 33531584929962002}
   - component: {fileID: 23006718686024736}
+  - component: {fileID: 6412883056235402764}
+  - component: {fileID: 5131263479681966123}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-11
   m_TagString: Untagged
@@ -2856,6 +3512,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6412883056235402764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506196927802040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &5131263479681966123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506196927802040}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1527365657584238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,7 +3557,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4338904909743048}
-  - component: {fileID: 6212521291943337675}
   m_Layer: 0
   m_Name: CockpitEquipments_Switchs
   m_TagString: Untagged
@@ -2898,27 +3589,6 @@ Transform:
   - {fileID: 4450846772635718}
   m_Father: {fileID: 4712275422966510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6212521291943337675
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527365657584238}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.13122171, y: 0.07595147, z: 0.06181097}
-  m_Center: {x: -0.44226924, y: -0.1244669, z: -0.957217}
 --- !u!1 &1544629848752064
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,6 +4140,8 @@ GameObject:
   - component: {fileID: 4450846772635718}
   - component: {fileID: 33199848119558380}
   - component: {fileID: 23043159191924768}
+  - component: {fileID: 314177225519742672}
+  - component: {fileID: 2469563192024076470}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-5
   m_TagString: Untagged
@@ -3542,6 +4214,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &314177225519742672
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700603644631456}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.032041002, y: 0.027979001, z: 0.016576238}
+  m_Center: {x: 0, y: 0.005701487, z: -0.000000007450581}
+--- !u!114 &2469563192024076470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700603644631456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &1719174227881730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,6 +4379,8 @@ GameObject:
   - component: {fileID: 4722088569725454}
   - component: {fileID: 33778116737882012}
   - component: {fileID: 23816489850596934}
+  - component: {fileID: 4114405632267880406}
+  - component: {fileID: 4618893115440495612}
   m_Layer: 0
   m_Name: CockpitEquipments_Button5
   m_TagString: Untagged
@@ -3741,6 +4453,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4114405632267880406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746510758905526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &4618893115440495612
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746510758905526}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03120693, y: 0.004153719, z: 0.00904386}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1746930763178324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3752,6 +4500,8 @@ GameObject:
   - component: {fileID: 4767559633764364}
   - component: {fileID: 33781102128671124}
   - component: {fileID: 23732981520003870}
+  - component: {fileID: 5575047287051357180}
+  - component: {fileID: 3000840436704624919}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-6
   m_TagString: Untagged
@@ -3824,6 +4574,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5575047287051357180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746930763178324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &3000840436704624919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746930763178324}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1756053164346478
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,6 +4622,7 @@ GameObject:
   - component: {fileID: 33584431447260352}
   - component: {fileID: 23478123724595254}
   - component: {fileID: 9101847987839013202}
+  - component: {fileID: 6863826680352942}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch2-2
   m_TagString: Untagged
@@ -3851,13 +4638,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756053164346478}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.66014105, y: 0.25340447, z: -0.25340447, w: 0.66014105}
-  m_LocalPosition: {x: -0.226, y: 0.0435, z: -0.53999996}
+  m_LocalRotation: {x: -0.1902243, y: 0.16741014, z: -0.010975557, w: 0.96729946}
+  m_LocalPosition: {x: -0.421, y: -0.011, z: -0.758}
   m_LocalScale: {x: 0.79999995, y: 0.8000005, z: 0.8000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4338904909743048}
-  m_LocalEulerAnglesHint: {x: -132, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: 201.367, y: 200.625, z: 174.768}
 --- !u!33 &33584431447260352
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3929,6 +4716,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.054182004, y: 0.02611205, z: 0.055018008}
   m_Center: {x: -1.2979965e-16, y: -9.313227e-10, z: 0.000000009313226}
+--- !u!114 &6863826680352942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756053164346478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d051b89287d00284c8c030fae9c32fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 1, y: 0, z: 0}
+  m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &1763636467555970
 GameObject:
   m_ObjectHideFlags: 0
@@ -4043,7 +4847,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4798066205335570}
-  - component: {fileID: 497966081198528563}
   m_Layer: 0
   m_Name: CockpitEquipments_Screens
   m_TagString: Untagged
@@ -4072,27 +4875,6 @@ Transform:
   - {fileID: 1502987367686884309}
   m_Father: {fileID: 4712275422966510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &497966081198528563
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791632528168832}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.08047217, y: 0.10826498, z: 0.19308329}
-  m_Center: {x: 0.0023835618, y: -0.0019316524, z: -0.0037863255}
 --- !u!1 &1793729247790070
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,6 +4886,8 @@ GameObject:
   - component: {fileID: 4716703009786294}
   - component: {fileID: 33087801319397540}
   - component: {fileID: 23872224454511784}
+  - component: {fileID: 5664288077714278511}
+  - component: {fileID: 7388602291163855170}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-9
   m_TagString: Untagged
@@ -4176,6 +4960,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5664288077714278511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793729247790070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &7388602291163855170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793729247790070}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1833182583675616
 GameObject:
   m_ObjectHideFlags: 0
@@ -4187,6 +5007,8 @@ GameObject:
   - component: {fileID: 4359131740241536}
   - component: {fileID: 33612288649642550}
   - component: {fileID: 23156690965439828}
+  - component: {fileID: 94571868698644747}
+  - component: {fileID: 3681011050524585582}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-8
   m_TagString: Untagged
@@ -4259,6 +5081,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &94571868698644747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833182583675616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &3681011050524585582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833182583675616}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1838459809671750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,6 +5128,8 @@ GameObject:
   - component: {fileID: 4000945908947874}
   - component: {fileID: 33219362633309432}
   - component: {fileID: 23773541824433860}
+  - component: {fileID: 7854597317692444737}
+  - component: {fileID: 810022372750720584}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-2
   m_TagString: Untagged
@@ -4342,6 +5202,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7854597317692444737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838459809671750}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.032041002, y: 0.02797899, z: 0.01657623}
+  m_Center: {x: 0, y: 0.0057019615, z: 0.00000047683716}
+--- !u!114 &810022372750720584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838459809671750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &1856734915530114
 GameObject:
   m_ObjectHideFlags: 0
@@ -4436,6 +5334,8 @@ GameObject:
   - component: {fileID: 4446828329232208}
   - component: {fileID: 33092600611551806}
   - component: {fileID: 23512916480385616}
+  - component: {fileID: 8049251306864862706}
+  - component: {fileID: 4249354468384241302}
   m_Layer: 0
   m_Name: CockpitEquipments_Button4-1
   m_TagString: Untagged
@@ -4508,6 +5408,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8049251306864862706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888846929154768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &4249354468384241302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888846929154768}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.031206997, y: 0.00415398, z: 0.009042969}
+  m_Center: {x: 0, y: 0.00000023841858, z: 0}
 --- !u!1 &1904669629141470
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,6 +5843,8 @@ GameObject:
   - component: {fileID: 4858807933232368}
   - component: {fileID: 33976242069669176}
   - component: {fileID: 23622519669219580}
+  - component: {fileID: 1010407725828274701}
+  - component: {fileID: 1959742036178940610}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-4
   m_TagString: Untagged
@@ -4979,6 +5917,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1010407725828274701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945190834885512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &1959742036178940610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945190834885512}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1968491674338212
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,6 +5964,8 @@ GameObject:
   - component: {fileID: 4822108121033716}
   - component: {fileID: 33316073159538768}
   - component: {fileID: 23936945072414644}
+  - component: {fileID: 1080117858797049656}
+  - component: {fileID: 4731811502012248360}
   m_Layer: 0
   m_Name: CockpitEquipments_Button6-5
   m_TagString: Untagged
@@ -5062,6 +6038,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1080117858797049656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968491674338212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
+--- !u!65 &4731811502012248360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968491674338212}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.026355999, y: 0.0068280124, z: 0.026354978}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1971305322074638
 GameObject:
   m_ObjectHideFlags: 0
@@ -5140,6 +6152,7 @@ GameObject:
   - component: {fileID: 4323408824104945538}
   - component: {fileID: 2464680807590826866}
   - component: {fileID: 1170179651169843491}
+  - component: {fileID: 4351050923119134479}
   m_Layer: 0
   m_Name: CockpitEquipments_Button7 (1)
   m_TagString: Untagged
@@ -5233,6 +6246,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.029090438, y: 0.004885205, z: 0.031372987}
   m_Center: {x: -0.0044065327, y: -0.0024756219, z: 0.0020979366}
+--- !u!114 &4351050923119134479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901326098322537036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &2632253843060172427
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,6 +6271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520903645128405776}
   - component: {fileID: 1156769531610466450}
+  - component: {fileID: 316809433528952920}
   m_Layer: 0
   m_Name: CockpitEquipments_ThrottleControlPivot
   m_TagString: Untagged
@@ -5288,6 +6317,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.19663146, y: 0.18646611, z: 0.16153394}
   m_Center: {x: 0, y: 0.07861584, z: -0.000000002342935}
+--- !u!114 &316809433528952920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632253843060172427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62048bad7d59b248909c414ce9a1211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_dragDirectionMask: {x: 0, y: 1, z: 0}
+  m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_mouseLeverHoverTexture: {fileID: 0}
+  m_mouseLeverDragTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
 --- !u!1 &6853187483784304166
 GameObject:
   m_ObjectHideFlags: 0
@@ -5300,6 +6346,7 @@ GameObject:
   - component: {fileID: 4337762164323290866}
   - component: {fileID: 8463659679358170682}
   - component: {fileID: 7310876029744355393}
+  - component: {fileID: 2895654047155518966}
   m_Layer: 0
   m_Name: CockpitEquipments_Button7 (2)
   m_TagString: Untagged
@@ -5316,7 +6363,7 @@ Transform:
   m_GameObject: {fileID: 6853187483784304166}
   serializedVersion: 2
   m_LocalRotation: {x: -0.21643944, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: -0.3917, y: -0.0294, z: -0.0741}
+  m_LocalPosition: {x: -0.3893, y: -0.0294, z: -0.0741}
   m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5393,3 +6440,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.029090438, y: 0.004885205, z: 0.031372987}
   m_Center: {x: -0.0044065327, y: -0.0024756219, z: 0.0020979366}
+--- !u!114 &2895654047155518966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853187483784304166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mouseButtonHoverTexture: {fileID: 0}
+  m_mouseButtonClickTexture: {fileID: 0}
+  m_baseMouseTexture: {fileID: 0}
