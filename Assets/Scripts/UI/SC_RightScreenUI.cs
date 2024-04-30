@@ -1,43 +1,163 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SC_RightScreenUI : MonoBehaviour
 {
-    [SerializeField] private Image _gaugeContainer;
-    [SerializeField] private Image _gaugeFill;
-    [SerializeField] private Sprite _gaugeFillWhite;
-    [SerializeField] private Sprite _gaugeFillYellow;
-    [SerializeField] private Sprite _gaugeFillOrange;
-    [SerializeField] private Sprite _gaugeContainerBlue;
-    [SerializeField] private Sprite _gaugeContainerOrange;
-    [SerializeField] private Sprite _gaugeContainerRed;
-    [SerializeField] private Image _crewContainer;
-    [SerializeField] private Image _shipContainer;
-    [SerializeField] private Image _container3;
-    [SerializeField] private Image _container4;
-    [SerializeField] private Image _container5;
-    [SerializeField] private Sprite _blueContainer;
-    [SerializeField] private Sprite _yellowContainer;
-    [SerializeField] private Sprite _redContainer;
+    [SerializeField] private Image m_gaugeCurrentContainer;
+    [SerializeField] private Image m_gaugeCurrentFill;
+
+    [SerializeField] private List<Sprite> m_gaugeFill;
+
+    [SerializeField] private List<Sprite> m_gaugeContainer;
+
+    [SerializeField] private Image m_crewContainer;
+    private int m_nbCrewEvent = 0;
+    private int m_maxOrange = 3;
+    private int m_maxRed = 5;
+
+    [SerializeField] private Image m_armorContainer;
+    private int m_nbArmorEvent = 0;
+
+    [SerializeField] private Image m_enginesContainer;
+    private int m_nbEnginesEvent = 0;
+
+    [SerializeField] private Image m_commandsContainer;
+    private int m_nbCommandsEvent = 0;
+
+    [SerializeField] private Image m_systemContainer;
+    private int m_nbSystemEvents = 0;
+
+    [SerializeField] private List<Sprite> m_containerColor;
+    
+
+    private SC_CrisisGaugeManager m_gaugeManager;
+    private SC_EventManager m_eventManager;
 
     private void Start()
     {
-        _gaugeContainer.sprite = _gaugeContainerBlue;
-        _gaugeFill.sprite = _gaugeFillWhite;
+        m_gaugeCurrentContainer.sprite = m_gaugeContainer[0];
+        m_gaugeCurrentFill.sprite = m_gaugeFill[0];
+        m_crewContainer.sprite = m_containerColor[0];
+        m_armorContainer.sprite = m_containerColor[0];
+        m_enginesContainer.sprite = m_containerColor[0];
+        m_commandsContainer.sprite = m_containerColor[0];
+        m_systemContainer.sprite = m_containerColor[0];
+        m_gaugeManager = SC_CrisisGaugeManager.Instance;
+        m_eventManager = SC_EventManager.Instance;
+
+        m_eventManager.NewEvent.AddListener(NewEvent);
+        m_eventManager.DeleteEvent.AddListener(DeleteEvent);
     }
 
     private void Update()
     {
-        _gaugeFill.rectTransform.localScale = new Vector2(SC_CrisisGaugeManager.Instance.GetCrisisPercentage(),0);
-        if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 35 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 65)
+        m_gaugeCurrentFill.fillAmount = m_gaugeManager.GetCrisisPercentage() / 100;
+        if (m_gaugeManager.GetCrisisPercentage() >= 35 && m_gaugeManager.GetCrisisPercentage() < 65)
         {
-            _gaugeContainer.sprite = _gaugeContainerOrange;
-            _gaugeFill.sprite = _gaugeFillYellow;
+            m_gaugeCurrentContainer.sprite = m_gaugeContainer[1];
+            m_gaugeCurrentFill.sprite = m_gaugeFill[1];
         }
-        else if (SC_CrisisGaugeManager.Instance.GetCrisisPercentage() >= 65 && SC_CrisisGaugeManager.Instance.GetCrisisPercentage() < 100)
+        else if (m_gaugeManager.GetCrisisPercentage() >= 65 && m_gaugeManager.GetCrisisPercentage() < 100)
         {
-            _gaugeContainer.sprite = _gaugeContainerRed;
-            _gaugeFill.sprite = _gaugeFillOrange;
+            m_gaugeCurrentContainer.sprite = m_gaugeContainer[2];
+            m_gaugeCurrentFill.sprite = m_gaugeFill[2];
+        }
+    }
+
+    private void NewEvent(SC_Event Event)
+    {
+        ChangeLogos(Event, 1);
+    }
+
+    private void DeleteEvent(SC_Event Event)
+    {
+        ChangeLogos(Event, -1);
+    }
+
+    private void ChangeLogos(SC_Event Event, int ind)
+    {
+        switch (Event.StarshipState)
+        {
+            case StarshipState.CrewHealth:
+                m_nbCrewEvent += ind;
+                if (m_nbCrewEvent < m_maxOrange)
+                {
+                    m_crewContainer.sprite = m_containerColor[0];
+                }
+                else if (m_nbCrewEvent > m_maxRed)
+                {
+                    m_crewContainer.sprite = m_containerColor[2];
+                }
+                else
+                {
+                    m_crewContainer.sprite = m_containerColor[1];
+                }
+                break;
+
+            case StarshipState.Armor:
+                m_nbArmorEvent += ind;
+                if (m_nbArmorEvent < m_maxOrange)
+                {
+                    m_armorContainer.sprite = m_containerColor[0];
+                }
+                else if (m_nbArmorEvent > m_maxRed)
+                {
+                    m_armorContainer.sprite = m_containerColor[2];
+                }
+                else
+                {
+                    m_armorContainer.sprite = m_containerColor[1];
+                }
+                break;
+
+            case StarshipState.Engines:
+                m_nbEnginesEvent += ind;
+                if (m_nbEnginesEvent < m_maxOrange)
+                {
+                    m_enginesContainer.sprite = m_containerColor[0];
+                }
+                else if (m_nbEnginesEvent > m_maxRed)
+                {
+                    m_enginesContainer.sprite = m_containerColor[2];
+                }
+                else
+                {
+                    m_enginesContainer.sprite = m_containerColor[1];
+                }
+                break;
+
+            case StarshipState.Commands:
+                m_nbCommandsEvent += ind;
+                if (m_nbCommandsEvent < m_maxOrange)
+                {
+                    m_commandsContainer.sprite = m_containerColor[0];
+                }
+                else if (m_nbCommandsEvent > m_maxRed)
+                {
+                    m_commandsContainer.sprite = m_containerColor[2];
+                }
+                else
+                {
+                    m_commandsContainer.sprite = m_containerColor[1];
+                }
+                break;
+
+            case StarshipState.System:
+                m_nbSystemEvents += ind;
+                if (m_nbSystemEvents < m_maxOrange)
+                {
+                    m_systemContainer.sprite = m_containerColor[0];
+                }
+                else if (m_nbSystemEvents > m_maxRed)
+                {
+                    m_systemContainer.sprite = m_containerColor[2];
+                }
+                else
+                {
+                    m_systemContainer.sprite = m_containerColor[1];
+                }
+                break;
         }
     }
 }

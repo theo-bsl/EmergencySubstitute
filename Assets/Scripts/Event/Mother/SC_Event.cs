@@ -17,6 +17,9 @@ public class SC_Event : ScriptableObject
     protected Profession m_profession;
 
     [SerializeField]
+    protected StarshipState m_starshipState;
+
+    [SerializeField]
     protected List<EventAction> m_eventAction = new List<EventAction>();
 
     [SerializeField]
@@ -45,6 +48,7 @@ public class SC_Event : ScriptableObject
     public string Name { get { return m_name; }}
     public Rooms Room { get { return m_room; } }
     public Color Dificulty {  get { return m_dificulty; }}
+    public StarshipState StarshipState { get { return m_starshipState; }}
 
     public ResultEndEvent UpdateEvent()
     {
