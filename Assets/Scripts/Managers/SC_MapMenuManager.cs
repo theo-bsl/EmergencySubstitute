@@ -4,9 +4,6 @@ using UnityEngine;
 public class SC_MapMenuManager : MonoBehaviour
 {
     [SerializeField]
-    private List<SC_CharacterIcon> m_characters = new List<SC_CharacterIcon>();
-
-    [SerializeField]
     private List<SC_UIEvent> m_events = new List<SC_UIEvent>();
 
     [SerializeField]
@@ -22,12 +19,6 @@ public class SC_MapMenuManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < m_characters.Count; i++)
-        {
-            SO_Character Character = SC_CharacterManager.Instance.Characters[i];
-            m_characters[i].InitCharacterIcon(Character);
-        }
-
         SC_EventManager.Instance.NewEvent.AddListener(AddEventToUI);
 
         SC_EventManager.Instance.DeleteEvent.AddListener(RemoveEventFromUI);
