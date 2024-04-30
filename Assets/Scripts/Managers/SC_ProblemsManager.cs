@@ -51,7 +51,8 @@ public class SC_ProblemsManager : MonoBehaviour
                     m_shouldCreateAgain = UnityEngine.Random.Range(0, 100) < 50f;
                     break;
                 default:
-                    throw new Exception("Crisis Gauge too high ! ");
+                    //throw new Exception("Crisis Gauge too high ! ");
+                    break;
             }
 
             if (m_shouldCreateAgain && !m_hasBeenCreated)

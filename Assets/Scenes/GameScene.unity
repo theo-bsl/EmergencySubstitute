@@ -261,9 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc4d209c7ea8774599367e779696b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_updateCharacterWorkTime:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &398745432
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,10 +743,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2179437792857078406, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_Size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3142315238360199238, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.000061035156
@@ -979,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3fd33f79e073b4ea19ad9189f2f864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeline: 05000000140000001e000000280000002d000000320000003c0000004b000000
+  m_timeline: 0500000028000000500000006e0000008c000000b4000000d2000000e6000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
