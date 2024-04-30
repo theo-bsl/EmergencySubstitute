@@ -12,21 +12,14 @@ public class SC_RightScreenUI : MonoBehaviour
     [SerializeField] private List<Sprite> m_gaugeContainer;
 
     [SerializeField] private Image m_crewContainer;
-    private int m_nbCrewEvent = 0;
-    private int m_maxOrange = 3;
-    private int m_maxRed = 5;
 
     [SerializeField] private Image m_armorContainer;
-    private int m_nbArmorEvent = 0;
 
     [SerializeField] private Image m_enginesContainer;
-    private int m_nbEnginesEvent = 0;
 
     [SerializeField] private Image m_commandsContainer;
-    private int m_nbCommandsEvent = 0;
 
     [SerializeField] private Image m_systemContainer;
-    private int m_nbSystemEvents = 0;
 
     [SerializeField] private List<Sprite> m_containerColor;
     
@@ -80,84 +73,71 @@ public class SC_RightScreenUI : MonoBehaviour
         switch (Event.StarshipState)
         {
             case StarshipState.CrewHealth:
-                m_nbCrewEvent += ind;
-                if (m_nbCrewEvent < m_maxOrange)
+                if (IsEventCrisis(Event.EventAction))
                 {
-                    m_crewContainer.sprite = m_containerColor[0];
-                }
-                else if (m_nbCrewEvent > m_maxRed)
-                {
-                    m_crewContainer.sprite = m_containerColor[2];
+                    m_crewContainer.sprite = m_containerColor[1];
                 }
                 else
                 {
-                    m_crewContainer.sprite = m_containerColor[1];
+                    m_crewContainer.sprite = m_containerColor[2];
                 }
                 break;
 
             case StarshipState.Armor:
-                m_nbArmorEvent += ind;
-                if (m_nbArmorEvent < m_maxOrange)
+                if (IsEventCrisis(Event.EventAction))
                 {
-                    m_armorContainer.sprite = m_containerColor[0];
-                }
-                else if (m_nbArmorEvent > m_maxRed)
-                {
-                    m_armorContainer.sprite = m_containerColor[2];
+                    m_armorContainer.sprite = m_containerColor[1];
                 }
                 else
                 {
-                    m_armorContainer.sprite = m_containerColor[1];
+                    m_armorContainer.sprite = m_containerColor[2];
                 }
                 break;
 
             case StarshipState.Engines:
-                m_nbEnginesEvent += ind;
-                if (m_nbEnginesEvent < m_maxOrange)
+                if (IsEventCrisis(Event.EventAction))
                 {
-                    m_enginesContainer.sprite = m_containerColor[0];
-                }
-                else if (m_nbEnginesEvent > m_maxRed)
-                {
-                    m_enginesContainer.sprite = m_containerColor[2];
+                    m_enginesContainer.sprite = m_containerColor[1];
                 }
                 else
                 {
-                    m_enginesContainer.sprite = m_containerColor[1];
+                    m_enginesContainer.sprite = m_containerColor[2];
                 }
                 break;
 
             case StarshipState.Commands:
-                m_nbCommandsEvent += ind;
-                if (m_nbCommandsEvent < m_maxOrange)
+                if (IsEventCrisis(Event.EventAction))
                 {
-                    m_commandsContainer.sprite = m_containerColor[0];
-                }
-                else if (m_nbCommandsEvent > m_maxRed)
-                {
-                    m_commandsContainer.sprite = m_containerColor[2];
+                    m_commandsContainer.sprite = m_containerColor[1];
                 }
                 else
                 {
-                    m_commandsContainer.sprite = m_containerColor[1];
+                    m_commandsContainer.sprite = m_containerColor[2];
                 }
                 break;
 
             case StarshipState.System:
-                m_nbSystemEvents += ind;
-                if (m_nbSystemEvents < m_maxOrange)
-                {
-                    m_systemContainer.sprite = m_containerColor[0];
-                }
-                else if (m_nbSystemEvents > m_maxRed)
-                {
-                    m_systemContainer.sprite = m_containerColor[2];
-                }
-                else
+                if (IsEventCrisis(Event.EventAction))
                 {
                     m_systemContainer.sprite = m_containerColor[1];
                 }
+                else
+                {
+                    m_systemContainer.sprite = m_containerColor[2];
+                }
                 break;
         }
+    }
+
+    private bool IsEventCrisis(List<EventAction> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (list[i].EventActionType == EventActionType.IncreaseGauge)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
