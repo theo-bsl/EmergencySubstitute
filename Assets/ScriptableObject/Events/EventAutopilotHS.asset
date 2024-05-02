@@ -22,5 +22,9 @@ MonoBehaviour:
   m_isVisible: 1
   m_icon: {fileID: 21300000, guid: 5ea74bb9ee2cd374aae503141c8c5f17, type: 3}
   m_name: Autopilot HS
+  m_deathCharacterPhrase: "a mal reprogramm\xE9 l'IA de bord, causant une collision
+    avec un ast\xE9ro\xEFde."
+  m_deathTimePhrase: "Le vaisseau a vait une embard\xE9e et a eu une collision avec
+    une base spatiale."
   m_room: 1
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

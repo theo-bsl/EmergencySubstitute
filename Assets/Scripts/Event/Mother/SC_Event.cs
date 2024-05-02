@@ -33,6 +33,12 @@ public class SC_Event : ScriptableObject
     protected string m_name;
 
     [SerializeField]
+    protected string m_deathCharacterPhrase;
+
+    [SerializeField]
+    protected string m_deathTimePhrase;
+
+    [SerializeField]
     protected Rooms m_room;
 
     [SerializeField]
@@ -46,6 +52,9 @@ public class SC_Event : ScriptableObject
     public bool IsVisible { get { return m_isVisible; } }
     public Sprite Icon { get { return m_icon; }}
     public string Name { get { return m_name; }}
+    public string DeathCharacterPhrase { get { return m_deathCharacterPhrase; } }
+
+    public string DeathTimePhrase { get { return m_deathTimePhrase; } }
     public Rooms Room { get { return m_room; } }
     public Color Dificulty {  get { return m_dificulty; }}
     public StarshipState StarshipState { get { return m_starshipState; }}
