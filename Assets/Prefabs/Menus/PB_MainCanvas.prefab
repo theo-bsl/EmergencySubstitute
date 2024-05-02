@@ -568,9 +568,9 @@ RectTransform:
   - {fileID: 8287594288412710637}
   - {fileID: 5371272155258662110}
   - {fileID: 7547770658412751805}
+  - {fileID: 4597072697070383455}
   - {fileID: 5947532309811031560}
   - {fileID: 1280739929795867120}
-  - {fileID: 4597072697070383455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1135,6 +1135,10 @@ PrefabInstance:
     - target: {fileID: 4605858806499867874, guid: 96a8c030ebd86f14eadebc8d5c1cf77a, type: 3}
       propertyPath: m_Name
       value: TutorialPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605858806499867874, guid: 96a8c030ebd86f14eadebc8d5c1cf77a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7241531981859624455, guid: 96a8c030ebd86f14eadebc8d5c1cf77a, type: 3}
       propertyPath: m_Pivot.x
