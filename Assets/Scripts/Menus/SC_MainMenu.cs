@@ -28,9 +28,12 @@ public class SC_MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject m_beginMissionMenu;
 
+    [SerializeField]
+    private GameObject m_confirmQuit;
+
     public void OnMouseButtonLeftDownInMenu(InputAction.CallbackContext context)
     {
-        if (context.started && !m_beginMissionMenu.activeSelf)
+        if (context.started && !m_beginMissionMenu.activeSelf && !m_confirmQuit.activeSelf)
         {
             Vector3 dir = m_mousePos - m_camera.transform.position;
             Physics.Raycast(m_camera.transform.position, dir, out RaycastHit hit, Mathf.Infinity);
@@ -41,7 +44,6 @@ public class SC_MainMenu : MonoBehaviour
             if (hit.collider == m_spaceShip1.GetComponent<Collider>()) 
             {
                 m_animator.SetTrigger("Ship1");
-                m_beginMissionMenu.transform.GetChild(0).GetComponent<Button>().interactable = true;
                 m_beginMissionMenu.SetActive(true);
             }
             else if (hit.collider == m_spaceShip2.GetComponent<Collider>())
@@ -52,11 +54,12 @@ public class SC_MainMenu : MonoBehaviour
             else if (hit.collider == m_spaceShip3.GetComponent<Collider>())
             {
                 m_animator.SetTrigger("Ship3");
+                m_beginMissionMenu.transform.GetChild(0).GetComponent<Button>().interactable = true;
                 m_beginMissionMenu.SetActive(true);
             }
             else if (hit.collider == m_exit.GetComponent<Collider>())
             {
-                Application.Quit();
+                m_confirmQuit.SetActive(true);
             }
 
         }
@@ -80,6 +83,16 @@ public class SC_MainMenu : MonoBehaviour
     public void LoadMission1()
     {
         SceneManager.LoadScene("GameScene");
+    }
+
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
+    public void BackFromQuit()
+    {
+        m_confirmQuit.SetActive(false);
     }
 
     public void MousePosInMenu(InputAction.CallbackContext context)
