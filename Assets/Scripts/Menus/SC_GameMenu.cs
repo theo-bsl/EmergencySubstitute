@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class SC_GameMenu : MonoBehaviour
 {
+    public static SC_GameMenu Instance;
+
     private bool m_inMenu = false;
 
     [Header("Menus")]
@@ -29,6 +31,15 @@ public class SC_GameMenu : MonoBehaviour
     private bool m_hasSeenTutorial = false;
 
     public bool InMenu { get { return m_inMenu; } }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     private void Start()
     {
         m_characterMenu.SetActive(false);
@@ -47,6 +58,8 @@ public class SC_GameMenu : MonoBehaviour
     public void CharacterMenu()
     {
         m_characterMenu.SetActive(!m_characterMenu.activeSelf);
+        m_inMenu = m_mapMenu.activeSelf || m_characterMenu.activeSelf;
+
         if (!m_hasSeenTutorial && m_mapMenu.activeSelf)
         {
             m_tutorialMenu.SetActive(true);
@@ -56,6 +69,8 @@ public class SC_GameMenu : MonoBehaviour
     public void MapMenu()
     {
         m_mapMenu.SetActive(!m_mapMenu.activeSelf);
+        m_inMenu = m_mapMenu.activeSelf || m_characterMenu.activeSelf;
+
         if (!m_hasSeenTutorial && m_characterMenu.activeSelf)
         {
             m_tutorialMenu.SetActive(true);
@@ -71,6 +86,7 @@ public class SC_GameMenu : MonoBehaviour
     private void ShowWinMenu()
     {
         m_winMenu.SetActive(true);
+        m_inMenu = true;
     }
 
     public void HideBackToMenu()
@@ -83,8 +99,15 @@ public class SC_GameMenu : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
+    public void Replay()
+    {
+        //Reload scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     private void ShowLoseMenu(string LoseMessage)
     {
+        m_inMenu = true;
         m_loseMessage.text = LoseMessage;
         m_loseMessage.transform.parent.gameObject.SetActive(true);
     }

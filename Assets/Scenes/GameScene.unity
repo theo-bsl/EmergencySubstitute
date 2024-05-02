@@ -560,6 +560,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a66bbac2-934d-4a04-822d-4aa69704a5b7
     m_ActionName: PlayerInputs/MouseDrag[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 413217367}
+        m_TargetAssemblyTypeName: SC_PlayerInput, Assembly-CSharp
+        m_MethodName: ShowBackToMenuPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e2244076-fb37-4154-9bc1-0ac025a7f855
+    m_ActionName: PlayerInputs/OpenBackToMenu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerInputs
@@ -577,6 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef22410fa3a0d141aedb3dd82461781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_backToMenuPopup: {fileID: 1908250564}
 --- !u!4 &413217368
 Transform:
   m_ObjectHideFlags: 0
@@ -2883,26 +2900,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3012154081638964255, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3142315238360199238, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
-      objectReference: {fileID: 0}
-    - target: {fileID: 3599096489533517199, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3599096489533517199, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3599096489533517199, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4177104014426432274, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2987,26 +2984,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PB_MainCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7547770658412751805, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8148656976668447517, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8669186681486314206, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-    - {fileID: 3012154081638964255, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
@@ -3219,6 +3198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49fe0f8c088ec44993c6be523e73179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1908250564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5999921500279034503, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+  m_PrefabInstance: {fileID: 1652222808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1931423945
 GameObject:
   m_ObjectHideFlags: 0
