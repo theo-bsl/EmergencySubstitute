@@ -17,7 +17,12 @@ public class SC_GameMenu : MonoBehaviour
     private GameObject m_winMenu;
 
     [SerializeField]
+    private GameObject m_tutorialMenu;
+
+    [SerializeField]
     private TextMeshProUGUI m_loseMessage;
+
+    private bool m_hasSeenTutorial = false;
 
     public bool InMenu { get { return m_inMenu; } }
     private void Start()
@@ -38,11 +43,25 @@ public class SC_GameMenu : MonoBehaviour
     public void CharacterMenu()
     {
         m_characterMenu.SetActive(!m_characterMenu.activeSelf);
+        if (!m_hasSeenTutorial && m_mapMenu.activeSelf)
+        {
+            m_tutorialMenu.SetActive(true);
+        }
     }
 
     public void MapMenu()
     {
         m_mapMenu.SetActive(!m_mapMenu.activeSelf);
+        if (!m_hasSeenTutorial && m_characterMenu.activeSelf)
+        {
+            m_tutorialMenu.SetActive(true);
+        }
+    }
+
+    public void CloseTutorial()
+    {
+        m_tutorialMenu.SetActive(false);
+        m_hasSeenTutorial = true;
     }
 
     private void ShowWinMenu()
