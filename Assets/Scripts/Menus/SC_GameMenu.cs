@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SC_GameMenu : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class SC_GameMenu : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI m_loseMessage;
+
+    [SerializeField]
+    private GameObject m_backToMenuPopup;
 
     private bool m_hasSeenTutorial = false;
 
@@ -67,6 +71,16 @@ public class SC_GameMenu : MonoBehaviour
     private void ShowWinMenu()
     {
         m_winMenu.SetActive(true);
+    }
+
+    public void HideBackToMenu()
+    {
+        m_backToMenuPopup.SetActive(false);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 
     private void ShowLoseMenu(string LoseMessage)
