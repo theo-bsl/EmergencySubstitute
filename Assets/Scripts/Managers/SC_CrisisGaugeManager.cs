@@ -8,7 +8,7 @@ public class SC_CrisisGaugeManager : MonoBehaviour
     private float m_waitTime;
     [SerializeField] private float m_timeToWaitBeforeDecreaseGauge;
 
-    private string m_loseMessage = "PAAAAANIQUE !!!!";
+    private string m_loseMessage = "La panique à bord du vaisseau a atteint un niveau tel que plus personne n’arrivait à rien faire menant le vaisseau et tout son équipage à sa fin.";
 
 
     private void Awake()

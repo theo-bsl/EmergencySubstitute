@@ -120,7 +120,7 @@ public class SC_EventManager : MonoBehaviour
         if (ResultEndEvent == ResultEndEvent.GameOver)
         {
             DestroyEvent(Event);
-            m_gameOverEvent.Invoke(Event.Name + " killed you !");
+            m_gameOverEvent.Invoke(Event.DeathTimePhrase);
         }
     }
 

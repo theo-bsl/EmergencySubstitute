@@ -15,9 +15,13 @@ MonoBehaviour:
   m_resolutionTimer: 5
   m_eventDuration: 20
   m_profession: 3
+  m_starshipState: 0
   m_eventAction: []
   m_isVisible: 1
   m_icon: {fileID: 21300000, guid: aab855b24248a66488d8eb184fccc6f8, type: 3}
   m_name: Epidemie
+  m_deathCharacterPhrase: "s'est laiss\xE9 d\xE9passer par la flemmingite aigu\xEB."
+  m_deathTimePhrase: "Le syndrome de la deuxi\xE8me chopine a pris le pas sur le
+    vaisseau, plus personne n'est sobre."
   m_room: 3
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}
