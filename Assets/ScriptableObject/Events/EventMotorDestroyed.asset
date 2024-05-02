@@ -15,13 +15,14 @@ MonoBehaviour:
   m_resolutionTimer: 60
   m_eventDuration: Infinity
   m_profession: 0
+  m_starshipState: 2
   m_eventAction:
   - EventActionType: 3
     EventActionValue: -1
   - EventActionType: 4
     EventActionValue: 1
   m_isVisible: 1
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 7d3ef56ab96d93745919a56a6ce2f7e9, type: 3}
   m_name: "Moteurs d\xE9truit"
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

@@ -15,11 +15,12 @@ MonoBehaviour:
   m_resolutionTimer: 5
   m_eventDuration: 20
   m_profession: 0
+  m_starshipState: 2
   m_eventAction:
   - EventActionType: 0
     EventActionValue: -1
   m_isVisible: 1
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 0fb24d3865b7f4c4f84d545ada526d34, type: 3}
   m_name: manque de liquide de refroidissement
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

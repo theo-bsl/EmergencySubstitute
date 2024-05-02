@@ -49,7 +49,8 @@ public class SC_EventManager : MonoBehaviour
                         crisisTimePenalty = 50f;
                         break;
                     default:
-                        throw new Exception("Crisis Gauge too high ! ");
+                        //throw new Exception("Crisis Gauge too high ! ");
+                        break;
                 }
 
                 

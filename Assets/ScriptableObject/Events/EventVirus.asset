@@ -15,9 +15,10 @@ MonoBehaviour:
   m_resolutionTimer: 10
   m_eventDuration: Infinity
   m_profession: 1
+  m_starshipState: 3
   m_eventAction: []
   m_isVisible: 1
-  m_icon: {fileID: 0}
+  m_icon: {fileID: 21300000, guid: 6a57b46539139864eae773a210a33bda, type: 3}
   m_name: Virus
   m_room: 4
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

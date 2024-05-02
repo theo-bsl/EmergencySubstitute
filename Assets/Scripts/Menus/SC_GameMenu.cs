@@ -6,8 +6,6 @@ public class SC_GameMenu : MonoBehaviour
     private bool m_inMenu = false;
 
     [Header("Menus")]
-    [SerializeField]
-    private GameObject m_settingsMenu;
 
     [SerializeField]
     private GameObject m_characterMenu;
@@ -24,7 +22,8 @@ public class SC_GameMenu : MonoBehaviour
     public bool InMenu { get { return m_inMenu; } }
     private void Start()
     {
-        CloseAllMenus();
+        m_characterMenu.SetActive(false);
+        m_mapMenu.SetActive(false);
 
         SC_GameManager.Instance.GameWin.AddListener(ShowWinMenu);
         SC_GameManager.Instance.GameLose.AddListener(ShowLoseMenu);
@@ -32,30 +31,18 @@ public class SC_GameMenu : MonoBehaviour
 
     public void SettingsMenu()
     {
-        bool MenuState = m_settingsMenu.activeSelf;
-        CloseAllMenus();
-        m_settingsMenu.SetActive(!MenuState);
+        m_characterMenu.SetActive(false);
+        m_mapMenu.SetActive(false);
     }
 
     public void CharacterMenu()
     {
-        bool MenuState = m_characterMenu.activeSelf;
-        CloseAllMenus();
-        m_characterMenu.SetActive(!MenuState);
+        m_characterMenu.SetActive(!m_characterMenu.activeSelf);
     }
 
     public void MapMenu()
     {
-        bool MenuState = m_mapMenu.activeSelf;
-        CloseAllMenus();
-        m_mapMenu.SetActive(!MenuState);
-    }
-
-    private void CloseAllMenus()
-    {
-        m_characterMenu.SetActive(false);
-        m_mapMenu.SetActive(false);
-        m_settingsMenu.SetActive(false);
+        m_mapMenu.SetActive(!m_mapMenu.activeSelf);
     }
 
     private void ShowWinMenu()
