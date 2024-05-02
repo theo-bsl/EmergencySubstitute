@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class SC_EventIcon : MonoBehaviour
 {
     private SC_Event m_event;
+    private SO_Character m_character;
     private string m_name;
 
     public string Name { get { return m_name; } }
@@ -18,7 +19,7 @@ public class SC_EventIcon : MonoBehaviour
 
     public void ProcessEventIcon()
     {
-        SC_EventProcessor.Instance.ProcessEvent(m_event);
+        SC_EventProcessor.Instance.ProcessEvent(m_event, m_character);
     }
 
     public void ChangeCharacterAttribution()
@@ -27,12 +28,37 @@ public class SC_EventIcon : MonoBehaviour
 
         if (Character != null)
         {
-            if (Character.IsAvailable && !m_event.IsGettingProcessed)
+            if (Character.IsAvailable && !m_event.IsGettingProcessed && !SC_EventProcessor.Instance.IsConfirming)
             {
-                transform.GetChild(0).GetComponent<Image>().sprite = Character.Icon;
+                m_character = Character;
+                SC_CharacterManager.Instance.SelectCharacter(null);
+                transform.GetChild(0).GetComponent<Image>().sprite = m_character.Icon;
                 transform.GetChild(0).gameObject.SetActive(true);
+                SC_EventProcessor.Instance.GreyCharacter(m_character);
+                ShowConfirmation();
             }
         }
+    }
+
+    public void ShowConfirmation()
+    {
+        SC_EventProcessor.Instance.IsConfirming = true;
+        transform.GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(2).gameObject.SetActive(true);
+    }
+
+    public void HideConfirmation()
+    {
+        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(2).gameObject.SetActive(false);
+        SC_EventProcessor.Instance.IsConfirming = false;
+    }
+
+    public void ResetConfirmation()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+        SC_EventProcessor.Instance.GreyCharacter(m_character);
+        m_character = null;
     }
 
     private void ResetAttribution(SC_Event Event)

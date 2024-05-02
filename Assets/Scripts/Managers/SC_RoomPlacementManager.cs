@@ -48,7 +48,7 @@ public class SC_RoomPlacementManager : MonoBehaviour
     [SerializeField]
     private Transform m_cabinRoomWaypoint;
 
-    private readonly int m_eventOffset = 50;
+    private readonly int m_eventOffset = 75;
 
     private void Awake()
     {

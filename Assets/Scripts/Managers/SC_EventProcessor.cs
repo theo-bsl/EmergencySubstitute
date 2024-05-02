@@ -16,6 +16,8 @@ public class SC_EventProcessor : MonoBehaviour
     //SO_Character = Character (this event greys out (or not) the character processing the event (or finishing))
     private UnityEvent<SO_Character> m_greyOutCharacter = new UnityEvent<SO_Character>();
 
+    private bool m_isConfirming = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,10 +26,13 @@ public class SC_EventProcessor : MonoBehaviour
         }
     }
 
-    public void ProcessEvent(SC_Event Event)
+    public void GreyCharacter(SO_Character Character)
     {
-        SO_Character Character = SC_CharacterManager.Instance.SelectedCharacter;
-        
+        m_greyOutCharacter.Invoke(Character);
+    }
+
+    public void ProcessEvent(SC_Event Event, SO_Character Character)
+    {
         if (Character != null)
         {
             if (Character.IsAvailable && !Event.IsGettingProcessed)
@@ -40,7 +45,6 @@ public class SC_EventProcessor : MonoBehaviour
 
     private IEnumerator Process(SC_Event Event, SO_Character Character)
     {
-        m_greyOutCharacter.Invoke(Character);
         SC_CharacterManager.Instance.SelectCharacter(null);
 
         bool hasWrongExpertise;
@@ -111,4 +115,6 @@ public class SC_EventProcessor : MonoBehaviour
     public UnityEvent<SO_Character, float, float> UpdateCharacterWorkTime { get { return m_updateCharacterWorkTime; } }
     public UnityEvent<SC_Event> UpdateCharacterAttribution {  get { return m_updateCharacterAttribution; } }
     public UnityEvent<SO_Character> GreyOutCharacter {  get { return m_greyOutCharacter; } }
+
+    public bool IsConfirming { get { return m_isConfirming; } set { m_isConfirming = value; } }
 }
