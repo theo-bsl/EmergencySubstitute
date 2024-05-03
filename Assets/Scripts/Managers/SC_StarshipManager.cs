@@ -154,28 +154,28 @@ public class SC_StarshipManager : MonoBehaviour
 
     private void SpeedUpdate()
     {
-        m_currentSpeed = Mathf.Clamp(m_currentSpeed + m_speedInd, 0f, Mathf.Infinity);
+        m_currentSpeed = Mathf.Clamp(m_currentSpeed + (m_speedInd * Time.deltaTime), 0f, Mathf.Infinity);
 
         ManageSpeedEvent();
     }
 
     private void TemperatureUpdate()
     {
-        m_currentTemperature = Mathf.Clamp(m_currentTemperature + m_temperatureInd, -273.15f, Mathf.Infinity);
+        m_currentTemperature = Mathf.Clamp(m_currentTemperature + (m_temperatureInd * Time.deltaTime), -273.15f, Mathf.Infinity);
 
         ManageTemperatureEvent();
     }
 
     private void PressureUpdate()
     {
-        m_currentPressure = Mathf.Clamp(m_currentPressure + m_pressureInd, 0f, Mathf.Infinity);
+        m_currentPressure = Mathf.Clamp(m_currentPressure + (m_pressureInd * Time.deltaTime), 0f, Mathf.Infinity);
 
         ManagePressureEvent();
     }
 
     private void OxygenUpdate()
     {
-        m_currentOxygen = Mathf.Clamp(m_currentOxygen + m_oxygenInd, 0f, Mathf.Infinity);
+        m_currentOxygen = Mathf.Clamp(m_currentOxygen + (m_oxygenInd * Time.deltaTime), 0f, Mathf.Infinity);
 
         ManageOxygenEvent();
     }
@@ -250,7 +250,7 @@ public class SC_StarshipManager : MonoBehaviour
 
     public void ChangeTemperature(float value)
     {
-        m_currentTemperature = Mathf.Clamp(m_currentTemperature + value, 0f, Mathf.Infinity);
+        m_currentTemperature = Mathf.Clamp(m_currentTemperature + value, -273.15f, Mathf.Infinity);
         ManageTemperatureEvent();
     }
 
