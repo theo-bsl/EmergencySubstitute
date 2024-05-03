@@ -16,7 +16,7 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isCriticalOxygenAlreadyActive = false;
     private int m_oxygenInd = 0;
 
-    private float m_currentSpeed = 0f;
+    private float m_currentSpeed = 5000f;
     private float m_lowSpeed = 0f;
     private float m_overSpeed = 8500f;
     private bool m_isOverSpeedAlreadyActive = false;
