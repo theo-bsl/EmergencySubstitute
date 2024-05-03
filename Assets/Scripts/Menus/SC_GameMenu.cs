@@ -86,7 +86,7 @@ public class SC_GameMenu : MonoBehaviour
     {
         m_tutorialMenu.SetActive(false);
         m_hasSeenTutorial = true;
-        m_inMenu = false;
+        m_inMenu = m_mapMenu.activeSelf || m_characterMenu.activeSelf || m_tutorialMenu.activeSelf;
     }
 
     public void CloseSitePopup()
