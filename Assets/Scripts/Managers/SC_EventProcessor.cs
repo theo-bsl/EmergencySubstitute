@@ -42,7 +42,6 @@ public class SC_EventProcessor : MonoBehaviour
             }
         }
     }
-
     private IEnumerator Process(SC_Event Event, SO_Character Character)
     {
         SC_CharacterManager.Instance.SelectCharacter(null);

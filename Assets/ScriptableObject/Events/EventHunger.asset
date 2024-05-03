@@ -15,11 +15,15 @@ MonoBehaviour:
   m_resolutionTimer: 10
   m_eventDuration: Infinity
   m_profession: 2
+  m_starshipState: 0
   m_eventAction:
   - EventActionType: 4
     EventActionValue: 1
   m_isVisible: 1
   m_icon: {fileID: 21300000, guid: 15b7d25dc7f8c9b4eab3341752bb347d, type: 3}
   m_name: Faim
+  m_deathCharacterPhrase: 
+  m_deathTimePhrase: 
+  m_eventParagraph: "L'\xE9quipage \xE0 faim"
   m_room: 2
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

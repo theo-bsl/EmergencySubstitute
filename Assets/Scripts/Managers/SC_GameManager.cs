@@ -13,7 +13,6 @@ public class SC_GameManager : MonoBehaviour
     private int m_maxOffsetTime;
     private SC_ProblemsManager m_problemManager;
     private bool m_endGame = false;
-
     private UnityEvent<string> m_gameLose = new UnityEvent<string>();
     private UnityEvent m_gameWin = new UnityEvent();
 
@@ -50,7 +49,6 @@ public class SC_GameManager : MonoBehaviour
             }
         }
     }
-
     private void CalculateNextEventTime()
     {
         int offSetTime = Random.Range(-m_maxOffsetTime, m_maxOffsetTime);

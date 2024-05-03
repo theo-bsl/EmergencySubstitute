@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SC_RoomPlacementManager : MonoBehaviour
@@ -48,7 +49,10 @@ public class SC_RoomPlacementManager : MonoBehaviour
     [SerializeField]
     private Transform m_cabinRoomWaypoint;
 
-    private readonly int m_eventOffset = 50;
+    [SerializeField]
+    private TextMeshProUGUI m_eventDescription;
+
+    private readonly int m_eventOffset = 75;
 
     private void Awake()
     {
@@ -69,6 +73,10 @@ public class SC_RoomPlacementManager : MonoBehaviour
         SC_EventManager.Instance.NewEvent.AddListener(AddEventToMap);
 
         SC_EventManager.Instance.DeleteEvent.AddListener(RemoveEventFromMap);
+    }
+    public void SetText(SC_Event Event)
+    {
+        m_eventDescription.text = Event.EventParagraph;
     }
 
     public void AddEventToMap(SC_Event Event)

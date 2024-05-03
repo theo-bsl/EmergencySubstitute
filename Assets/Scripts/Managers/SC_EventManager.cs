@@ -25,6 +25,7 @@ public class SC_EventManager : MonoBehaviour
 
     private UnityEvent<string> m_gameOverEvent = new();
 
+
     private void Awake()
     {
         if (Instance == null)
