@@ -1379,10 +1379,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4177104014426432274}
     m_Modifications:
+    - target: {fileID: 3358778594237046709, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
+      propertyPath: m_eventDescription
+      value: 
+      objectReference: {fileID: 4556056406118856293}
     - target: {fileID: 6510328605883704409, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
       propertyPath: m_Name
       value: PB_MapMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6823394126663502272, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7331da3d1c01a2245bfd73987b13b6b2, type: 2}
+    - target: {fileID: 6823394126663502272, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2299042881182500470, guid: 7331da3d1c01a2245bfd73987b13b6b2, type: 2}
     - target: {fileID: 8522460370667686005, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1478,6 +1490,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6510328605883704409, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
   m_PrefabInstance: {fileID: 7028938039306534821}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4556056406118856293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6823394126663502272, guid: 7976a3466e0bc364dad2d9c26c600da1, type: 3}
+  m_PrefabInstance: {fileID: 7028938039306534821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7513619834916302348
 PrefabInstance:
   m_ObjectHideFlags: 0
