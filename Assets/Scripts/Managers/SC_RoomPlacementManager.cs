@@ -70,7 +70,10 @@ public class SC_RoomPlacementManager : MonoBehaviour
 
         SC_EventManager.Instance.DeleteEvent.AddListener(RemoveEventFromMap);
     }
-
+    public void SetText()
+    {
+        
+    }
     public void AddEventToMap(SC_Event Event)
     {
         GameObject EventIcon = Instantiate(m_eventIconPrefab, m_eventIconsContainer);

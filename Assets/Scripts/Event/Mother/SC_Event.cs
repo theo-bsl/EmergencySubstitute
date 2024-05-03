@@ -38,6 +38,9 @@ public class SC_Event : ScriptableObject
     [SerializeField]
     protected string m_deathTimePhrase;
 
+    [SerializeField] 
+    protected string m_eventParagraph;
+
     [SerializeField]
     protected Rooms m_room;
 
@@ -53,8 +56,8 @@ public class SC_Event : ScriptableObject
     public Sprite Icon { get { return m_icon; }}
     public string Name { get { return m_name; }}
     public string DeathCharacterPhrase { get { return m_deathCharacterPhrase; } }
-
     public string DeathTimePhrase { get { return m_deathTimePhrase; } }
+    public string EventParagraph { get { return m_eventParagraph; } }
     public Rooms Room { get { return m_room; } }
     public Color Dificulty {  get { return m_dificulty; }}
     public StarshipState StarshipState { get { return m_starshipState; }}
