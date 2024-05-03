@@ -31,6 +31,12 @@ public class SC_GameMenu : MonoBehaviour
     [SerializeField]
     private GameObject m_sitePopup;
 
+    [SerializeField]
+    private GameObject m_firstTextSitePopup;
+
+    [SerializeField]
+    private GameObject m_secondeTextSitePopup;
+
     private bool m_hasSeenTutorial = false;
 
     public bool InMenu { get { return m_inMenu; } }
@@ -89,11 +95,19 @@ public class SC_GameMenu : MonoBehaviour
         m_inMenu = m_mapMenu.activeSelf || m_characterMenu.activeSelf || m_tutorialMenu.activeSelf;
     }
 
-    public void CloseSitePopup()
+    public void NextDialogueSitePopup()
     {
-        m_sitePopup.SetActive(false);
-        m_inMenu = false;
-        Time.timeScale = 1.0f;
+        if (m_firstTextSitePopup.activeSelf)
+        {
+            m_firstTextSitePopup.SetActive(false);
+            m_secondeTextSitePopup.SetActive(true);
+        }
+        else
+        {
+            m_sitePopup.SetActive(false);
+            m_inMenu = false;
+            Time.timeScale = 1.0f;
+        }
     }
 
     private void ShowWinMenu()

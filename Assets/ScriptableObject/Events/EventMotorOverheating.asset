@@ -26,5 +26,8 @@ MonoBehaviour:
   m_isVisible: 1
   m_icon: {fileID: 21300000, guid: f6cb8e7e78dcc9a46a6d73dc31834f25, type: 3}
   m_name: Surchauffe des moteurs
+  m_deathCharacterPhrase: 
+  m_deathTimePhrase: 
+  m_eventParagraph: Les moteurs ont trop chaud pour fonctionner normalement.
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

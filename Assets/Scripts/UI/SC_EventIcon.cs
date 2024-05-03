@@ -1,12 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SC_EventIcon : MonoBehaviour
+public class SC_EventIcon : MonoBehaviour, IPointerEnterHandler
 {
     private SC_Event m_event;
     private SO_Character m_character;
     private string m_name;
-
+    private UnityEvent<string> m_showDescription = new UnityEvent<string>();
     public string Name { get { return m_name; } }
 
     public void InitEventIcon(SC_Event Event)
@@ -69,4 +71,8 @@ public class SC_EventIcon : MonoBehaviour
         }
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        SC_RoomPlacementManager.Instance.SetText(m_event);
+    }
 }

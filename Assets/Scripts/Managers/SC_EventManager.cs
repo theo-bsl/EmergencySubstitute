@@ -10,7 +10,12 @@ public class SC_EventManager : MonoBehaviour
     [SerializeField]
     private List<SC_Event> m_events = new List<SC_Event>();
 
+    [SerializeField] private GameObject m_redAlert;
+    [SerializeField] private GameObject m_orangeAlert;
+
     private int m_nbCrisisEvent = 0;
+    private int m_nbFatalEvent = 0;
+    private bool m_isRedAlert = false;
 
     //SC_Event = Event
     private UnityEvent<SC_Event> m_newEvent = new();
@@ -19,6 +24,7 @@ public class SC_EventManager : MonoBehaviour
     private UnityEvent<SC_Event> m_deleteEvent = new();
 
     private UnityEvent<string> m_gameOverEvent = new();
+
 
     private void Awake()
     {
@@ -64,6 +70,17 @@ public class SC_EventManager : MonoBehaviour
                 if (CheckIfCrisis(InstantiatedEvent))
                 {
                     m_nbCrisisEvent++;
+                    if (InstantiatedEvent.Name == "SAS HS" && !m_isRedAlert)
+                    {
+                        m_orangeAlert.SetActive(true);
+                    }
+                }
+                else
+                {
+                    m_nbFatalEvent++;
+                    m_redAlert.SetActive(true);
+                    m_orangeAlert.SetActive(false);
+                    m_isRedAlert = true;
                 }
 
                 if (InstantiatedEvent.IsVisible)
@@ -130,12 +147,27 @@ public class SC_EventManager : MonoBehaviour
         {
             m_nbCrisisEvent--;
         }
+        else
+        {
+            m_nbFatalEvent--;
+        }
 
         if (Event.IsVisible)
         {
             m_deleteEvent.Invoke(Event);
         }
         m_events.Remove(Event);
+
+        if (Event.Name == "SAS HS")
+        {
+            m_orangeAlert.SetActive(false);
+        }
+
+        if (m_nbFatalEvent == 0)
+        {
+            m_redAlert.SetActive(false);
+        }
+
         Destroy(Event);
     }
 
