@@ -1103,6 +1103,8 @@ MonoBehaviour:
   m_events: []
   m_redAlert: {fileID: 368695196}
   m_orangeAlert: {fileID: 907526391}
+  m_apple: {fileID: 0}
+  m_screenShake: {fileID: 0}
 --- !u!1 &785006583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,6 +1747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PB_MainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5565209665911435569, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2191,6 +2197,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3376999906499653385, guid: 7405726a3c9294f4dba99f5a4099ac45, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3327c02a3f32914dabcf7cc88a5f4d8, type: 2}
+    - target: {fileID: 5399284803887575988, guid: 7405726a3c9294f4dba99f5a4099ac45, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3327c02a3f32914dabcf7cc88a5f4d8, type: 2}
     - target: {fileID: 5422841954448455331, guid: 7405726a3c9294f4dba99f5a4099ac45, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
