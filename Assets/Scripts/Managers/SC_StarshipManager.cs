@@ -16,7 +16,7 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isCriticalOxygenAlreadyActive = false;
     private int m_oxygenInd = 0;
 
-    private float m_currentSpeed = 5000f;
+    private float m_currentSpeed = 0f;
     private float m_lowSpeed = 0f;
     private float m_overSpeed = 8500f;
     private bool m_isOverSpeedAlreadyActive = false;
@@ -57,6 +57,8 @@ public class SC_StarshipManager : MonoBehaviour
     [SerializeField] private SC_Event m_overOxygenEvent;
 
     [SerializeField] private float m_distanceToDestination;
+
+    [SerializeField] private ParticleSystem m_particleSystem;
 
     private UnityEvent m_win = new UnityEvent();
 
@@ -183,6 +185,7 @@ public class SC_StarshipManager : MonoBehaviour
     private void Travel()
     {
         m_distanceToDestination -= m_currentSpeed * Time.deltaTime;
+        m_particleSystem.playbackSpeed = m_currentSpeed * Time.deltaTime / 5;
         if (m_distanceToDestination <= 0f) 
         {
             m_win.Invoke();
