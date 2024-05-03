@@ -2713,6 +2713,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a6486e6f01a154bb3045f49b5d8d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_criticalUnderTemperatureEvent: {fileID: 11400000, guid: 3c4fd21b202a31046a2de2efb4fef385, type: 2}
+  m_underTemperatureEvent: {fileID: 11400000, guid: 538a61e74be72dc44876f7e6cbfadbd9, type: 2}
+  m_overTemperatureEvent: {fileID: 11400000, guid: 6c5ed0c991cf8e4448ce29ba7f2e933b, type: 2}
+  m_criticalOverTemperatureEvent: {fileID: 11400000, guid: 8565c7c26d901bc41b440429cd8e155c, type: 2}
+  m_overPressureEvent: {fileID: 11400000, guid: 9273181b0557509469fad702c4f34cec, type: 2}
+  m_criticalPressureEvent: {fileID: 11400000, guid: 35a51a6ae151a4041ae2b0d1cb4abac1, type: 2}
+  m_lowSpeedEvent: {fileID: 11400000, guid: 2c77cd17a930bb54e87bbed29e32e464, type: 2}
+  m_overSpeedEvent: {fileID: 11400000, guid: e3eb220ec7e09d043b2a2794cf12bfc4, type: 2}
+  m_criticalOxygenEvent: {fileID: 11400000, guid: 53f2b1ffdb4023648af0320f4c8e2f9b, type: 2}
+  m_lowOxygenEvent: {fileID: 11400000, guid: 2bbda7d793905e541909f99f3709c25e, type: 2}
+  m_overOxygenEvent: {fileID: 11400000, guid: d858c8d31d1c43441960cbff190cbc4b, type: 2}
   m_distanceToDestination: 6030000
 --- !u!1 &1626768493
 GameObject:

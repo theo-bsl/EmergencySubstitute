@@ -5,6 +5,8 @@ public class SC_StarshipManager : MonoBehaviour
 {
     public static SC_StarshipManager Instance;
 
+    private SC_EventManager m_eventManager;
+
     private float m_currentOxygen = 50f;
     private float m_criticalOxygen = 13f;
     private float m_lowOxygen = 17f;
@@ -39,6 +41,21 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isCriticalOverTemperatureAlreadyActive = false;
     private int m_temperatureInd = 0;
 
+    [SerializeField] private SC_Event m_criticalUnderTemperatureEvent;
+    [SerializeField] private SC_Event m_underTemperatureEvent;
+    [SerializeField] private SC_Event m_overTemperatureEvent;
+    [SerializeField] private SC_Event m_criticalOverTemperatureEvent;
+
+    [SerializeField] private SC_Event m_overPressureEvent;
+    [SerializeField] private SC_Event m_criticalPressureEvent;
+
+    [SerializeField] private SC_Event m_lowSpeedEvent;
+    [SerializeField] private SC_Event m_overSpeedEvent;
+
+    [SerializeField] private SC_Event m_criticalOxygenEvent;
+    [SerializeField] private SC_Event m_lowOxygenEvent;
+    [SerializeField] private SC_Event m_overOxygenEvent;
+
     [SerializeField] private float m_distanceToDestination;
 
     private UnityEvent m_win = new UnityEvent();
@@ -51,6 +68,11 @@ public class SC_StarshipManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Start()
+    {
+        m_eventManager = SC_EventManager.Instance;
     }
 
     private void Update()
@@ -94,41 +116,41 @@ public class SC_StarshipManager : MonoBehaviour
     }
     
     private void ManageOxygenEvent()
-{
-    //Catégorie oxygène trop élevé (>80%)
-    if (m_currentOxygen > m_overOxygen && !m_isOverOxygenAlreadyActive)
     {
-        m_isOverOxygenAlreadyActive = true;
-        //Ajouter l'event "Oxygène trop élevé"
+        //Catégorie oxygène trop élevé (>80%)
+        if (m_currentOxygen > m_overOxygen && !m_isOverOxygenAlreadyActive)
+        {
+            m_isOverOxygenAlreadyActive = true;
+            m_eventManager.SpawnEvent(m_overOxygenEvent);
+        }
+        else if (m_currentOxygen < m_overOxygen && m_isOverOxygenAlreadyActive)
+        {
+            m_isOverOxygenAlreadyActive = false;
+            m_eventManager.FindAndDestroyEvent(m_overOxygenEvent);
+        }
+        //Catégorie oxygène critique (<13%)
+        else if (m_currentOxygen < m_criticalOxygen && !m_isCriticalOxygenAlreadyActive)
+        {
+            m_isCriticalOxygenAlreadyActive = true;
+            m_eventManager.SpawnEvent(m_criticalOxygenEvent);
+        }
+        else if (m_currentOxygen > m_criticalOxygen && m_isCriticalOxygenAlreadyActive)
+        {
+            m_isCriticalOxygenAlreadyActive = false;
+            m_eventManager.FindAndDestroyEvent(m_criticalOxygenEvent);
+        }
+        //Catégorie oxygène bas (<17%)
+        else if (m_currentOxygen < m_lowOxygen && !m_isLowOxygenAlreadyActive)
+        {
+            m_isLowOxygenAlreadyActive = true;
+            m_eventManager.SpawnEvent(m_lowOxygenEvent);
+        }
+        else if (m_currentOxygen > m_lowOxygen && m_isLowOxygenAlreadyActive)
+        {
+            m_isLowOxygenAlreadyActive = false;
+            m_eventManager.FindAndDestroyEvent(m_lowOxygenEvent);
+        }
     }
-    else if (m_currentOxygen < m_overOxygen && m_isOverOxygenAlreadyActive)
-    {
-        m_isOverOxygenAlreadyActive = false;
-        //Retirer l'event "Oxygène trop élevé"
-    }
-    //Catégorie oxygène bas (<17%)
-    else if (m_currentOxygen < m_lowOxygen && !m_isLowOxygenAlreadyActive)
-    {
-        m_isLowOxygenAlreadyActive = true;
-        //Ajouter l'event "Manque d'oxygène"
-    }
-    else if (m_currentOxygen > m_lowOxygen && m_isLowOxygenAlreadyActive)
-    {
-        m_isLowOxygenAlreadyActive = false;
-        //Retirer l'event "Manque d'oxygène"
-    }
-    //Catégorie oxygène critique (<13%)
-    else if (m_currentOxygen < m_criticalOxygen && !m_isCriticalOxygenAlreadyActive)
-    {
-        m_isCriticalOxygenAlreadyActive = true;
-        //Ajouter l'event "Manque d'oxygène critique"
-    }
-    else if (m_currentOxygen > m_criticalOxygen && m_isCriticalOxygenAlreadyActive)
-    {
-        m_isCriticalOxygenAlreadyActive = false;
-        //Retirer l'event "Manque d'oxygène critique"
-    }
-}
 
     private void SpeedUpdate()
     {
@@ -174,23 +196,23 @@ public class SC_StarshipManager : MonoBehaviour
         if (m_currentSpeed > m_overSpeed && !m_isOverSpeedAlreadyActive)
         {
             m_isOverSpeedAlreadyActive = true;
-            //Ajouter l'event "Vitesse trop élevée"
+            m_eventManager.SpawnEvent(m_overSpeedEvent);
         }
         else if (m_currentSpeed < m_overSpeed && m_isOverSpeedAlreadyActive)
         {
             m_isOverSpeedAlreadyActive = false;
-            //Retirer l'event "Vitesse trop élevée"
+            m_eventManager.FindAndDestroyEvent(m_overSpeedEvent);
         }
         //Catégorie Vitesse trop basse (=0)
         else if (m_currentSpeed < m_lowSpeed && !m_isLowSpeedAlreadyActive)
         {
             m_isLowSpeedAlreadyActive = true;
-            //Ajouter l'event "Vitesse trop basse"
+            m_eventManager.SpawnEvent(m_lowSpeedEvent);
         }
         else if (m_currentSpeed > m_lowSpeed && m_isLowSpeedAlreadyActive)
         {
             m_isLowSpeedAlreadyActive = false;
-            //Retirer l'event "Vitesse trop basse"
+            m_eventManager.FindAndDestroyEvent(m_lowSpeedEvent);
         }
     }
 
@@ -202,27 +224,27 @@ public class SC_StarshipManager : MonoBehaviour
 
     private void ManagePressureEvent()
     {
+        //Catégorie surpression critique (>2.0 bar)
+        if (m_currentPressure > m_criticalPressure && !m_isCriticalPressureAlreadyActive)
+        {
+            m_isCriticalPressureAlreadyActive = true;
+            m_eventManager.SpawnEvent(m_criticalPressureEvent);
+        }
+        else if (m_currentPressure < m_criticalPressure && m_isCriticalPressureAlreadyActive)
+        {
+            m_isCriticalPressureAlreadyActive = false;
+            m_eventManager.FindAndDestroyEvent(m_criticalPressureEvent);
+        }
         //Catégorie surpression (>1.60 bar)
-        if (m_currentPressure > m_overPressure && !m_isOverPressureAlreadyActive)
+        else if (m_currentPressure > m_overPressure && !m_isOverPressureAlreadyActive)
         {
             m_isOverPressureAlreadyActive = true;
-            //Ajouter l'event "Surpression"
+            m_eventManager.SpawnEvent(m_overPressureEvent);
         }
         else if (m_currentPressure < m_overPressure && m_isOverPressureAlreadyActive)
         {
             m_isOverPressureAlreadyActive = false;
-            //Retirer l'event "Surpression"
-        }
-        //Catégorie surpression critique (>2.0 bar)
-        else if (m_currentPressure < m_criticalPressure && !m_isCriticalPressureAlreadyActive)
-        {
-            m_isCriticalPressureAlreadyActive = true;
-            //Ajouter l'event "Surpression critique"
-        }
-        else if (m_currentPressure > m_criticalPressure && m_isCriticalPressureAlreadyActive)
-        {
-            m_isCriticalPressureAlreadyActive = false;
-            //Retirer l'event "Surpression critique"
+            m_eventManager.FindAndDestroyEvent(m_overPressureEvent);
         }
     }
 
@@ -235,48 +257,48 @@ public class SC_StarshipManager : MonoBehaviour
     private void ManageTemperatureEvent()
     {
         //Catégorie température critiquement trop basse (<-10°C)
-        if (m_currentTemperature > m_criticalUnderTemperature && !m_isCriticalUnderTemperatureAlreadyActive)
+        if (m_currentTemperature < m_criticalUnderTemperature && !m_isCriticalUnderTemperatureAlreadyActive)
         {
             m_isCriticalUnderTemperatureAlreadyActive = true;
-            //Ajouter l'event "Température critiquement basse"
+            m_eventManager.SpawnEvent(m_criticalUnderTemperatureEvent);
         }
-        else if (m_currentTemperature < m_criticalUnderTemperature && m_isCriticalUnderTemperatureAlreadyActive)
+        else if (m_currentTemperature > m_criticalUnderTemperature && m_isCriticalUnderTemperatureAlreadyActive)
         {
             m_isCriticalUnderTemperatureAlreadyActive = false;
-            //Retirer l'event "Température critiquement basse"
+            m_eventManager.FindAndDestroyEvent(m_criticalUnderTemperatureEvent);
         }
         //Catégorie température bas (<-5°C)
         else if (m_currentTemperature < m_underTemperature && !m_isUnderTemperatureAlreadyActive)
         {
             m_isUnderTemperatureAlreadyActive = true;
-            //Ajouter l'event "Température basse"
+            m_eventManager.SpawnEvent(m_underTemperatureEvent);
         }
         else if (m_currentTemperature > m_underTemperature && m_isUnderTemperatureAlreadyActive)
         {
             m_isUnderTemperatureAlreadyActive = false;
-            //Retirer l'event "Température basse"
+            m_eventManager.FindAndDestroyEvent(m_underTemperatureEvent);
+        }
+        //Catégorie température critiquement haute (>50°C)
+        else if (m_currentTemperature > m_criticalOverTemperature && !m_isCriticalOverTemperatureAlreadyActive)
+        {
+            m_isCriticalOverTemperatureAlreadyActive = true;
+            m_eventManager.SpawnEvent(m_criticalOverTemperatureEvent);
+        }
+        else if (m_currentTemperature < m_criticalOverTemperature && m_isCriticalOverTemperatureAlreadyActive)
+        {
+            m_isCriticalOverTemperatureAlreadyActive = false;
+            m_eventManager.FindAndDestroyEvent(m_criticalOverTemperatureEvent);
         }
         //Catégorie température haute (>30°C)
         else if (m_currentTemperature > m_overTemperature && !m_isOverTemperatureAlreadyActive)
         {
             m_isOverTemperatureAlreadyActive = true;
-            //Ajouter l'event "Température élevée"
+            m_eventManager.SpawnEvent(m_overTemperatureEvent);
         }
         else if (m_currentTemperature < m_overTemperature && m_isOverTemperatureAlreadyActive)
         {
             m_isOverTemperatureAlreadyActive = false;
-            //Retirer l'event "Température élevée"
-        }
-        //Catégorie température critiquement haute (>50°C)
-        else if (m_currentTemperature < m_criticalOverTemperature && !m_isCriticalOverTemperatureAlreadyActive)
-        {
-            m_isCriticalOverTemperatureAlreadyActive = true;
-            //Ajouter l'event "Vitesse trop basse"
-        }
-        else if (m_currentTemperature > m_criticalOverTemperature && m_isCriticalOverTemperatureAlreadyActive)
-        {
-            m_isCriticalOverTemperatureAlreadyActive = false;
-            //Retirer l'event "Vitesse trop basse"
+            m_eventManager.FindAndDestroyEvent(m_overTemperatureEvent);
         }
     }
 }
