@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SC_EventIcon : MonoBehaviour
+public class SC_EventIcon : MonoBehaviour, IPointerEnterHandler
 {
     private SC_Event m_event;
     private SO_Character m_character;
@@ -22,10 +23,7 @@ public class SC_EventIcon : MonoBehaviour
     {
         SC_EventProcessor.Instance.ProcessEvent(m_event, m_character);
     }
-    public void OnMouseEnter()
-    {
-        m_event.EventParagraph;
-    }
+
     public void ChangeCharacterAttribution()
     {
         SO_Character Character = SC_CharacterManager.Instance.SelectedCharacter;
@@ -73,4 +71,8 @@ public class SC_EventIcon : MonoBehaviour
         }
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        SC_RoomPlacementManager.Instance.SetText(m_event);
+    }
 }
