@@ -23,6 +23,7 @@ public class SC_RightScreenUI : MonoBehaviour
 
     [SerializeField] private List<Sprite> m_containerColor;
     
+    private int m_ind = 0;
 
     private SC_CrisisGaugeManager m_gaugeManager;
     private SC_EventManager m_eventManager;
@@ -70,62 +71,135 @@ public class SC_RightScreenUI : MonoBehaviour
 
     private void ChangeLogos(SC_Event Event, int ind)
     {
-        switch (Event.StarshipState)
+        if (ind > 0)
         {
-            case StarshipState.CrewHealth:
-                if (IsEventCrisis(Event.EventAction))
-                {
-                    m_crewContainer.sprite = m_containerColor[1];
-                }
-                else
-                {
-                    m_crewContainer.sprite = m_containerColor[2];
-                }
-                break;
+            switch (Event.StarshipState)
+            {
+                case StarshipState.CrewHealth:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind];
+                        m_ind = ind;
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind * 2];
+                        m_ind = ind * 2;
+                    }
+                    break;
 
-            case StarshipState.Armor:
-                if (IsEventCrisis(Event.EventAction))
-                {
-                    m_armorContainer.sprite = m_containerColor[1];
-                }
-                else
-                {
-                    m_armorContainer.sprite = m_containerColor[2];
-                }
-                break;
+                case StarshipState.Armor:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind];
+                        m_ind = ind;
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind * 2];
+                        m_ind = ind * 2;
+                    }
+                    break;
 
-            case StarshipState.Engines:
-                if (IsEventCrisis(Event.EventAction))
-                {
-                    m_enginesContainer.sprite = m_containerColor[1];
-                }
-                else
-                {
-                    m_enginesContainer.sprite = m_containerColor[2];
-                }
-                break;
+                case StarshipState.Engines:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind];
+                        m_ind = ind;
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind * 2];
+                        m_ind = ind * 2;
+                    }
+                    break;
 
-            case StarshipState.Commands:
-                if (IsEventCrisis(Event.EventAction))
-                {
-                    m_commandsContainer.sprite = m_containerColor[1];
-                }
-                else
-                {
-                    m_commandsContainer.sprite = m_containerColor[2];
-                }
-                break;
+                case StarshipState.Commands:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind];
+                        m_ind = ind;
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind * 2];
+                        m_ind = ind * 2;
+                    }
+                    break;
 
-            case StarshipState.System:
-                if (IsEventCrisis(Event.EventAction))
-                {
-                    m_systemContainer.sprite = m_containerColor[1];
-                }
-                else
-                {
-                    m_systemContainer.sprite = m_containerColor[2];
-                }
-                break;
+                case StarshipState.System:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind];
+                        m_ind = ind;
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[ind * 2];
+                        m_ind = ind * 2;
+                    }
+                    break;
+            }
+        }
+        else if (ind < 0)
+        {
+            switch (Event.StarshipState)
+            {
+                case StarshipState.CrewHealth:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[m_ind + ind];
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[0];
+                    }
+                    break;
+
+                case StarshipState.Armor:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[m_ind + ind];
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[0];
+                    }
+                    break;
+
+                case StarshipState.Engines:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[m_ind + ind];
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[0];
+                    }
+                    break;
+
+                case StarshipState.Commands:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[m_ind + ind];
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[0];
+                    }
+                    break;
+
+                case StarshipState.System:
+                    if (IsEventCrisis(Event.EventAction))
+                    {
+                        m_crewContainer.sprite = m_containerColor[m_ind + ind];
+                    }
+                    else
+                    {
+                        m_crewContainer.sprite = m_containerColor[0];
+                    }
+                    break;
+            }
         }
     }
 

@@ -36,7 +36,7 @@ public class SC_GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= m_nextTimeToSpawnEvent && !m_endGame)
+        if (Time.timeSinceLevelLoad >= m_nextTimeToSpawnEvent && !m_endGame)
         {
             m_problemManager.CreateProblem();
             if (m_indexTimeline < m_timeline.Count) 

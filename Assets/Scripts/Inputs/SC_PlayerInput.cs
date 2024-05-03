@@ -16,12 +16,12 @@ public class SC_PlayerInput : MonoBehaviour
     }
     public void OnMouseButtonLeftDown(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !SC_GameMenu.Instance.InMenu)
         {
             SC_StarshipController.Instance.SetIsDragging(true);
             SC_StarshipController.Instance.CheckForInteractable(m_mousePos);
         }
-        if (context.canceled)
+        if (context.canceled && !SC_GameMenu.Instance.InMenu)
         {
             SC_StarshipController.Instance.SetIsDragging(false);
         }
