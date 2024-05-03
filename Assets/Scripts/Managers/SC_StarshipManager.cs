@@ -16,7 +16,7 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isCriticalOxygenAlreadyActive = false;
     private int m_oxygenInd = 0;
 
-    private float m_currentSpeed = 6700f;
+    private float m_currentSpeed = 5000f;
     private float m_lowSpeed = 0f;
     private float m_overSpeed = 8500f;
     private bool m_isOverSpeedAlreadyActive = false;
@@ -301,4 +301,9 @@ public class SC_StarshipManager : MonoBehaviour
             m_eventManager.FindAndDestroyEvent(m_overTemperatureEvent);
         }
     }
+
+    public float GetTemperature() { return m_currentTemperature; }
+    public float GetPressure() {  return m_currentPressure; }
+    public float GetOxygen() { return m_currentOxygen; }
+    public float GetSpeed() {  return m_currentSpeed; }
 }
