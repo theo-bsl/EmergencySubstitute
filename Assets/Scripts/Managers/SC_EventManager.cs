@@ -12,6 +12,8 @@ public class SC_EventManager : MonoBehaviour
 
     [SerializeField] private GameObject m_redAlert;
     [SerializeField] private GameObject m_orangeAlert;
+    [SerializeField] private Animator m_apple;
+    [SerializeField] private Animator m_screenShake;
 
     private int m_nbCrisisEvent = 0;
     private int m_nbFatalEvent = 0;
@@ -73,6 +75,10 @@ public class SC_EventManager : MonoBehaviour
                     {
                         m_orangeAlert.SetActive(true);
                     }
+                    else if (InstantiatedEvent.Name == "système de gravité HS")
+                    {
+                        m_apple.SetTrigger("StartEvent");
+                    }
                 }
                 else
                 {
@@ -80,6 +86,10 @@ public class SC_EventManager : MonoBehaviour
                     m_redAlert.SetActive(true);
                     m_orangeAlert.SetActive(false);
                     m_isRedAlert = true;
+                    if (InstantiatedEvent.Name == "Carlingue déchirée" ||  InstantiatedEvent.Name == "Moteurs détruit")
+                    {
+                        m_screenShake.SetBool("IsShaking", true);
+                    }
                 }
 
                 if (InstantiatedEvent.IsVisible)
@@ -160,6 +170,14 @@ public class SC_EventManager : MonoBehaviour
         if (Event.Name == "SAS HS")
         {
             m_orangeAlert.SetActive(false);
+        }
+        else if (Event.Name == "système de gravité HS")
+        {
+            m_apple.SetTrigger("EndEvent");
+        }
+        else if (Event.Name == "Carlingue déchirée" || Event.Name == "Moteurs détruit")
+        {
+            m_screenShake.SetBool("IsShaking", false);
         }
 
         if (m_nbFatalEvent == 0)
