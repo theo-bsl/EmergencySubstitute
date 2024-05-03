@@ -139,6 +139,32 @@ public class SC_EventManager : MonoBehaviour
         Destroy(Event);
     }
 
+    public void FindAndDestroyEvent(SC_Event EventToDestroy)
+    {
+        SC_Event Event = null;
+
+        for (int i = 0; i < m_events.Count; i++)
+        {
+            if (m_events[i].Name == EventToDestroy.Name)
+            {
+                Event = m_events[i];
+                break;
+            }
+        }
+
+        if (CheckIfCrisis(Event))
+        {
+            m_nbCrisisEvent--;
+        }
+
+        if (Event.IsVisible)
+        {
+            m_deleteEvent.Invoke(Event);
+        }
+        m_events.Remove(Event);
+        Destroy(Event);
+    }
+
     private void Update()
     {
         for (int i = m_events.Count - 1; i >= 0; i--)
