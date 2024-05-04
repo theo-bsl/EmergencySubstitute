@@ -37,6 +37,9 @@ public class SC_GameMenu : MonoBehaviour
     [SerializeField]
     private GameObject m_secondeTextSitePopup;
 
+    [SerializeField]
+    private GameObject m_tutoOpenUi;
+
     private bool m_hasSeenTutorial = false;
 
     public bool InMenu { get { return m_inMenu; } }
@@ -66,25 +69,16 @@ public class SC_GameMenu : MonoBehaviour
         m_mapMenu.SetActive(false);
     }
 
-    public void CharacterMenu()
-    {
-        m_characterMenu.SetActive(!m_characterMenu.activeSelf);
-        m_inMenu = m_mapMenu.activeSelf || m_characterMenu.activeSelf || m_tutorialMenu.activeSelf;
-
-        if (!m_hasSeenTutorial && m_mapMenu.activeSelf)
-        {
-            m_tutorialMenu.SetActive(true);
-        }
-    }
-
     public void MapMenu()
     {
+        m_characterMenu.SetActive(!m_characterMenu.activeSelf);
         m_mapMenu.SetActive(!m_mapMenu.activeSelf);
         m_inMenu = m_mapMenu.activeSelf || m_characterMenu.activeSelf || m_tutorialMenu.activeSelf;
 
         if (!m_hasSeenTutorial && m_characterMenu.activeSelf)
         {
             m_tutorialMenu.SetActive(true);
+            Time.timeScale = 0.0f;
         }
     }
 
@@ -93,6 +87,7 @@ public class SC_GameMenu : MonoBehaviour
         m_tutorialMenu.SetActive(false);
         m_hasSeenTutorial = true;
         m_inMenu = m_mapMenu.activeSelf || m_characterMenu.activeSelf || m_tutorialMenu.activeSelf;
+        Time.timeScale = 1.0f;
     }
 
     public void NextDialogueSitePopup()
@@ -107,7 +102,20 @@ public class SC_GameMenu : MonoBehaviour
             m_sitePopup.SetActive(false);
             m_inMenu = false;
             Time.timeScale = 1.0f;
+            OpenTutorialOpenUI();
         }
+    }
+
+    public void OpenTutorialOpenUI()
+    {
+        m_tutoOpenUi.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    public void CloseTutorialOpenUI()
+    {
+        m_tutoOpenUi.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 
     private void ShowWinMenu()
@@ -119,6 +127,7 @@ public class SC_GameMenu : MonoBehaviour
     public void HideBackToMenu()
     {
         m_backToMenuPopup.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 
     public void BackToMenu()

@@ -60,6 +60,8 @@ public class SC_StarshipManager : MonoBehaviour
 
     [SerializeField] private ParticleSystem m_particleSystem;
 
+    [SerializeField] private GameObject m_planet;
+
     private UnityEvent m_win = new UnityEvent();
 
     public UnityEvent Win { get { return m_win; } }

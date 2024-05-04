@@ -41,5 +41,6 @@ public class SC_PlayerInput : MonoBehaviour
     public void ShowBackToMenuPopup()
     {
         m_backToMenuPopup.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 }

@@ -44,17 +44,14 @@ public class SC_EventManager : MonoBehaviour
 
                 switch (SC_CrisisGaugeManager.Instance.GetCrisisPercentage())
                 {
-                    case < 25:
+                    case < 35:
                         crisisTimePenalty = 0;
                         break;
-                    case < 50:
-                        crisisTimePenalty = 16.6f;
-                        break;
-                    case < 75:
-                        crisisTimePenalty = 33.2f;
+                    case < 65:
+                        crisisTimePenalty = 15f;
                         break;
                     case < 100:
-                        crisisTimePenalty = 50f;
+                        crisisTimePenalty = 35f;
                         break;
                     default:
                         //throw new Exception("Crisis Gauge too high ! ");
