@@ -958,6 +958,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 0, y: 1, z: 0}
   m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -1031,6 +1033,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 0, y: 1, z: 0}
   m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 65
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -1786,6 +1790,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 0, y: 1, z: 0}
   m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -2408,6 +2414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 1, y: 0, z: 0}
   m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -2786,6 +2794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 0, y: 1, z: 0}
   m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -2909,6 +2919,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 1, y: 0, z: 0}
   m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -3011,6 +3023,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 1, y: 0, z: 0}
   m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -4081,6 +4095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 0, y: 1, z: 0}
   m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -5063,6 +5079,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 1, y: 0, z: 0}
   m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -7149,6 +7167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 1, y: 0, z: 0}
   m_deltaRotationMask: {x: 0, y: 1, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -9897,6 +9917,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dragDirectionMask: {x: 0, y: 1, z: 0}
   m_deltaRotationMask: {x: 1, y: 0, z: 0}
+  m_minRotationLimit: 0
+  m_maxRotationLimit: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}

@@ -5,10 +5,11 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
     private Vector3 m_dragDirection = Vector3.zero;
     [SerializeField] private Vector3 m_dragDirectionMask;
 
-    private Quaternion m_deltaRotation;
+    private Vector3 m_deltaRotation;
     [SerializeField] private Vector3 m_deltaRotationMask;
 
-    private Vector3 m_newRotation = Vector3.zero;
+    [SerializeField] private float m_minRotationLimit;
+    [SerializeField] private float m_maxRotationLimit;
 
     protected int m_stateInd;
 
@@ -38,12 +39,37 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
         m_dragDirection.x = DragDirection.x * m_dragDirectionMask.x;
         m_dragDirection.y = DragDirection.y * m_dragDirectionMask.y;
 
-        m_newRotation.x = m_dragDirection.x * m_deltaRotationMask.x + m_dragDirection.y * m_deltaRotationMask.x;
-        m_newRotation.y = m_dragDirection.x * m_deltaRotationMask.y + m_dragDirection.y * m_deltaRotationMask.y;
+        m_deltaRotation.x = m_dragDirection.x * m_deltaRotationMask.x + m_dragDirection.y * m_deltaRotationMask.x;
+        m_deltaRotation.y = m_dragDirection.x * m_deltaRotationMask.y + m_dragDirection.y * m_deltaRotationMask.y;
 
-        m_deltaRotation = Quaternion.Euler(m_newRotation);
+        if (CheckForNewRotation())
+        {
+            m_transform.rotation *= Quaternion.Euler(m_deltaRotation);
 
-        m_transform.rotation = m_transform.rotation * m_deltaRotation;
+            ManageInd();
+        }
+
+        StarshipInteractableAction();
+    }
+
+    private bool CheckForNewRotation()
+    {
+        //Debug.Log("localEulerAngles = " + m_transform.localEulerAngles);
+
+        //float newRotation = (MultiplyVector(m_transform.localEulerAngles, m_deltaRotationMask) + m_deltaRotation).magnitude;
+        Vector3 newRotation = m_transform.localEulerAngles + m_deltaRotation;
+
+        float interestingAngles = newRotation.x * m_deltaRotationMask.x + newRotation.y * m_deltaRotationMask.y + newRotation.z * m_deltaRotationMask.z;
+
+        return interestingAngles > m_minRotationLimit && interestingAngles < m_maxRotationLimit;
+    }
+
+    private void ManageInd()
+    {
+        if (MultiplyVector(m_transform.localEulerAngles, m_deltaRotationMask).magnitude > 0)
+        {
+
+        }
 
         if (m_transform.eulerAngles.y >= 90 && m_transform.eulerAngles.y <= 180)
         {
@@ -57,7 +83,11 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
         {
             m_stateInd = 0;
         }
-        StarshipInteractableAction();
+    }
+
+    private Vector3 MultiplyVector(Vector3 v1, Vector3 v2)
+    {
+        return new Vector3(v1.x * v2.x, v1.y * v2.y, v1.z * v2.z);
     }
 
     public bool GetIsSelected()
