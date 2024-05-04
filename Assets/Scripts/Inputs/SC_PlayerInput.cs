@@ -29,7 +29,7 @@ public class SC_PlayerInput : MonoBehaviour
 
     public void MousePos(InputAction.CallbackContext context)
     {
-        m_mousePos = m_camera.ScreenToWorldPoint(new Vector3(context.ReadValue<Vector2>().x, context.ReadValue<Vector2>().y, 1f));
+        m_mousePos = m_camera ? m_camera.ScreenToWorldPoint(new Vector3(context.ReadValue<Vector2>().x, context.ReadValue<Vector2>().y, 1f)) : m_mousePos;
     }
 
     public void MouseDelta(InputAction.CallbackContext context)
