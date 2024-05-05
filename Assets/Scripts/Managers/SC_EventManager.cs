@@ -203,11 +203,21 @@ public class SC_EventManager : MonoBehaviour
         {
             m_nbCrisisEvent--;
         }
+        else
+        {
+            m_nbFatalEvent--;
+        }
 
         if (Event.IsVisible)
         {
             m_deleteEvent.Invoke(Event);
         }
+
+        if (m_nbFatalEvent == 0)
+        {
+            m_redAlert.SetActive(false);
+        }
+
         m_events.Remove(Event);
         Destroy(Event);
     }

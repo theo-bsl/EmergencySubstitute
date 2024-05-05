@@ -21,19 +21,19 @@ public class SC_CockpitVarsDisplay : MonoBehaviour
     {
         if (m_parameter == StarshipVar.Pressure)
         {
-            m_text.text = ((int)m_manager.GetPressure()).ToString() + "bar";
+            m_text.text = ((float)m_manager.GetPressure()).ToString("0.00") + " bar";
         }
         else if (m_parameter == StarshipVar.Oxygen)
         {
-            m_text.text = ((int)m_manager.GetOxygen()).ToString() + "%";
+            m_text.text = ((float)m_manager.GetOxygen()).ToString("0.0") + "%";
         }
         else if (m_parameter == StarshipVar.Temperature)
         {
-            m_text.text = ((int)m_manager.GetTemperature()).ToString() + "°C";
+            m_text.text = ((float)m_manager.GetTemperature()).ToString("0.0") + "°C";
         }
         else
         {
-            m_text.text = ((int)m_manager.GetSpeed()).ToString() + "Ua/h";
+            m_text.text = ((int)m_manager.GetSpeed()).ToString() + " Ua/h";
         }
     }
 }
