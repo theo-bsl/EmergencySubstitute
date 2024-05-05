@@ -40,6 +40,9 @@ public class SC_GameMenu : MonoBehaviour
     [SerializeField]
     private GameObject m_tutoOpenUi;
 
+    [SerializeField]
+    private GameObject m_tutoZoomScreen;
+
     private bool m_hasSeenTutorial = false;
 
     public bool InMenu { get { return m_inMenu; } }
@@ -115,6 +118,19 @@ public class SC_GameMenu : MonoBehaviour
     public void CloseTutorialOpenUI()
     {
         m_tutoOpenUi.SetActive(false);
+        Time.timeScale = 1.0f;
+        OpenTutorialZoomScreen();
+    }
+
+    public void OpenTutorialZoomScreen()
+    {
+        m_tutoZoomScreen.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    public void CloseTutorialZoomScreen()
+    {
+        m_tutoZoomScreen.SetActive(false);
         Time.timeScale = 1.0f;
     }
 
