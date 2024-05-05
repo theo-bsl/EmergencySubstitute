@@ -15,9 +15,15 @@ MonoBehaviour:
   m_resolutionTimer: 0
   m_eventDuration: Infinity
   m_profession: 0
-  m_eventAction: []
+  m_starshipState: 0
+  m_eventAction:
+  - EventActionType: 4
+    EventActionValue: 1
   m_isVisible: 0
   m_icon: {fileID: 0}
   m_name: "manque d'oxyg\xE8ne"
+  m_deathCharacterPhrase: 
+  m_deathTimePhrase: 
+  m_eventParagraph: 
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

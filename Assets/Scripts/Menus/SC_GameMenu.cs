@@ -145,7 +145,7 @@ public class SC_GameMenu : MonoBehaviour
     private void ShowLoseMenu(string LoseMessage)
     {
         m_inMenu = true;
-        m_loseMessage.text = LoseMessage;
+        m_loseMessage.text = LoseMessage + m_loseMessage.text;
         m_loseMessage.transform.parent.gameObject.SetActive(true);
     }
 }
