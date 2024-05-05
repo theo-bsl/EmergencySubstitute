@@ -7,14 +7,14 @@ public class SC_StarshipManager : MonoBehaviour
 
     private SC_EventManager m_eventManager;
 
-    private float m_currentOxygen = 50f;
+    private float m_currentOxygen = 20.9f;
     private float m_criticalOxygen = 13f;
     private float m_lowOxygen = 17f;
     private float m_overOxygen = 80f;
     private bool m_isOverOxygenAlreadyActive = false;
     private bool m_isLowOxygenAlreadyActive = false;
     private bool m_isCriticalOxygenAlreadyActive = false;
-    private int m_oxygenInd = 0;
+    private float m_oxygenInd = 0.0f;
 
     private float m_currentSpeed = 5000f;
     private float m_lowSpeed = 0f;
@@ -23,14 +23,14 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isLowSpeedAlreadyActive = false;
     private int m_speedInd = 0;
 
-    private float m_currentPressure = 1f;
+    private float m_currentPressure = 1.1f;
     private float m_overPressure = 1.6f;
     private float m_criticalPressure = 2.0f;
     private bool m_isOverPressureAlreadyActive = false;
     private bool m_isCriticalPressureAlreadyActive = false;
-    private int m_pressureInd = 0;
+    private float m_pressureInd = 0.0f;
 
-    private float m_currentTemperature = 20f;
+    private float m_currentTemperature = 20.5f;
     private float m_criticalUnderTemperature = -5f;
     private float m_underTemperature = 10f;
     private float m_overTemperature = 30f;
@@ -39,7 +39,7 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isUnderTemperatureAlreadyActive = false;
     private bool m_isOverTemperatureAlreadyActive = false;
     private bool m_isCriticalOverTemperatureAlreadyActive = false;
-    private int m_temperatureInd = 0;
+    private float m_temperatureInd = 0.0f;
 
     [SerializeField] private SC_Event m_criticalUnderTemperatureEvent;
     [SerializeField] private SC_Event m_underTemperatureEvent;
@@ -60,6 +60,12 @@ public class SC_StarshipManager : MonoBehaviour
 
     [SerializeField] private ParticleSystem m_particleSystem;
 
+    [SerializeField] private GameObject m_planet;
+
+    private Vector3 m_planetScale;
+
+    private float m_distanceToWin;
+
     private UnityEvent m_win = new UnityEvent();
 
     public UnityEvent Win { get { return m_win; } }
@@ -75,6 +81,8 @@ public class SC_StarshipManager : MonoBehaviour
     private void Start()
     {
         m_eventManager = SC_EventManager.Instance;
+        m_planetScale = new Vector3(1.5f, 1.5f, 1.5f);
+        m_distanceToWin = m_distanceToDestination / 10;
     }
 
     private void Update()
@@ -156,7 +164,7 @@ public class SC_StarshipManager : MonoBehaviour
 
     private void SpeedUpdate()
     {
-        m_currentSpeed = Mathf.Clamp(m_currentSpeed + (m_speedInd * Time.deltaTime), 0f, Mathf.Infinity);
+        m_currentSpeed = Mathf.Clamp(m_currentSpeed + (m_speedInd * Time.deltaTime*40), 0f, 8500f);
 
         ManageSpeedEvent();
     }
@@ -177,7 +185,7 @@ public class SC_StarshipManager : MonoBehaviour
 
     private void OxygenUpdate()
     {
-        m_currentOxygen = Mathf.Clamp(m_currentOxygen + (m_oxygenInd * Time.deltaTime), 0f, Mathf.Infinity);
+        m_currentOxygen = Mathf.Clamp(m_currentOxygen + (m_oxygenInd * Time.deltaTime), 0f, 100f);
 
         ManageOxygenEvent();
     }
@@ -185,8 +193,12 @@ public class SC_StarshipManager : MonoBehaviour
     private void Travel()
     {
         m_distanceToDestination -= m_currentSpeed * Time.deltaTime;
-        m_particleSystem.playbackSpeed = m_currentSpeed * Time.deltaTime / 5;
-        if (m_distanceToDestination <= 0f) 
+        m_particleSystem.playbackSpeed = m_currentSpeed * Time.deltaTime / 2;
+        m_planetScale.x = 15 * m_distanceToWin/ m_distanceToDestination;
+        m_planetScale.y = m_planetScale.x;
+        m_planetScale.z = m_planetScale.x;
+        m_planet.gameObject.transform.localScale = m_planetScale;
+        if (m_distanceToDestination <= m_distanceToWin) 
         {
             m_win.Invoke();
         }
