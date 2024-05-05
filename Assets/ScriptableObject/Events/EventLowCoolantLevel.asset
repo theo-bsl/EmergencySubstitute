@@ -27,6 +27,6 @@ MonoBehaviour:
   m_deathTimePhrase: "Les r\xE9acteurs ont oblit\xE9r\xE9s le vaisseau suite \xE0
     un chauffage \xE0 blanc... un peu trop blanc."
   m_eventParagraph: "Le liquide de refroidissement n'est plus assez pr\xE9sent dans
-    le syst\xE8me."
+    le syst\xE8me. Besoin d'un ing\xE9nieur"
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

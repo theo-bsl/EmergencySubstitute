@@ -26,6 +26,6 @@ MonoBehaviour:
   m_name: "Moteurs d\xE9truit"
   m_deathCharacterPhrase: 
   m_deathTimePhrase: 
-  m_eventParagraph: "R\xE9acteur hors d'usage."
+  m_eventParagraph: "R\xE9acteur hors d'usage. Besoin d'un ing\xE9nieur"
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

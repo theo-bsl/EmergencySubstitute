@@ -99,7 +99,7 @@ public class SC_EventProcessor : MonoBehaviour
             {
                 if (hasWrongExpertise)
                 {
-                    SC_GameManager.Instance.Lose(Event.DeathCharacterPhrase);
+                    SC_GameManager.Instance.Lose(Character.Name + " " + Event.DeathCharacterPhrase);
                 }
                 else
                 {

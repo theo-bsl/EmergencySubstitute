@@ -28,6 +28,7 @@ MonoBehaviour:
   m_name: Surchauffe des moteurs
   m_deathCharacterPhrase: 
   m_deathTimePhrase: 
-  m_eventParagraph: Les moteurs ont trop chaud pour fonctionner normalement.
+  m_eventParagraph: "Les moteurs ont trop chaud pour fonctionner normalement. Besoin
+    d'un ing\xE9nieur"
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

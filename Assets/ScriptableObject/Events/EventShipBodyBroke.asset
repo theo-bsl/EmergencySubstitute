@@ -29,6 +29,6 @@ MonoBehaviour:
   m_deathCharacterPhrase: "a mal revis\xE9 la vis num\xE9ro 32.54 avec son tournevis
     antid\xE9rapant \xE0 t\xEAte Robertson num\xE9ro 3."
   m_deathTimePhrase: "Le vaisseau s'est disloqu\xE9."
-  m_eventParagraph: "Exterieur du vaisseau endommag\xE9."
+  m_eventParagraph: "Exterieur du vaisseau endommag\xE9. Besoin d'un ing\xE9nieur"
   m_room: 5
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

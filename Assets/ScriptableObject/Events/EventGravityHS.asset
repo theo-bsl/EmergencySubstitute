@@ -24,6 +24,6 @@ MonoBehaviour:
   m_name: "syst\xE8me de gravit\xE9 HS"
   m_deathCharacterPhrase: 
   m_deathTimePhrase: 
-  m_eventParagraph: "La gravit\xE9 du vaisseau est inop\xE9rante"
+  m_eventParagraph: "La gravit\xE9 du vaisseau est inop\xE9rante. Besoin d'un informaticien"
   m_room: 4
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

@@ -69,13 +69,13 @@ public class SC_EventManager : MonoBehaviour
                 if (CheckIfCrisis(InstantiatedEvent))
                 {
                     m_nbCrisisEvent++;
-                    if (InstantiatedEvent.Name == "SAS HS" && !m_isRedAlert)
-                    {
-                        m_orangeAlert.SetActive(true);
-                    }
-                    else if (InstantiatedEvent.Name == "système de gravité HS")
+                    if (InstantiatedEvent.Name == "système de gravité HS")
                     {
                         m_apple.SetTrigger("StartEvent");
+                    }
+                    if (!m_isRedAlert)
+                    {
+                        m_orangeAlert.SetActive(true);
                     }
                 }
                 else
@@ -153,6 +153,7 @@ public class SC_EventManager : MonoBehaviour
         if (CheckIfCrisis(Event))
         {
             m_nbCrisisEvent--;
+            m_orangeAlert.SetActive(false);
         }
         else
         {
@@ -165,11 +166,7 @@ public class SC_EventManager : MonoBehaviour
         }
         m_events.Remove(Event);
 
-        if (Event.Name == "SAS HS")
-        {
-            m_orangeAlert.SetActive(false);
-        }
-        else if (Event.Name == "système de gravité HS")
+        if (Event.Name == "système de gravité HS")
         {
             m_apple.SetTrigger("EndEvent");
         }

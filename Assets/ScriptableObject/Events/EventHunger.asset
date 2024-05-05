@@ -24,6 +24,6 @@ MonoBehaviour:
   m_name: Faim
   m_deathCharacterPhrase: 
   m_deathTimePhrase: 
-  m_eventParagraph: "L'\xE9quipage \xE0 faim"
+  m_eventParagraph: "L'\xE9quipage \xE0 faim. Besoin d'un cuisinier"
   m_room: 2
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

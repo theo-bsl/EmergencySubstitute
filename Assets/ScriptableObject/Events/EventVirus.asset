@@ -22,6 +22,6 @@ MonoBehaviour:
   m_name: Virus
   m_deathCharacterPhrase: 
   m_deathTimePhrase: 
-  m_eventParagraph: "Un virus a infect\xE9 l'ordinateur de bord"
+  m_eventParagraph: "Un virus a infect\xE9 l'ordinateur de bord. Besoin d'un informaticien"
   m_room: 4
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}
