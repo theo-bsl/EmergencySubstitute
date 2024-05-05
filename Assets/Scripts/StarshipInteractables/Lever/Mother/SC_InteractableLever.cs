@@ -11,7 +11,7 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
     [SerializeField] private float m_minRotationLimit;
     [SerializeField] private float m_maxRotationLimit;
 
-    protected int m_stateInd;
+    [SerializeField] protected int m_stateInd;
 
     private Transform m_transform;
 
@@ -54,9 +54,6 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
 
     private bool CheckForNewRotation()
     {
-        //Debug.Log("localEulerAngles = " + m_transform.localEulerAngles);
-
-        //float newRotation = (MultiplyVector(m_transform.localEulerAngles, m_deltaRotationMask) + m_deltaRotation).magnitude;
         Vector3 newRotation = m_transform.localEulerAngles + m_deltaRotation;
 
         float interestingAngles = newRotation.x * m_deltaRotationMask.x + newRotation.y * m_deltaRotationMask.y + newRotation.z * m_deltaRotationMask.z;
@@ -66,28 +63,21 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
 
     private void ManageInd()
     {
-        if (MultiplyVector(m_transform.localEulerAngles, m_deltaRotationMask).magnitude > 0)
-        {
+        float interestingAngles = m_transform.localEulerAngles.x * m_deltaRotationMask.x + m_transform.localEulerAngles.y * m_deltaRotationMask.y + m_transform.localEulerAngles.z * m_deltaRotationMask.z;
+        float operatingAngle = m_maxRotationLimit - m_minRotationLimit;
 
-        }
-
-        if (m_transform.eulerAngles.y >= 90 && m_transform.eulerAngles.y <= 180)
-        {
-            m_stateInd = 1;
-        }
-        else if (m_transform.eulerAngles.y <= 270 && m_transform.eulerAngles.y > 180)
+        if (interestingAngles < operatingAngle / 3)
         {
             m_stateInd = -1;
         }
-        else
+        else if (interestingAngles < operatingAngle / 3 * 2)
         {
             m_stateInd = 0;
         }
-    }
-
-    private Vector3 MultiplyVector(Vector3 v1, Vector3 v2)
-    {
-        return new Vector3(v1.x * v2.x, v1.y * v2.y, v1.z * v2.z);
+        else
+        {
+            m_stateInd = 1;
+        }
     }
 
     public bool GetIsSelected()

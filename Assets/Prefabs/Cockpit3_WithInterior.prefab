@@ -850,7 +850,6 @@ GameObject:
   - component: {fileID: 3015344104292593504}
   - component: {fileID: 7184289557732931960}
   - component: {fileID: 51651501364324637}
-  - component: {fileID: 3488082409905599732}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-1
   m_TagString: Untagged
@@ -944,25 +943,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.032041002, y: 0.027979, z: 0.016576236}
   m_Center: {x: 0, y: 0.0057019633, z: 0}
---- !u!114 &3488082409905599732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799194923515447813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dragDirectionMask: {x: 0, y: 1, z: 0}
-  m_deltaRotationMask: {x: 1, y: 0, z: 0}
-  m_minRotationLimit: 0
-  m_maxRotationLimit: 0
-  m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
-  m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
-  m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
 --- !u!1 &832346185675988225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1015,7 @@ MonoBehaviour:
   m_deltaRotationMask: {x: 1, y: 0, z: 0}
   m_minRotationLimit: 0
   m_maxRotationLimit: 65
+  m_stateInd: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -1682,7 +1663,6 @@ GameObject:
   - component: {fileID: 4872172626147024367}
   - component: {fileID: 5915078997449143073}
   - component: {fileID: 1556133672629704557}
-  - component: {fileID: 8810799445027686011}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-4
   m_TagString: Untagged
@@ -1776,25 +1756,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.032041002, y: 0.02797899, z: 0.01657623}
   m_Center: {x: 0, y: 0.0057019615, z: 0.00000047683716}
---- !u!114 &8810799445027686011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709032498062218737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dragDirectionMask: {x: 0, y: 1, z: 0}
-  m_deltaRotationMask: {x: 1, y: 0, z: 0}
-  m_minRotationLimit: 0
-  m_maxRotationLimit: 0
-  m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
-  m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
-  m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
 --- !u!1 &1929056594317720124
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,7 +2287,6 @@ GameObject:
   - component: {fileID: 5222544427012574679}
   - component: {fileID: 4803043346378138244}
   - component: {fileID: 5506835377786777782}
-  - component: {fileID: 9070507898557976538}
   - component: {fileID: 7242205478934686437}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch2-1
@@ -2400,25 +2360,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9070507898557976538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2302980509188892873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e1bbdde2fe93c94283d8bd4194442c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dragDirectionMask: {x: 1, y: 0, z: 0}
-  m_deltaRotationMask: {x: 0, y: 1, z: 0}
-  m_minRotationLimit: 0
-  m_maxRotationLimit: 0
-  m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
-  m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
-  m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
 --- !u!65 &7242205478934686437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2686,7 +2627,6 @@ GameObject:
   - component: {fileID: 4015549917255417561}
   - component: {fileID: 1209684819348171596}
   - component: {fileID: 9005433026663087535}
-  - component: {fileID: 2812979329197661741}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-2
   m_TagString: Untagged
@@ -2780,25 +2720,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.032041002, y: 0.02797899, z: 0.01657623}
   m_Center: {x: 0, y: 0.0057019615, z: 0.00000047683716}
---- !u!114 &2812979329197661741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2394567166175200349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dragDirectionMask: {x: 0, y: 1, z: 0}
-  m_deltaRotationMask: {x: 1, y: 0, z: 0}
-  m_minRotationLimit: 0
-  m_maxRotationLimit: 0
-  m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
-  m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
-  m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
 --- !u!1 &2688721107215380955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,6 +2842,7 @@ MonoBehaviour:
   m_deltaRotationMask: {x: 0, y: 1, z: 0}
   m_minRotationLimit: 0
   m_maxRotationLimit: 0
+  m_stateInd: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -2935,7 +2857,6 @@ GameObject:
   - component: {fileID: 7758680702308459424}
   - component: {fileID: 9011388421313862376}
   - component: {fileID: 5776425678309232138}
-  - component: {fileID: 4144952939081377086}
   - component: {fileID: 2844695222311471232}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch2-3
@@ -3009,25 +2930,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4144952939081377086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2774548060177628793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e1bbdde2fe93c94283d8bd4194442c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dragDirectionMask: {x: 1, y: 0, z: 0}
-  m_deltaRotationMask: {x: 0, y: 1, z: 0}
-  m_minRotationLimit: 0
-  m_maxRotationLimit: 0
-  m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
-  m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
-  m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
 --- !u!65 &2844695222311471232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3987,7 +3889,6 @@ GameObject:
   - component: {fileID: 7372786260264976559}
   - component: {fileID: 1969415219884649574}
   - component: {fileID: 3023238977730355900}
-  - component: {fileID: 2879977412419878774}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-5
   m_TagString: Untagged
@@ -4081,25 +3982,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.032041002, y: 0.027979001, z: 0.016576238}
   m_Center: {x: 0, y: 0.005701487, z: -0.000000007450581}
---- !u!114 &2879977412419878774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3648240545310505780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dragDirectionMask: {x: 0, y: 1, z: 0}
-  m_deltaRotationMask: {x: 1, y: 0, z: 0}
-  m_minRotationLimit: 0
-  m_maxRotationLimit: 0
-  m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
-  m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
-  m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
 --- !u!1 &3740393077122687138
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,6 +4963,7 @@ MonoBehaviour:
   m_deltaRotationMask: {x: 0, y: 1, z: 0}
   m_minRotationLimit: 0
   m_maxRotationLimit: 0
+  m_stateInd: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -7169,6 +7052,7 @@ MonoBehaviour:
   m_deltaRotationMask: {x: 0, y: 1, z: 0}
   m_minRotationLimit: 0
   m_maxRotationLimit: 0
+  m_stateInd: 0
   m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
   m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
   m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
@@ -9809,7 +9693,6 @@ GameObject:
   - component: {fileID: 7580088399195703101}
   - component: {fileID: 7582958374655828324}
   - component: {fileID: 5559981982911977424}
-  - component: {fileID: 4655733736588607580}
   m_Layer: 0
   m_Name: CockpitEquipments_Switch3-3
   m_TagString: Untagged
@@ -9903,25 +9786,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.032041002, y: 0.027979001, z: 0.016576238}
   m_Center: {x: 0, y: 0.005701487, z: -0.000000007450581}
---- !u!114 &4655733736588607580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8958701281036277497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8fd5b84b19c2d49b275a8cfaa9ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dragDirectionMask: {x: 0, y: 1, z: 0}
-  m_deltaRotationMask: {x: 1, y: 0, z: 0}
-  m_minRotationLimit: 0
-  m_maxRotationLimit: 0
-  m_mouseLeverHoverTexture: {fileID: 2800000, guid: 75baf591eccd5324da31567d0e97845d, type: 3}
-  m_mouseLeverDragTexture: {fileID: 2800000, guid: e8d4c35662c3cdf48828acf6fb6b158e, type: 3}
-  m_baseMouseTexture: {fileID: 2800000, guid: 37d845f078810a84385b8d61e11e0037, type: 3}
 --- !u!1 &8979411743273440301
 GameObject:
   m_ObjectHideFlags: 0
