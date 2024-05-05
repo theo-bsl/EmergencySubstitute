@@ -25,6 +25,11 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
         m_transform = transform;
     }
 
+    private void Start()
+    {
+        ManageInd();
+    }
+
     public  void OnSelected() 
     { 
         m_hasBeenChosen = true;
@@ -57,6 +62,24 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
         Vector3 newRotation = m_transform.localEulerAngles + m_deltaRotation;
 
         float interestingAngles = newRotation.x * m_deltaRotationMask.x + newRotation.y * m_deltaRotationMask.y + newRotation.z * m_deltaRotationMask.z;
+        //interestingAngles = interestingAngles < 0 ? 360 + interestingAngles : interestingAngles;
+
+        if (m_minRotationLimit > m_maxRotationLimit)
+        {
+            if (interestingAngles < 0)
+            {
+                return interestingAngles + 360 > m_minRotationLimit && interestingAngles < m_maxRotationLimit;
+            }
+            else 
+            {
+                if (interestingAngles < m_maxRotationLimit)
+                {
+                    return interestingAngles > m_minRotationLimit - 360;
+                }
+                else
+                    return interestingAngles > m_minRotationLimit;
+            }
+        }
 
         return interestingAngles > m_minRotationLimit && interestingAngles < m_maxRotationLimit;
     }
