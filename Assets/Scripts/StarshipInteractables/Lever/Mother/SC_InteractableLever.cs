@@ -86,14 +86,22 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
 
     private void ManageInd()
     {
-        float interestingAngles = m_transform.localEulerAngles.x * m_deltaRotationMask.x + m_transform.localEulerAngles.y * m_deltaRotationMask.y + m_transform.localEulerAngles.z * m_deltaRotationMask.z;
-        float operatingAngle = m_maxRotationLimit - m_minRotationLimit;
+        float maxAngle = m_maxRotationLimit;
+        float minAngle = m_minRotationLimit;
+        float currentAngle = m_transform.localEulerAngles.x * m_deltaRotationMask.x + m_transform.localEulerAngles.y * m_deltaRotationMask.y + m_transform.localEulerAngles.z * m_deltaRotationMask.z;
 
-        if (interestingAngles < operatingAngle / 3)
+        maxAngle += 360 - minAngle;
+        currentAngle += 360 - minAngle;
+        currentAngle -= currentAngle >= 360 ? 360 : 0;
+        minAngle = 0;
+
+        float operatingAngle = maxAngle - minAngle;
+
+        if (currentAngle < operatingAngle / 3)
         {
             m_stateInd = -1;
         }
-        else if (interestingAngles < operatingAngle / 3 * 2)
+        else if (currentAngle < operatingAngle / 3 * 2)
         {
             m_stateInd = 0;
         }
@@ -101,6 +109,29 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
         {
             m_stateInd = 1;
         }
+
+        /*float interestingAngles = m_transform.localEulerAngles.x * m_deltaRotationMask.x + m_transform.localEulerAngles.y * m_deltaRotationMask.y + m_transform.localEulerAngles.z * m_deltaRotationMask.z;
+        float operatingAngle = Mathf.Abs(m_maxRotationLimit - m_minRotationLimit);
+
+        if (m_minRotationLimit > m_maxRotationLimit)
+        {
+
+        }
+        else
+        {
+            if (interestingAngles < operatingAngle / 3)
+            {
+                m_stateInd = -1;
+            }
+            else if (interestingAngles < operatingAngle / 3 * 2)
+            {
+                m_stateInd = 0;
+            }
+            else
+            {
+                m_stateInd = 1;
+            }
+        }*/
     }
 
     public bool GetIsSelected()
