@@ -56,57 +56,81 @@ public class SoundPlayer : MonoBehaviour
 
     public void StartMenu()
     {
-        menu.Play();
+        if(menu == null)
+        {
+            menu.Play();
+        }
     }
 
     public void StopMenu()
     {
-        menu.Stop();
+        if (menu == null)
+        {
+            menu.Stop();
+        }
     }
 
     public void StopAmbiance()
     {
-        ambiance.Stop();
+        if(ambiance != null)
+        {
+            ambiance.Stop();
+        }
     }
 
     public void Breath()
     {
-        actualBreathSrc.Play();
+        if(actualBreathSrc != null)
+        {
+            actualBreathSrc.Play();
+        }
     }
 
     public void StartNormalBreathing()
     {
-        actualBreathSrc = normalBreathSrc;
-        timer = breathInterval;
-        hardBreathSrc.Stop();
-        veryHardBreathSrc.Stop();
-        illnessSrc.Stop();
+        if(normalBreathSrc != null)
+        {
+            actualBreathSrc = normalBreathSrc;
+            timer = breathInterval;
+            hardBreathSrc.Stop();
+            veryHardBreathSrc.Stop();
+            illnessSrc.Stop();
+        }
     }
 
     public void StartHardBreathing()
     {
-        actualBreathSrc = hardBreathSrc;
-        timer = breathInterval;
-        veryHardBreathSrc.Stop();
-        illnessSrc.Stop();
-        normalBreathSrc.Stop();
+        if (hardBreathSrc != null)
+        {
+            actualBreathSrc = hardBreathSrc;
+            timer = breathInterval;
+            veryHardBreathSrc.Stop();
+            illnessSrc.Stop();
+            normalBreathSrc.Stop();
+        }
     }
 
     public void StartVeryhardBreathing()
     {
-        actualBreathSrc = veryHardBreathSrc;
-        timer = breathInterval;
-        hardBreathSrc.Stop();
-        illnessSrc.Stop();
-        normalBreathSrc.Stop();
+        if (veryHardBreathSrc != null)
+        {
+            actualBreathSrc = veryHardBreathSrc;
+            timer = breathInterval;
+            hardBreathSrc.Stop();
+            illnessSrc.Stop();
+            normalBreathSrc.Stop();
+        }
     }
 
     public void StopBreathing()
     {
-        hardBreathSrc.Stop();
-        illnessSrc.Stop();
-        normalBreathSrc.Stop();
-        normalBreathSrc.Stop();
+        if(hardBreathSrc != null)
+        {
+            hardBreathSrc.Stop();
+            illnessSrc.Stop();
+            normalBreathSrc.Stop();
+            normalBreathSrc.Stop();
+        }
     }
 
     public void PlayToussing()
@@ -117,132 +141,201 @@ public class SoundPlayer : MonoBehaviour
 
     public void MotorBaseSpeed()
     {
-        motorSrc.Play();
-        slowMotorSrc.Stop();
-        fastMotorSrc.Stop();
+        if(motorSrc != null)
+        {
+            motorSrc.Play();
+            slowMotorSrc.Stop();
+            fastMotorSrc.Stop();
+        }
     }
 
     public void MotorFastSpeed()
     {
-        motorSrc.Stop();
-        slowMotorSrc.Stop();
-        fastMotorSrc.Play();
+        if (motorSrc != null)
+        {
+            motorSrc.Stop();
+            slowMotorSrc.Stop();
+            fastMotorSrc.Play();
+        }
     }
 
     public void MotorSlowSpeed()
     {
-        motorSrc.Stop();
-        slowMotorSrc.Play();
-        fastMotorSrc.Stop();
+        if (motorSrc != null)
+        {
+            motorSrc.Stop();
+            slowMotorSrc.Play();
+            fastMotorSrc.Stop();
+        }
     }
 
     public void StopMotor()
     {
-        motorSrc.Stop();
-        slowMotorSrc.Stop();
-        fastMotorSrc.Stop();
+        if (motorSrc != null)
+        {
+            motorSrc.Stop();
+            slowMotorSrc.Stop();
+            fastMotorSrc.Stop();
+        }
     }
 
     public void StartAcouphene()
     {
-        tinnitusSrc.Play();
+        if (tinnitusSrc != null)
+        {
+            tinnitusSrc.Play();
+        }
     }
 
     public void StopAcouphene()
     {
-        tinnitusSrc.Stop();
+        if(tinnitusSrc != null)
+        {
+            tinnitusSrc.Stop();
+        }
     }
 
     public void StartFatalAlarm()
     {
-        fatalEventSrc.Play();
+        if (fatalEventSrc != null)
+        {
+            fatalEventSrc.Play();
+        }
     }
 
     public void StartCrisesAlarm()
     {
-        crisesEventSrc.Play();
+        if (crisesEventSrc != null)
+        {
+            crisesEventSrc.Play();
+        }
     }
 
     public void EndFatalAlarm()
     {
-        fatalEventSrc.Stop();
+        if(fatalEventSrc != null)
+        {
+            fatalEventSrc.Stop();
+        }
     }
 
     public void EndCrisesAlarm()
     {
-        crisesEventSrc.Stop();
+        if(crisesEventSrc != null)
+        {
+            crisesEventSrc.Stop();
+        }
     }
 
     public void StartHacking()
     {
-        hackingSrc.Play();
+        if (hackingSrc != null)
+        {
+            hackingSrc.Play();
+        }
     }
 
     public void EndHacking()
     {
-        hackingSrc.Stop();
+        if(hackingSrc != null)
+        {
+            hackingSrc.Stop();
+        }
     }
 
     public void PlayHunger()
     {
-        hungerSrc.Play();
+        if(hungerSrc != null)
+        {
+            hungerSrc.Play();
+        }
     }
 
     public void PlayEndEvent()
     {
-        endEventSrc.Play();
+        if(endEventSrc != null)
+        {
+            endEventSrc.Play();
+        }
     }
 
     public void PlayCarlingue()
     {
-        bodySrc.Play();
+        if(bodySrc != null)
+        {
+            bodySrc.Play();
+        }
     }
 
     public void PlayUpBtn()
     {
-        upButtonSrc.Play();
+        if(upButtonSrc != null)
+        {
+            upButtonSrc.Play();
+        }
     }
 
     public void PlayDownButton()
     {
-        //downButtonSrc.Play();
+        if(downButtonSrc != null)
+        {
+            //downButtonSrc.Play();
+        }
     }
 
     public void PlayPopup()
     {
-        popupSrc.Play();
+        if(popupSrc != null)
+        {
+            popupSrc.Play();
+        }
     }
 
     public void PlayWork()
     {
-        workSrc.Play();
+        if(workSrc != null)
+        {
+            workSrc.Play();
+        }
     }
 
     public void StartWin()
     {
-        victorySrc.Play();
+        if (victorySrc != null)
+        {
+            victorySrc.Play();
+        }
     }
 
     public void StopWin()
     {
-        victorySrc.Stop();
+        if(victorySrc != null)
+        {
+            victorySrc.Stop();
+        }
     }
 
     public void StartLoose()
     {
-        defeatSrc.Play();
+        if (defeatSrc != null)
+        {
+            defeatSrc.Play();
+        }
     }
 
     public void StopLoose()
     {
-        defeatSrc.Stop();
+        if(defeatSrc != null)
+        {
+            defeatSrc.Stop();
+        }
     }
 
     private void Update()
     {
         timer += Time.deltaTime;
 
-        if(timer > breathInterval)
+        if(timer > breathInterval && normalBreathSrc != null)
         {
             timer = 0;
             Breath();
