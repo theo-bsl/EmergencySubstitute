@@ -95,6 +95,7 @@ public class SC_GameMenu : MonoBehaviour
 
     public void NextDialogueSitePopup()
     {
+        SoundPlayer.instance.PlayDownButton();
         if (m_firstTextSitePopup.activeSelf)
         {
             m_firstTextSitePopup.SetActive(false);
@@ -120,6 +121,7 @@ public class SC_GameMenu : MonoBehaviour
         m_tutoOpenUi.SetActive(false);
         Time.timeScale = 1.0f;
         OpenTutorialZoomScreen();
+        SoundPlayer.instance.PlayDownButton();
     }
 
     public void OpenTutorialZoomScreen()
@@ -132,6 +134,7 @@ public class SC_GameMenu : MonoBehaviour
     {
         m_tutoZoomScreen.SetActive(false);
         Time.timeScale = 1.0f;
+        SoundPlayer.instance.PlayDownButton();
     }
 
     private void ShowWinMenu()
@@ -150,12 +153,16 @@ public class SC_GameMenu : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("MenuScene");
+        SoundPlayer.instance.StopWin();
+        SoundPlayer.instance.StopLoose();
     }
 
     public void Replay()
     {
         //Reload scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SoundPlayer.instance.StopWin();
+        SoundPlayer.instance.StopLoose();
     }
 
     private void ShowLoseMenu(string LoseMessage)

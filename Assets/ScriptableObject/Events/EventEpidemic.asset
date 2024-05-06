@@ -21,8 +21,9 @@ MonoBehaviour:
   m_icon: {fileID: 21300000, guid: aab855b24248a66488d8eb184fccc6f8, type: 3}
   m_name: Epidemie
   m_deathCharacterPhrase: "s'est laiss\xE9 d\xE9passer par la flemmingite aigu\xEB."
-  m_deathTimePhrase: "Le syndrome de la deuxi\xE8me chopine a pris le pas sur le
-    vaisseau, plus personne n'est sobre."
+  m_deathTimePhrase: "Il semblerait que quelque chose ait mal tourn\xE9. Peut-\xEAtre
+    que les membres de l'\xE9quipage n'auraient pas d\xFB boire l\u2019eau non filtr\xE9e
+    \xE0 bord ?"
   m_eventParagraph: "Maladie se propageant dans le vaisseau. Besoin d'un m\xE9decin"
   m_room: 3
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

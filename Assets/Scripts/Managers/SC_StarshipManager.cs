@@ -164,7 +164,7 @@ public class SC_StarshipManager : MonoBehaviour
 
     private void SpeedUpdate()
     {
-        m_currentSpeed = Mathf.Clamp(m_currentSpeed + (m_speedInd * Time.deltaTime*40), 0f, 8500f);
+        m_currentSpeed = Mathf.Clamp(m_currentSpeed + (m_speedInd * Time.deltaTime*40), 0f, Mathf.Infinity);
 
         ManageSpeedEvent();
     }

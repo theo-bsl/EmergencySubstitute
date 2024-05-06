@@ -82,6 +82,7 @@ public class SC_MainMenu : MonoBehaviour
 
     public void LoadMission1()
     {
+        SoundPlayer.instance.StopMenu();
         SceneManager.LoadScene("GameScene");
     }
 

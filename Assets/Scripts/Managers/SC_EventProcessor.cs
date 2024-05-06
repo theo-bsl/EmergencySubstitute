@@ -38,6 +38,7 @@ public class SC_EventProcessor : MonoBehaviour
             if (Character.IsAvailable && !Event.IsGettingProcessed)
             {
                 Event.IsGettingProcessed = true;
+                SoundPlayer.instance.PlayWork();
                 StartCoroutine(Process(Event, Character));
             }
         }

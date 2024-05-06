@@ -39,6 +39,9 @@ public class SoundPlayer : MonoBehaviour
     public AudioSource victorySrc;
     public AudioSource defeatSrc;
 
+    public AudioSource ambiance;
+    public AudioSource menu;
+
     private void Awake()
     {
         instance = this;
@@ -49,6 +52,21 @@ public class SoundPlayer : MonoBehaviour
         actualBreathSrc = normalBreathSrc;
         MotorBaseSpeed();
 
+    }
+
+    public void StartMenu()
+    {
+        menu.Play();
+    }
+
+    public void StopMenu()
+    {
+        menu.Stop();
+    }
+
+    public void StopAmbiance()
+    {
+        ambiance.Stop();
     }
 
     public void Breath()
@@ -83,13 +101,18 @@ public class SoundPlayer : MonoBehaviour
         normalBreathSrc.Stop();
     }
 
-    public void StartToussing()
+    public void StopBreathing()
+    {
+        hardBreathSrc.Stop();
+        illnessSrc.Stop();
+        normalBreathSrc.Stop();
+        normalBreathSrc.Stop();
+    }
+
+    public void PlayToussing()
     {
         actualBreathSrc = illnessSrc;
         timer = breathInterval;
-        hardBreathSrc.Stop();
-        veryHardBreathSrc.Stop();
-        normalBreathSrc.Stop();
     }
 
     public void MotorBaseSpeed()
@@ -110,6 +133,13 @@ public class SoundPlayer : MonoBehaviour
     {
         motorSrc.Stop();
         slowMotorSrc.Play();
+        fastMotorSrc.Stop();
+    }
+
+    public void StopMotor()
+    {
+        motorSrc.Stop();
+        slowMotorSrc.Stop();
         fastMotorSrc.Stop();
     }
 
@@ -173,9 +203,9 @@ public class SoundPlayer : MonoBehaviour
         upButtonSrc.Play();
     }
 
-    public void PlayDownutton()
+    public void PlayDownButton()
     {
-        downButtonSrc.Play();
+        //downButtonSrc.Play();
     }
 
     public void PlayPopup()
@@ -188,14 +218,24 @@ public class SoundPlayer : MonoBehaviour
         workSrc.Play();
     }
 
-    public void PlayWin()
+    public void StartWin()
     {
         victorySrc.Play();
     }
 
-    public void PlayLoose()
+    public void StopWin()
+    {
+        victorySrc.Stop();
+    }
+
+    public void StartLoose()
     {
         defeatSrc.Play();
+    }
+
+    public void StopLoose()
+    {
+        defeatSrc.Stop();
     }
 
     private void Update()
