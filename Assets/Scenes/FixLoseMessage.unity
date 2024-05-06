@@ -1137,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13802bcf049e144a8aece2c493a2464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gaugeDecrease: 0
   m_timeToWaitBeforeDecreaseGauge: 30
 --- !u!1 &614044369
 GameObject:
@@ -3029,10 +3030,6 @@ PrefabInstance:
       objectReference: {fileID: 1155997062307774052, guid: 536c0cb151a97b7409c59e760d086cd2, type: 2}
     - target: {fileID: 5613795286008213081, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5900898462681309526, guid: 06f2246e9b76e05418785729907eeb27, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6213667090659268880, guid: 06f2246e9b76e05418785729907eeb27, type: 3}

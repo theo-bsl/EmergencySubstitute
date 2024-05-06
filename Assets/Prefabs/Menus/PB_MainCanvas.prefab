@@ -603,6 +603,8 @@ MonoBehaviour:
   m_sitePopup: {fileID: 9181360449903438342}
   m_firstTextSitePopup: {fileID: 6514467295786632712}
   m_secondeTextSitePopup: {fileID: 4749394681099898569}
+  m_tutoOpenUi: {fileID: 0}
+  m_tutoZoomScreen: {fileID: 0}
 --- !u!1 &6514467295786632712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,10 +1522,6 @@ PrefabInstance:
     - target: {fileID: 4152757069369790298, guid: ec5aa31250ff245439c61b6851baaa01, type: 3}
       propertyPath: m_Name
       value: LoseMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4152757069369790298, guid: ec5aa31250ff245439c61b6851baaa01, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6048682950828595110, guid: ec5aa31250ff245439c61b6851baaa01, type: 3}
       propertyPath: m_sharedMaterial
