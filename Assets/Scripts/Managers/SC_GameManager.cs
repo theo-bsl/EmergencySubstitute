@@ -59,8 +59,11 @@ public class SC_GameManager : MonoBehaviour
 
     public void Win()
     {
-        PauseGame();
+        //PauseGame();
+        Time.timeScale = 0.0f;
         m_gameWin.Invoke();
+        StopSounds();
+        SoundPlayer.instance.StartWin();
         //SceneManager.LoadScene("Win_Scene");
     }
 
@@ -68,7 +71,20 @@ public class SC_GameManager : MonoBehaviour
     {
         PauseGame();
         m_gameLose.Invoke(LoseMessage);
+        StopSounds();
+        SoundPlayer.instance.StartLoose();
         //SceneManager.LoadScene("Defeat_Scene");
+    }
+
+    public void StopSounds()
+    {
+        SoundPlayer.instance.StopAcouphene();
+        SoundPlayer.instance.EndHacking();
+        SoundPlayer.instance.EndCrisesAlarm();
+        SoundPlayer.instance.EndFatalAlarm();
+        SoundPlayer.instance.StopBreathing();
+        SoundPlayer.instance.StopMotor();
+        SoundPlayer.instance.StopAmbiance();
     }
 
     public void PauseGame()

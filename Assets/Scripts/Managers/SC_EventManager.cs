@@ -69,20 +69,23 @@ public class SC_EventManager : MonoBehaviour
                 if (CheckIfCrisis(InstantiatedEvent))
                 {
                     m_nbCrisisEvent++;
-                    if (InstantiatedEvent.Name == "SAS HS" && !m_isRedAlert)
-                    {
-                        m_orangeAlert.SetActive(true);
-                    }
-                    else if (InstantiatedEvent.Name == "système de gravité HS")
+                    if (InstantiatedEvent.Name == "système de gravité HS")
                     {
                         m_apple.SetTrigger("StartEvent");
+                    }
+                    if (!m_isRedAlert)
+                    {
+                        m_orangeAlert.SetActive(true);
+                        SoundPlayer.instance.StartCrisesAlarm();
                     }
                 }
                 else
                 {
                     m_nbFatalEvent++;
                     m_redAlert.SetActive(true);
+                    SoundPlayer.instance.StartFatalAlarm();
                     m_orangeAlert.SetActive(false);
+                    SoundPlayer.instance.EndCrisesAlarm();
                     m_isRedAlert = true;
                     if (InstantiatedEvent.Name == "Carlingue déchirée" ||  InstantiatedEvent.Name == "Moteurs détruit")
                     {
@@ -94,11 +97,76 @@ public class SC_EventManager : MonoBehaviour
                 {
                     m_newEvent.Invoke(InstantiatedEvent);
                 }
+                playSoundStartEvent(InstantiatedEvent);
             }
         }
     }
 
-    public bool CheckIfCrisis(SC_Event Event)
+    public void playSoundStartEvent(SC_Event InstantiatedEvent)
+    {
+        SoundPlayer.instance.PlayPopup();
+
+        if(InstantiatedEvent.Name == "manque de vitesse")
+        {
+            SoundPlayer.instance.MotorSlowSpeed();
+        }
+        else if (InstantiatedEvent.Name == "trop de vitesse")
+        {
+            SoundPlayer.instance.MotorFastSpeed();
+        }
+        else if (InstantiatedEvent.Name == "manque d'oxygène")
+        {
+            SoundPlayer.instance.StartHardBreathing();
+        }
+        else if (InstantiatedEvent.Name == "manque d'oxygène critique")
+        {
+            SoundPlayer.instance.StartVeryhardBreathing();
+        }
+        else if (InstantiatedEvent.Name == "Carlingue déchirée")
+        {
+            SoundPlayer.instance.PlayCarlingue();
+        }
+        else if (InstantiatedEvent.Name == "surpression critique")
+        {
+            SoundPlayer.instance.StartAcouphene();
+        }
+        else if (InstantiatedEvent.Name == "Faim")
+        {
+            SoundPlayer.instance.PlayHunger();
+        }
+        else if (InstantiatedEvent.Name == "Virus")
+        {
+            SoundPlayer.instance.StartHacking();
+        }
+        else if (InstantiatedEvent.Name == "Epidemie")
+        {
+            SoundPlayer.instance.PlayToussing();
+        }
+    }
+
+    public void playSoundEndEvent(SC_Event InstantiatedEvent)
+    {
+        SoundPlayer.instance.PlayEndEvent();
+
+        if (InstantiatedEvent.Name == "Virus")
+        {
+            SoundPlayer.instance.EndHacking();
+        }
+        else if (InstantiatedEvent.Name == "surpression critique")
+        {
+            SoundPlayer.instance.StopAcouphene();
+        }
+        else if (InstantiatedEvent.Name == "manque de vitesse" || InstantiatedEvent.Name == "trop de vitesse")
+        {
+            SoundPlayer.instance.MotorBaseSpeed();
+        }
+        else if (InstantiatedEvent.Name == "manque d'oxygène" || InstantiatedEvent.Name == "manque d'oxygène critique")
+        {
+            SoundPlayer.instance.StartNormalBreathing();
+        }
+    }
+
+        public bool CheckIfCrisis(SC_Event Event)
     {
         for (int i = 0; i < Event.EventAction.Count; i++)
         {
@@ -153,6 +221,8 @@ public class SC_EventManager : MonoBehaviour
         if (CheckIfCrisis(Event))
         {
             m_nbCrisisEvent--;
+            m_orangeAlert.SetActive(false);
+            SoundPlayer.instance.EndCrisesAlarm();
         }
         else
         {
@@ -165,11 +235,7 @@ public class SC_EventManager : MonoBehaviour
         }
         m_events.Remove(Event);
 
-        if (Event.Name == "SAS HS")
-        {
-            m_orangeAlert.SetActive(false);
-        }
-        else if (Event.Name == "système de gravité HS")
+        if (Event.Name == "système de gravité HS")
         {
             m_apple.SetTrigger("EndEvent");
         }
@@ -181,7 +247,9 @@ public class SC_EventManager : MonoBehaviour
         if (m_nbFatalEvent == 0)
         {
             m_redAlert.SetActive(false);
+            SoundPlayer.instance.EndFatalAlarm();
         }
+        playSoundEndEvent(Event);
 
         Destroy(Event);
     }

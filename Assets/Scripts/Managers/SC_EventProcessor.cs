@@ -38,6 +38,7 @@ public class SC_EventProcessor : MonoBehaviour
             if (Character.IsAvailable && !Event.IsGettingProcessed)
             {
                 Event.IsGettingProcessed = true;
+                SoundPlayer.instance.PlayWork();
                 StartCoroutine(Process(Event, Character));
             }
         }
@@ -99,7 +100,7 @@ public class SC_EventProcessor : MonoBehaviour
             {
                 if (hasWrongExpertise)
                 {
-                    SC_GameManager.Instance.Lose(Event.DeathCharacterPhrase);
+                    SC_GameManager.Instance.Lose(Character.Name + " " + Event.DeathCharacterPhrase);
                 }
                 else
                 {

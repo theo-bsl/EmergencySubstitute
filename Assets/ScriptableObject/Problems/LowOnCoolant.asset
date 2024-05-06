@@ -14,15 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_eventConfigurations:
   - SC_Event: {fileID: 11400000, guid: 4d519d58703d5594e886a0f3ee57ebbf, type: 2}
-    EventActions:
-    - EventActionType: 0
-      EventActionValue: -1
+    EventActions: []
   - SC_Event: {fileID: 11400000, guid: bceaa0e6bf9dae64c9b763d0a312e7a7, type: 2}
     EventActions:
     - EventActionType: 0
-      EventActionValue: 1
+      EventActionValue: 0.5
     - EventActionType: 3
-      EventActionValue: -1
+      EventActionValue: -60
     - EventActionType: 4
-      EventActionValue: 1
+      EventActionValue: 0.5
   m_blockerEvents: []

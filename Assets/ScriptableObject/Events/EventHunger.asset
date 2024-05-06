@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28aa68e2b0d4da43bf7c4746dc4bb94, type: 3}
   m_Name: EventHunger
   m_EditorClassIdentifier: 
-  m_resolutionTimer: 10
+  m_resolutionTimer: 15
   m_eventDuration: Infinity
   m_profession: 2
   m_starshipState: 0
@@ -24,6 +24,6 @@ MonoBehaviour:
   m_name: Faim
   m_deathCharacterPhrase: 
   m_deathTimePhrase: 
-  m_eventParagraph: "L'\xE9quipage \xE0 faim"
+  m_eventParagraph: "L'\xE9quipage \xE0 faim. Besoin d'un cuisinier"
   m_room: 2
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}

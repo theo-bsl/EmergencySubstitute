@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EventNotEnoughSpeed
   m_EditorClassIdentifier: 
   m_resolutionTimer: 0
-  m_eventDuration: 30
+  m_eventDuration: 90
   m_profession: 0
   m_starshipState: 0
   m_eventAction: []

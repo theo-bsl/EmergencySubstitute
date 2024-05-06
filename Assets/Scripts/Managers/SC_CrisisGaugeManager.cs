@@ -4,7 +4,7 @@ public class SC_CrisisGaugeManager : MonoBehaviour
 {
     public static SC_CrisisGaugeManager Instance;
     private float m_percentage;
-    private float m_gaugeDecrease;
+    [SerializeField] private float m_gaugeDecrease;
     private float m_waitTime;
     [SerializeField] private float m_timeToWaitBeforeDecreaseGauge;
 

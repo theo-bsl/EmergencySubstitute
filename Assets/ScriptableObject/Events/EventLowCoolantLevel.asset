@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28aa68e2b0d4da43bf7c4746dc4bb94, type: 3}
   m_Name: EventLowCoolantLevel
   m_EditorClassIdentifier: 
-  m_resolutionTimer: 5
-  m_eventDuration: 20
+  m_resolutionTimer: 10
+  m_eventDuration: 30
   m_profession: 0
   m_starshipState: 2
   m_eventAction:
@@ -27,6 +27,6 @@ MonoBehaviour:
   m_deathTimePhrase: "Les r\xE9acteurs ont oblit\xE9r\xE9s le vaisseau suite \xE0
     un chauffage \xE0 blanc... un peu trop blanc."
   m_eventParagraph: "Le liquide de refroidissement n'est plus assez pr\xE9sent dans
-    le syst\xE8me."
+    le syst\xE8me. Besoin d'un ing\xE9nieur"
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}
