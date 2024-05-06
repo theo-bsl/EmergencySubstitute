@@ -1971,7 +1971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13802bcf049e144a8aece2c493a2464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeToWaitBeforeDecreaseGauge: 30
+  m_gaugeDecrease: 0.5
+  m_timeToWaitBeforeDecreaseGauge: 5
 --- !u!224 &605959112 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8549772210160358068, guid: 7405726a3c9294f4dba99f5a4099ac45, type: 3}
@@ -4525,7 +4526,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 95ebe4ebd89f52144aabfb9d7b3d63f0, type: 2}
   m_audioClip: {fileID: 8300000, guid: e6688f07636e0fc44a1641696307b7be, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6503,7 +6504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3fd33f79e073b4ea19ad9189f2f864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeline: 05000000280000006e000000b4000000e60000000e0100006801000086010000e0010000120200004e02000080020000a8020000
+  m_timeline: ff000000280000006e000000b4000000e60000000e0100006801000086010000e0010000120200004e02000080020000a8020000
 --- !u!1 &1977340923
 GameObject:
   m_ObjectHideFlags: 0

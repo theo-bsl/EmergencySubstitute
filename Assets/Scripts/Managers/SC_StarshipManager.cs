@@ -30,9 +30,9 @@ public class SC_StarshipManager : MonoBehaviour
     private bool m_isCriticalPressureAlreadyActive = false;
     private float m_pressureInd = 0.0f;
 
-    private float m_currentTemperature = 20.5f;
-    private float m_criticalUnderTemperature = -5f;
-    private float m_underTemperature = 10f;
+    private float m_currentTemperature = -21f;
+    private float m_criticalUnderTemperature = -20f;
+    private float m_underTemperature = 0f;
     private float m_overTemperature = 30f;
     private float m_criticalOverTemperature = 50f;
     private bool m_isCriticalUnderTemperatureAlreadyActive = false;

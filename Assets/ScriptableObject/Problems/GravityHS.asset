@@ -16,6 +16,6 @@ MonoBehaviour:
   - SC_Event: {fileID: 11400000, guid: 5accca066f4217f439fe3ba2be119787, type: 2}
     EventActions:
     - EventActionType: 4
-      EventActionValue: 1
+      EventActionValue: 0.5
   m_blockerEvents:
   - {fileID: 11400000, guid: 5accca066f4217f439fe3ba2be119787, type: 2}

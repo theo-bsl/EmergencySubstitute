@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28aa68e2b0d4da43bf7c4746dc4bb94, type: 3}
   m_Name: EventMotorOverheating
   m_EditorClassIdentifier: 
-  m_resolutionTimer: 10
+  m_resolutionTimer: 15
   m_eventDuration: Infinity
   m_profession: 0
   m_starshipState: 2

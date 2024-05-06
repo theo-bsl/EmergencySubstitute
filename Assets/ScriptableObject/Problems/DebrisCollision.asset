@@ -16,15 +16,15 @@ MonoBehaviour:
   - SC_Event: {fileID: 11400000, guid: 3c1350250a4aaf043b339de3864f6562, type: 2}
     EventActions:
     - EventActionType: 0
-      EventActionValue: -1
+      EventActionValue: -0.5
     - EventActionType: 1
-      EventActionValue: -1
+      EventActionValue: -0.2
     - EventActionType: 2
-      EventActionValue: -1
+      EventActionValue: -0.1
   - SC_Event: {fileID: 11400000, guid: bf07ce06425ee6a4db95e64d61d0d485, type: 2}
     EventActions:
     - EventActionType: 3
-      EventActionValue: -1
+      EventActionValue: -30
     - EventActionType: 4
-      EventActionValue: 1
+      EventActionValue: 0.5
   m_blockerEvents: []

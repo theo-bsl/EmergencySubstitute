@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EventCriticallyTooMuchHeat
   m_EditorClassIdentifier: 
   m_resolutionTimer: 0
-  m_eventDuration: 30
+  m_eventDuration: 60
   m_profession: 0
   m_starshipState: 0
   m_eventAction: []
@@ -22,5 +22,6 @@ MonoBehaviour:
   m_name: "exc\xE8s de chaleur critique"
   m_deathCharacterPhrase: 
   m_deathTimePhrase: "Se r\xE9chauffer, c'est bien mais pas trop."
+  m_eventParagraph: 
   m_room: 0
   m_dificulty: {r: 0, g: 0, b: 0, a: 0}
