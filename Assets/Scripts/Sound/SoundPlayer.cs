@@ -135,8 +135,7 @@ public class SoundPlayer : MonoBehaviour
 
     public void PlayToussing()
     {
-        actualBreathSrc = illnessSrc;
-        timer = breathInterval;
+        illnessSrc.Play();
     }
 
     public void MotorBaseSpeed()

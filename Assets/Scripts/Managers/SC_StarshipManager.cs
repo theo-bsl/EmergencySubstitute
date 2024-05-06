@@ -178,7 +178,7 @@ public class SC_StarshipManager : MonoBehaviour
 
     private void PressureUpdate()
     {
-        m_currentPressure = Mathf.Clamp(m_currentPressure + (m_pressureInd * Time.deltaTime), 0f, Mathf.Infinity);
+        m_currentPressure = Mathf.Clamp(m_currentPressure + (m_pressureInd * Time.deltaTime * 0.1f), 0f, Mathf.Infinity);
 
         ManagePressureEvent();
     }
