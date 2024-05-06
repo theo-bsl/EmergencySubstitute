@@ -19,6 +19,8 @@ MonoBehaviour:
       EventActionValue: 60
     - EventActionType: 2
       EventActionValue: 0.1
+    - EventActionType: 4
+      EventActionValue: 0.5
   m_blockerEvents:
   - {fileID: 11400000, guid: 79163e2272927c947b68891cf1d5155c, type: 2}
   - {fileID: 11400000, guid: bfd97f08e757aee4ba527ac7574d86ae, type: 2}

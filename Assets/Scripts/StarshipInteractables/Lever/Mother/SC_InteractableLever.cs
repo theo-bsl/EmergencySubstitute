@@ -90,10 +90,13 @@ public abstract class SC_InteractableLever : SC_StarshipInteractable
         float minAngle = m_minRotationLimit;
         float currentAngle = m_transform.localEulerAngles.x * m_deltaRotationMask.x + m_transform.localEulerAngles.y * m_deltaRotationMask.y + m_transform.localEulerAngles.z * m_deltaRotationMask.z;
 
-        maxAngle += 360 - minAngle;
-        currentAngle += 360 - minAngle;
-        currentAngle -= currentAngle >= 360 ? 360 : 0;
-        minAngle = 0;
+        if (minAngle > maxAngle)
+        {
+            maxAngle += 360 - minAngle;
+            currentAngle += 360 - minAngle;
+            currentAngle -= currentAngle >= 360 ? 360 : 0;
+            minAngle = 0;
+        }
 
         float operatingAngle = maxAngle - minAngle;
 

@@ -166,7 +166,7 @@ public class SC_EventManager : MonoBehaviour
         }
     }
 
-        public bool CheckIfCrisis(SC_Event Event)
+    public bool CheckIfCrisis(SC_Event Event)
     {
         for (int i = 0; i < Event.EventAction.Count; i++)
         {

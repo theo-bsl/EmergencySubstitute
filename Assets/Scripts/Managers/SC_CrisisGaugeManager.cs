@@ -8,6 +8,8 @@ public class SC_CrisisGaugeManager : MonoBehaviour
     private float m_waitTime;
     [SerializeField] private float m_timeToWaitBeforeDecreaseGauge;
 
+    private bool m_hasLose = false;
+
     private string m_loseMessage = "La panique à bord du vaisseau a atteint un niveau tel que plus personne n’arrivait à rien faire menant le vaisseau et tout son équipage à sa fin.";
 
 
@@ -22,8 +24,9 @@ public class SC_CrisisGaugeManager : MonoBehaviour
     public void IncreaseGauge(float percentage)
     {
         m_percentage += percentage * Time.deltaTime;
-        if (m_percentage >= 100)
+        if (m_percentage >= 100 && !m_hasLose)
         {
+            m_hasLose = true;
             SC_GameManager.Instance.Lose(m_loseMessage);
         }
     }
